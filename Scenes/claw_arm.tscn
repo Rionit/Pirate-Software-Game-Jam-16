@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://d0yyaf3xp7gic"]
+[gd_scene load_steps=28 format=4 uid="uid://d0yyaf3xp7gic"]
 
 [ext_resource type="Script" path="res://Scripts/claw_arm.gd" id="1_2dnwu"]
 [ext_resource type="Texture2D" uid="uid://dvrsqa00g1b77" path="res://Meshes/Claw Arm/claw_arm_image_2.png" id="1_gymtd"]
@@ -44,6 +44,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g2ox2")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p5b5s"]
+points = PackedVector3Array(-0.691816, -0.599507, -0.651152, -0.691816, 0.599507, -0.651152, -0.602714, -0.599507, -0.651152, -0.691816, -0.599507, 0.651024, -1.60743, -0.181683, -0.181655, -0.691816, 0.599507, 0.651024, -0.602714, 0.599507, -0.651152, -1.60743, 0.181566, -0.181655, -0.602714, -0.599507, 0.651024, 0.536015, -0.552561, -0.600161, 0.74575, -0.552561, -0.529156, 0.83294, -0.552561, -0.357445, -1.60743, -0.181683, 0.181527, -0.602714, 0.599507, 0.651024, -1.60743, 0.181566, 0.181527, 0.83294, 0.552443, -0.357445, 0.74575, 0.552443, -0.529156, 0.536015, 0.552443, -0.600161, 0.83294, -0.552561, 0.357318, 0.74575, -0.552561, 0.529029, 0.536015, -0.552561, 0.600034, 0.536015, 0.552443, 0.600034, 0.74575, 0.552443, 0.529029, 0.83294, 0.552443, 0.357318)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_8ncah"]
 _surfaces = [{
 "aabb": AABB(-0.997906, -0.24432, -0.557505, 2.38059, 0.488665, 1.00907),
@@ -77,6 +80,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8ncah")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5kcym"]
+points = PackedVector3Array(-0.799135, -0.238532, -0.557505, -0.941048, -0.243076, -0.503278, -0.879296, -0.24011, -0.544961, -0.799135, 0.238509, -0.557505, -0.369903, -0.226908, -0.557505, -0.997906, -0.24432, -0.218219, -0.997906, -0.24432, -0.395418, -0.941048, 0.242336, -0.503278, 1.28038, -0.187685, 0.151983, 1.38245, -0.185437, 0.282956, 1.38245, -0.185437, 0.451562, -0.879296, 0.240088, -0.544961, -0.997906, 0.244297, -0.395418, 1.28038, 0.187662, 0.151983, -0.369903, 0.226886, -0.557505, -0.302559, -0.225091, -0.544072, -0.799135, -0.238723, 0.061408, -0.941048, -0.242406, -0.0829984, -0.997906, 0.244297, -0.218219, 1.38245, 0.185414, 0.282956, 1.38245, 0.185414, 0.451562, 0.204737, -0.211315, 0.451562, -0.297199, -0.225043, 0.256485, -0.302559, 0.225068, -0.544072, -0.799135, 0.238701, 0.061408, -0.879296, -0.240589, -0.00990623, -0.941048, 0.241714, -0.0829984, 0.204737, 0.211292, 0.451562, -0.297199, 0.22502, 0.256485, -0.879296, 0.239896, -0.00990623)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_or3sb"]
 _surfaces = [{
@@ -112,6 +118,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_or3sb")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a0jva"]
+points = PackedVector3Array(0.204762, -0.211318, -0.451569, 0.204762, 0.211289, -0.451569, 1.3827, -0.18544, -0.451569, -0.297174, -0.225046, -0.256591, 1.3827, 0.185411, -0.451569, -0.297174, 0.225017, -0.256591, 1.3827, -0.18544, -0.283062, -0.997881, -0.244323, 0.218113, -0.79911, -0.238726, -0.0615139, 1.3827, 0.185411, -0.283062, -0.79911, 0.238697, -0.0615139, -0.997881, 0.244342, 0.218113, 1.28041, -0.187688, -0.152089, -0.997881, -0.244323, 0.395312, -0.941022, -0.242409, 0.0828926, -0.879271, -0.240592, 0.00980037, -0.997881, 0.244342, 0.395312, 1.28041, 0.187659, -0.152089, -0.879271, 0.240563, 0.00980037, -0.941022, 0.241711, 0.0828926, -0.302533, -0.225094, 0.543966, -0.369878, -0.226911, 0.557498, -0.879271, -0.240831, 0.544855, -0.941022, -0.242362, 0.503173, -0.941022, 0.242333, 0.503173, -0.79911, 0.238506, 0.557498, -0.369878, 0.226883, 0.557498, -0.302533, 0.225065, 0.543966, -0.79911, -0.238535, 0.557498, -0.879271, 0.240085, 0.544855)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_prmac"]
 _surfaces = [{
 "aabb": AABB(-1.34005, -0.669605, -0.676142, 1.78737, 1.3523, 1.3523),
@@ -146,6 +155,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_prmac")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mfq4g"]
+points = PackedVector3Array(0.107195, -0.174673, -0.676142, 0.107195, 0.187625, -0.676142, 0.447313, -0.174673, -0.676142, 0.107195, -0.488523, -0.495059, -1.15023, -0.336694, -0.566539, -1.28442, -0.280966, -0.566539, -1.34005, -0.14661, -0.566539, 0.107195, 0.501475, -0.495059, 0.447313, 0.187625, -0.676142, -1.34005, 0.159563, -0.566539, -1.28442, 0.293918, -0.566539, -1.15023, 0.349646, -0.566539, 0.447313, -0.488523, -0.495059, 0.107195, -0.669605, -0.181209, -1.15023, -0.336694, 0.566419, -1.28442, -0.280966, 0.566419, -1.34005, -0.14661, 0.566419, 0.107195, 0.68269, -0.181209, 0.447313, 0.501475, -0.495059, -1.34005, 0.159563, 0.566419, -1.28442, 0.293918, 0.566419, -1.15023, 0.349646, 0.566419, 0.447313, -0.669605, -0.181209, 0.107195, -0.669605, 0.181089, 0.107195, -0.488523, 0.494939, 0.107195, -0.174673, 0.676154, 0.107195, 0.68269, 0.181089, 0.447313, 0.68269, -0.181209, 0.107195, 0.187625, 0.676154, 0.107195, 0.501475, 0.494939, 0.447313, -0.669605, 0.181089, 0.447313, -0.488523, 0.494939, 0.447313, -0.174673, 0.676154, 0.447313, 0.68269, 0.181089, 0.447313, 0.187625, 0.676154, 0.447313, 0.501475, 0.494939)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_6m26l"]
 _surfaces = [{
 "aabb": AABB(-3.10716, -0.568083, -0.559162, 7.31076, 1.04522, 1.11857),
@@ -179,6 +191,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6m26l")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hyn2h"]
+points = PackedVector3Array(2.84178, 0.344442, -0.559162, 2.86683, 0.295229, -0.559162, -3.10716, 0.0119262, -0.380252, -2.77654, 0.467421, -0.380252, 2.96487, 0.407466, -0.559162, 3.23465, -0.425664, -0.559162, -2.77654, -0.443467, -0.380252, -3.10716, 0.0119262, 0.380389, 3.28546, -0.524293, -0.559162, -2.77654, 0.467421, 0.380389, 2.92909, 0.477141, -0.408501, 2.92909, 0.477039, -0.512299, 2.93982, 0.456678, -0.545475, 3.31552, -0.278539, -0.559162, 4.08624, 0.173273, -0.492591, 4.2036, 0.0119262, -0.492591, -2.77654, -0.443467, 0.380389, 3.33699, -0.568083, -0.559162, 2.84178, 0.344442, 0.559299, 3.28546, -0.524293, 0.559409, 3.23465, -0.425664, 0.559409, 2.96487, 0.407466, 0.559299, 2.93982, 0.456678, 0.545613, 2.92909, 0.477039, 0.512437, 4.08624, 0.173273, 0.492728, 3.40139, -0.446638, -0.559162, 4.2036, 0.0119262, 0.492728, 4.08624, -0.149318, -0.492591, 3.44862, -0.539845, -0.559162, 3.33699, -0.568083, 0.559409, 3.40426, -0.562763, -0.559162, 3.31552, -0.278539, 0.559409, 3.40139, -0.446638, 0.559409, 3.44862, -0.539845, 0.559409, 4.08624, -0.149318, 0.492728, 3.89803, -0.310665, -0.466532, 3.40426, -0.562763, 0.559409, 3.84937, -0.335527, -0.366346, 3.89803, -0.310665, 0.466669, 3.84937, -0.335527, 0.366484)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_30jyc"]
 _surfaces = [{
@@ -427,9 +442,16 @@ transform = Transform3D(1, 1.34719e-07, -9.48266e-07, -1.46375e-07, 1, 0.0002737
 bone_name = "Claw _Clamp"
 bone_idx = 5
 
-[node name="Claw _Clamp" type="MeshInstance3D" parent="Armature/Skeleton/Claw _Clamp"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Armature/Skeleton/Claw _Clamp"]
+
+[node name="Claw _Clamp" type="MeshInstance3D" parent="Armature/Skeleton/Claw _Clamp/StaticBody3D"]
+transform = Transform3D(1, 6.77236e-15, -5.68434e-14, -2.72005e-15, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_7e1a6")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton/Claw _Clamp/StaticBody3D"]
+transform = Transform3D(1, 6.77236e-15, -5.68434e-14, -2.72005e-15, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_p5b5s")
 
 [node name="Claw_Left" type="BoneAttachment3D" parent="Armature/Skeleton"]
 transform = Transform3D(1, 1.34719e-07, -9.48266e-07, -1.46375e-07, 1, 0.000273764, 9.84051e-07, -0.000273764, 1, -1.38271, -0.000153428, -0.48549)
@@ -437,8 +459,16 @@ bone_name = "Claw_Left"
 bone_idx = 6
 
 [node name="Claw_Left" type="MeshInstance3D" parent="Armature/Skeleton/Claw_Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_p41f0")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Armature/Skeleton/Claw_Left/Claw_Left"]
+transform = Transform3D(1, -7.49401e-15, 1.13687e-13, -2.77556e-15, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton/Claw_Left/Claw_Left/StaticBody3D"]
+transform = Transform3D(1, 2.1011e-14, -1.7053e-13, -1.69031e-14, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_5kcym")
 
 [node name="Claw_Right" type="BoneAttachment3D" parent="Armature/Skeleton"]
 transform = Transform3D(1, 1.34719e-07, -9.48266e-07, -1.46375e-07, 1, 0.000273764, 9.84051e-07, -0.000273764, 1, -1.38274, 0.000115483, 0.485531)
@@ -446,26 +476,48 @@ bone_name = "Claw_Right"
 bone_idx = 7
 
 [node name="Claw_Right" type="MeshInstance3D" parent="Armature/Skeleton/Claw_Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_8wgrx")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Armature/Skeleton/Claw_Right/Claw_Right"]
+transform = Transform3D(1, -7.49401e-15, 1.13687e-13, -2.77556e-15, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton/Claw_Right/Claw_Right/StaticBody3D"]
+transform = Transform3D(1, 2.10387e-14, -1.7053e-13, -1.69031e-14, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_a0jva")
 
 [node name="Front Shaft" type="BoneAttachment3D" parent="Armature/Skeleton"]
 transform = Transform3D(1, 1.9406e-07, -9.63204e-07, -2.05888e-07, 1, 2.08616e-07, 9.99313e-07, -1.78814e-07, 1, -3.22877, -0.00655019, 1.63841e-05)
 bone_name = "Front Shaft"
 bone_idx = 8
 
-[node name="Front Shaft" type="MeshInstance3D" parent="Armature/Skeleton/Front Shaft"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Armature/Skeleton/Front Shaft"]
+
+[node name="Front Shaft" type="MeshInstance3D" parent="Armature/Skeleton/Front Shaft/StaticBody3D"]
+transform = Transform3D(1, 1.25068e-14, 0, 4.69008e-15, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_078my")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton/Front Shaft/StaticBody3D"]
+transform = Transform3D(1, 1.25068e-14, 0, 4.69008e-15, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_mfq4g")
 
 [node name="Middle Shaft" type="BoneAttachment3D" parent="Armature/Skeleton"]
 transform = Transform3D(1, 8.3947e-07, -1.03857e-06, -8.51297e-07, 1, 7.15256e-07, 1.07468e-06, -6.85453e-07, 1, -8.37158, -0.0168167, 1.09581e-05)
 bone_name = "Middle Shaft"
 bone_idx = 9
 
-[node name="Middle Shaft" type="MeshInstance3D" parent="Armature/Skeleton/Middle Shaft"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Armature/Skeleton/Middle Shaft"]
+
+[node name="Middle Shaft" type="MeshInstance3D" parent="Armature/Skeleton/Middle Shaft/StaticBody3D"]
+transform = Transform3D(1, -2.97737e-14, 0, 8.39787e-14, 1, 0, 1.13687e-13, -5.68434e-14, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_suvi0")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton/Middle Shaft/StaticBody3D"]
+transform = Transform3D(1, -2.97737e-14, 0, 8.39787e-14, 1, 0, 1.13687e-13, -5.68434e-14, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_hyn2h")
 
 [node name="Main Shaft" type="BoneAttachment3D" parent="Armature/Skeleton"]
 transform = Transform3D(1, -1.90118e-08, 7.74185e-09, -1.90118e-08, 1, 0, 7.74185e-09, 0, 1, -10.9998, -0.00479773, 0.648033)
