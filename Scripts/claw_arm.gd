@@ -7,10 +7,15 @@ extends Node3D
 @export var look_direction := Vector3(1, 0, 0)
 
 var claw_idx : int
-var pinched : bool = true
+var pinched := true
 
-const MOVE_SPEED = 10
-const ROTATION_SPEED = 2.0
+var angular_velocity := 0.0
+var velocity := Vector3.ZERO
+
+const MAX_MOVE_SPEED = 5
+const MAX_ROTATION_SPEED = 5.0
+const ACCELERATION = 0.05
+const DESCELERATION = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,28 +40,36 @@ func claw_released():
 	pinched = false
 
 func _physics_process(delta: float) -> void:
-	var claw_rotation := skeleton.get_bone_pose_rotation(claw_idx).get_euler()
 	if Input.is_action_pressed("rotate_claw_left"):
-		claw_rotation.y = fmod(claw_rotation.y - deg_to_rad(ROTATION_SPEED), 360)
-		skeleton.set_bone_pose_rotation(claw_idx, Quaternion.from_euler(claw_rotation))
+		angular_velocity = min(angular_velocity + ACCELERATION, MAX_ROTATION_SPEED)
 	elif Input.is_action_pressed("rotate_claw_right"):
-		claw_rotation.y = fmod(claw_rotation.y + deg_to_rad(ROTATION_SPEED), 360)
-		skeleton.set_bone_pose_rotation(claw_idx, Quaternion.from_euler(claw_rotation))
+		angular_velocity = max(angular_velocity - ACCELERATION, -MAX_ROTATION_SPEED)
+	else:
+		angular_velocity = move_toward(angular_velocity, 0, delta * DESCELERATION)
 	
 	if Input.is_action_just_pressed("pinch"):
 		if pinched:
 			animation_player.play("release")
 		else:
 			animation_player.play("pinch")
-			
+	
+	var dir = look_direction.normalized()
+	
 	if Input.is_action_pressed("up"):
-		ik_target.global_position.y += delta * MOVE_SPEED
+		velocity.y = min(velocity.y + ACCELERATION, MAX_MOVE_SPEED)
+	elif Input.is_action_pressed("down"):
+		velocity.y = max(velocity.y - ACCELERATION, -MAX_MOVE_SPEED)
 	elif Input.is_action_pressed("front"):
-		ik_target.global_position.x += look_direction.normalized().x * delta * MOVE_SPEED
-		ik_target.global_position.z += look_direction.normalized().z * delta * MOVE_SPEED
-		
-	if Input.is_action_pressed("down"):
-		ik_target.global_position.y -= delta * MOVE_SPEED
+		velocity.x = min(velocity.x + ACCELERATION, MAX_MOVE_SPEED)
 	elif Input.is_action_pressed("back"):
-		ik_target.global_position.x -= look_direction.normalized().x * delta * MOVE_SPEED
-		ik_target.global_position.z -= look_direction.normalized().z * delta * MOVE_SPEED
+		velocity.x = max(velocity.x - ACCELERATION, -MAX_MOVE_SPEED)
+	else:
+		velocity = lerp(velocity, Vector3.ZERO, delta * DESCELERATION)
+	
+	# ROTATION
+	var claw_rotation := skeleton.get_bone_pose_rotation(claw_idx).get_euler()
+	claw_rotation.y = fmod(claw_rotation.y + deg_to_rad(angular_velocity), 360)
+	skeleton.set_bone_pose_rotation(claw_idx, Quaternion.from_euler(claw_rotation))
+	
+	# POSITION
+	ik_target.position += velocity * delta
