@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dq8cp8tbiusly"]
+
+[ext_resource type="PackedScene" uid="uid://dkxt8pog23mmg" path="res://Scenes/player.tscn" id="1_akknk"]
+[ext_resource type="PackedScene" uid="uid://byljoswnvn8h0" path="res://Meshes/Honda/honda_accord.glb" id="2_3if8w"]
+[ext_resource type="Texture2D" uid="uid://8lw51iw6uyjq" path="res://Images/sky.hdr" id="3_1fb3r"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_abnbi"]
+panorama = ExtResource("3_1fb3r")
+filter = false
+
+[sub_resource type="Sky" id="Sky_c07wn"]
+sky_material = SubResource("PanoramaSkyMaterial_abnbi")
+radiance_size = 2
+
+[sub_resource type="Environment" id="Environment_4hy1x"]
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_c07wn")
+ambient_light_source = 3
+
+[node name="Main" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_akknk")]
+
+[node name="honda_accord" parent="." instance=ExtResource("2_3if8w")]
+transform = Transform3D(-0.925772, 0, -0.378083, 0, 1, 0, 0.378083, 0, -0.925772, 8.58374, -9.53674e-07, -2.86644)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.847419, 0.326958, -0.418306, -2.47925e-08, 0.787882, 0.615826, 0.530925, -0.521863, 0.667666, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4hy1x")

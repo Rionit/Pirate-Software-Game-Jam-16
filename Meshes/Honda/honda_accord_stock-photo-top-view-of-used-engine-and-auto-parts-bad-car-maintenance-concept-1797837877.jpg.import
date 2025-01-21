@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b8v07ykp7r1r4"
+path.s3tc="res://.godot/imported/honda_accord_stock-photo-top-view-of-used-engine-and-auto-parts-bad-car-maintenance-concept-1797837877.jpg-9dbf74d0739ea49ccc2c850f6aacfe45.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "91556a6d25531d0e10f47431cd68210f"
+}
+
+[deps]
+
+source_file="res://Meshes/Honda/honda_accord_stock-photo-top-view-of-used-engine-and-auto-parts-bad-car-maintenance-concept-1797837877.jpg"
+dest_files=["res://.godot/imported/honda_accord_stock-photo-top-view-of-used-engine-and-auto-parts-bad-car-maintenance-concept-1797837877.jpg-9dbf74d0739ea49ccc2c850f6aacfe45.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

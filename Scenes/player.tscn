@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkxt8pog23mmg"]
+
+[ext_resource type="PackedScene" uid="uid://d0yyaf3xp7gic" path="res://Scenes/claw_arm.tscn" id="1_n1uco"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_xfo1h"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_xfo1h")
+
+[node name="Machine" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.01129, 0)
+
+[node name="ClawArm" parent="Machine" instance=ExtResource("1_n1uco")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4844, -2, 2)
+
+[node name="Camera3D" type="Camera3D" parent="Machine"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
