@@ -356,7 +356,6 @@ _data = {
 
 [node name="claw_arm" type="Node3D"]
 script = ExtResource("1_2dnwu")
-look_direction = null
 
 [node name="Armature" type="Node3D" parent="."]
 

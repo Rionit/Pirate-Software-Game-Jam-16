@@ -25,6 +25,7 @@ func _physics_process(delta):
 	else:
 		angular_velocity = move_toward(angular_velocity, 0, delta * DESCELERATION)
 	
+	claw_arm.velocity.z = -deg_to_rad(angular_velocity) * 10.0
 	rotate_machine(angular_velocity * delta)
 
 func rotate_machine(angle: float):

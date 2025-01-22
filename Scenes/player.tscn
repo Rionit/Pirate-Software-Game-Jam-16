@@ -11,7 +11,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.01129, 0)
 
 [node name="ClawArm" parent="Machine" instance=ExtResource("1_n1uco")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4844, -2, 2)
-look_direction = null
+look_direction = Vector3(1, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Machine"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)

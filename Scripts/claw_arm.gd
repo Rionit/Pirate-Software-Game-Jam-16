@@ -45,7 +45,7 @@ func claw_pinched():
 func claw_released():
 	pinched = false
 	if pinched_part != null: 
-		pinched_part.release(angular_velocity)
+		pinched_part.release(angular_velocity, velocity)
 		pinched_part = null
 	
 func pinch() -> void:
@@ -86,8 +86,9 @@ func _physics_process(delta: float) -> void:
 	claw_rotation.y = fmod(claw_rotation.y + deg_to_rad(angular_velocity), 360)
 	skeleton.set_bone_pose_rotation(claw_idx, Quaternion.from_euler(claw_rotation))
 	
-	# POSITION
-	ik_target.position += velocity * delta
+	# POSITION - we just want x and y cause z is controled in player
+	ik_target.position.x += velocity.x * delta
+	ik_target.position.y += velocity.y * delta
 
 func tip_entered_body(body: Node3D) -> void:
 	print("Tip entered " + body.name)

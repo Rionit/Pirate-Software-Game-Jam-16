@@ -28,10 +28,11 @@ func pinch(tip: Node3D):
 	self.freeze = true
 	return self
 
-func release(angular_velocity: float):
+func release(angular_velocity: float, velocity: Vector3):
 	self.reparent(get_tree().get_root())
 	self.freeze = false
 	self.angular_velocity.y = -angular_velocity
+	self.linear_velocity = velocity
 	if duplicated_collider != null:
 		duplicated_collider.queue_free()
 
