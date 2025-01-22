@@ -7,8 +7,8 @@ extends Node3D
 
 @export var look_direction := Vector3(1, 0, 0)
 
-var pinched_part: RigidBody3D = null
-var close_part: RigidBody3D = null
+var pinched_part: CarPart = null
+var close_part: CarPart = null
 var claw_idx: int
 var pinched := true
 
@@ -49,8 +49,9 @@ func claw_released():
 	if pinched_part != null: 
 		pinched_part.reparent(get_tree().get_root())
 		pinched_part.freeze = false
+		pinched_part.duplicated_collider.queue_free()
 		pinched_part = null
-
+	
 func pinch() -> void:
 	if pinched:
 		animation_player.play("release")

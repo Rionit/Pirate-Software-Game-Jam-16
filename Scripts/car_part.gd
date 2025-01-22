@@ -3,11 +3,12 @@ class_name CarPart
 
 signal collider_duplicated(_collider: CollisionShape3D)
 
-@export var mesh: MeshInstance3D
 @onready var collider: CollisionShape3D = $CollisionShape3D
 @onready var car: Car = $"../.."
 
-var duplicated_collider: CollisionShape3D
+@export var duplicated_collider: CollisionShape3D
+@export var mesh: MeshInstance3D
+
 var blend_shape_idx: int
 
 # Called when the node enters the scene tree for the first time.
