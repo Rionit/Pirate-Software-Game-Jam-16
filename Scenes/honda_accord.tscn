@@ -1,14 +1,13 @@
-[gd_scene load_steps=41 format=4 uid="uid://c0opyhoefwu3g"]
+[gd_scene load_steps=44 format=4 uid="uid://c0opyhoefwu3g"]
 
+[ext_resource type="Script" path="res://Scripts/car.gd" id="1_lkd2i"]
 [ext_resource type="Texture2D" uid="uid://dxt3bgxrbwjbn" path="res://Meshes/Honda/honda_accord_Image_0.png" id="1_m4lpq"]
 [ext_resource type="Texture2D" uid="uid://ciy8a1p3fd6dv" path="res://Meshes/Honda/honda_accord_Image_0_1.jpg" id="2_8j7ix"]
+[ext_resource type="PackedScene" uid="uid://cci3ne7yjx11w" path="res://Scenes/car_part.tscn" id="3_nr02l"]
 [ext_resource type="Texture2D" uid="uid://b8v07ykp7r1r4" path="res://Meshes/Honda/honda_accord_stock-photo-top-view-of-used-engine-and-auto-parts-bad-car-maintenance-concept-1797837877.jpg" id="3_pb3jf"]
 [ext_resource type="Texture2D" uid="uid://tja1p1ggwe0e" path="res://Meshes/Honda/honda_accord_usedcarbatteriesyoucanrecycleprofitably_Jupiterimages_PHOTOSdotcom.jpg" id="4_yq5bl"]
 [ext_resource type="Texture2D" uid="uid://c7upgn7f7my6x" path="res://Meshes/Honda/honda_accord_image_1.png" id="5_vnvm5"]
 [ext_resource type="Texture2D" uid="uid://bhg5xwsw36jx5" path="res://Meshes/Honda/honda_accord_honda seat.jpg" id="6_l43qf"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_rtiip"]
-size = Vector3(7.91058, 2.42822, 2.83691)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yav2"]
 resource_name = "Body"
@@ -236,6 +235,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("PRALP74shb8AAIA/HAbrP6Omp79gIY0+MCf7PwACULlgIY0+PRALPwACULkAAIA/PRALP74shT8AAIA/HAbrP6Ompz9gIY0+sUH+Pv/qhL+2W2k/Ud7kPwMPp7+LmkA+qR/1P75ST7nS7j8+69j+PgACULkAM2k/pUH+PgHrhD+5W2k/T97kPw4Ppz+QmkA+PRALP74shb8AAIA/PRALP74shb8AAIA/PRALP74shb8AAIA/MCf7PwACULlgIY0+MCf7PwACULlgIY0+MCf7PwACULlgIY0+sUH+Pv/qhL+2W2k/sUH+Pv/qhL+2W2k/sUH+Pv/qhL+2W2k/qR/1P75ST7nS7j8+qR/1P75ST7nS7j8+qR/1P75ST7nS7j8+PRALP74shb8AAIA/PRALP74shb8AAIA/PRALP74shb8AAIA/PRALP74shb8AAIA/MCf7PwACULlgIY0+MCf7PwACULlgIY0+MCf7PwACULlgIY0+MCf7PwACULlgIY0+PRALP74shT8AAIA/PRALP74shT8AAIA/PRALP74shT8AAIA/PRALP74shT8AAIA/sUH+Pv/qhL+2W2k/sUH+Pv/qhL+2W2k/sUH+Pv/qhL+2W2k/sUH+Pv/qhL+2W2k/qR/1P75ST7nS7j8+qR/1P75ST7nS7j8+qR/1P75ST7nS7j8+qR/1P75ST7nS7j8+pUH+PgHrhD+5W2k/pUH+PgHrhD+5W2k/pUH+PgHrhD+5W2k/pUH+PgHrhD+5W2k/I2rhVQ90xBvX1uuNOGvGB93R/3+jgUsA1mG1g8SFswAhahyq////PziB/LkQiGufoCjBQ////7+OLMkw////v3nwzA////+/AAD+myKA+39bKUK9i0kYa5PtcRn///+/U51RXg90xBvLalmTD3TEGzxKtGkPdMQbc9hfdaOBSwArygF6o4FLACeSXp2jgUsA8dbNZf///7+iprFb////vz80QHX///+/Vdu/QP///7/xZxeu////v3xGAZz///+/i4Kzbg90xBucks1WD3TEG6hQgoAPdMQb0C7Faw90xBvUpDp6o4FLAEHckHSjgUsAysr8eaOBSwBInBCmo4FLAIWB1IP///8/qYjFr////z/Sau6+////P6RYWJT///8/1wwUPf///7+g1V5r////vy+nK1z///+/wR7WX////78JCCQp////vyTdt1H///+/l5gQsv///79pqsfr////vycLUL+LSRhr1EAbzYtJGGuITHiRi0kYa+YaYXSLSRhr")
 }]
 blend_shape_mode = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6dfrn"]
+points = PackedVector3Array(0.496595, -1.03848, 0.911553, 1.78798, -1.30516, 0.188071, 1.83604, -1.30977, 0.275643, 0.543074, -1.04054, 1, 0.496595, 1.03823, 0.911553, 1.91494, -0.000256419, 0.187434, 1.78798, 1.3049, 0.188071, 1.96213, -0.000256419, 0.275643, 0.543074, 1.04028, 1, 1.83604, 1.30977, 0.275643)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_x7d43"]
 resource_name = "honda_accord_Cube_Body_0_009"
@@ -558,140 +560,151 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="honda_accord" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_dov7c"]
+size = Vector3(7.99805, 1.86969, 2.89551)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="honda_accord" type="Node3D"]
+script = ExtResource("1_lkd2i")
+
+[node name="CarBody" type="RigidBody3D" parent="."]
 mass = 10.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0514221, 1.2112, 0)
-shape = SubResource("BoxShape3D_rtiip")
-
-[node name="Door_R" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Door_R" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_h4hnf")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Door_L" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Door_L" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_d2ms4")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Trunk" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Trunk" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_885mt")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Wheel_FR" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Wheel_FR" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 2.71416, 0.528721, 1.13846)
 mesh = SubResource("ArrayMesh_olba1")
 skeleton = NodePath("")
 
-[node name="Wheel_BR" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Wheel_BR" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, -2.1687, 0.528721, 1.13846)
 mesh = SubResource("ArrayMesh_tkd2t")
 skeleton = NodePath("")
 
-[node name="Wheel_BL" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Wheel_BL" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, -2.1687, 0.52872, -1.12525)
 mesh = SubResource("ArrayMesh_4ur22")
 skeleton = NodePath("")
 
-[node name="Wheel_FL" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Wheel_FL" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 2.71416, 0.52872, -1.12525)
 mesh = SubResource("ArrayMesh_wpkey")
 skeleton = NodePath("")
 
-[node name="Window_Front" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="CarPart" parent="CarBody" node_paths=PackedStringArray("mesh") instance=ExtResource("3_nr02l")]
+mesh = NodePath("Window_Front")
+
+[node name="Window_Front" type="MeshInstance3D" parent="CarBody/CarPart"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_1pyx1")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Window_Back" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/CarPart"]
+transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
+shape = SubResource("ConvexPolygonShape3D_6dfrn")
+
+[node name="Window_Back" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_x7d43")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Roof" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Roof" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_nttle")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Bumper" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Bumper" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1.00826, 0, 0, 0, -3.60581e-07, 1.00826, 0, -1.00826, -3.60581e-07, -0.0319459, 1.4248, 0)
 mesh = SubResource("ArrayMesh_3xjx7")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Hood" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Hood" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_qfffp")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Motor" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Motor" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(0.683386, 0, 0, 0, 0.452484, 0, 0, 0, 1, 2.91875, 0.92433, 0)
 mesh = SubResource("ArrayMesh_eifhr")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Battery" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Battery" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(0.683386, 0, 0, 0, 0.452484, 0, 0, 0, 1, 2.85922, 0.92433, -0.0426933)
 mesh = SubResource("ArrayMesh_17ekk")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Wheel Shaft front" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Wheel Shaft front" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(0.0912765, 0, 0, 0, 0.0912765, 0, 0, 0, 1.19048, 2.71416, 0.403424, 0.00660503)
 mesh = SubResource("ArrayMesh_c3e4q")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Body" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Body" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_0j6f7")
 skeleton = NodePath("")
 "blend_shapes/Cube Squash" = 0.0
 blend_shapes/Damage = 0.0
 
-[node name="Wheel Shaft back" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Wheel Shaft back" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(0.0912765, 0, 0, 0, 0.0912765, 0, 0, 0, 1.19048, -2.1687, 0.368611, 0.00660503)
 mesh = SubResource("ArrayMesh_fcs1a")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Palubka" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Palubka" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(1, 0, 0, 0, -3.56794e-07, 1, 0, -0.997669, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_70uur")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Seat" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Seat" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, 0.425865, 1.41985, -0.667506)
 mesh = SubResource("ArrayMesh_ut5wx")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Seat_001" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Seat_001" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, 0.425865, 1.41985, 0.67772)
 mesh = SubResource("ArrayMesh_jq5gt")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Seat_002" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Seat_002" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, -1.1416, 1.41985, -0.667506)
 mesh = SubResource("ArrayMesh_jj0tn")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="Seat_003" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="Seat_003" type="MeshInstance3D" parent="CarBody"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, -1.1416, 1.41985, 0.67772)
 mesh = SubResource("ArrayMesh_2s6ug")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.936676, 0)
+shape = SubResource("BoxShape3D_dov7c")

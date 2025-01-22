@@ -27,6 +27,9 @@ func _physics_process(delta):
 	
 	rotate_machine(angular_velocity * delta)
 
-func rotate_machine(angle):
+func rotate_machine(angle: float):
 	machine.rotate_y(deg_to_rad(angle))
 	claw_arm.look_direction = claw_arm.look_direction.rotated(Vector3.UP, deg_to_rad(angle))
+
+func _on_pinch_area_entered(body: Node3D) -> void:
+	print("yippeee")

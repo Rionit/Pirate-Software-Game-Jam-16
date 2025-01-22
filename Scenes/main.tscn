@@ -40,7 +40,7 @@ size = Vector3(38.8984, 1.33398, 32.4922)
 [node name="Player" parent="." instance=ExtResource("1_akknk")]
 
 [node name="honda_accord" parent="." instance=ExtResource("2_m3n5v")]
-transform = Transform3D(-0.95884, 0, -0.283948, 0, 1, 0, 0.283948, 0, -0.95884, 8.91265, 1.96838, -3.48034)
+transform = Transform3D(-0.95884, 0, -0.283948, 0, 1, 0, 0.283948, 0, -0.95884, 8.91265, 1.96838, -4.94167)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.984808, -0.0868241, 0.150384, 0, 0.866025, 0.5, -0.173648, 0.492404, -0.852868, 2.66287, 7.5, -20)
@@ -49,6 +49,8 @@ transform = Transform3D(-0.984808, -0.0868241, 0.150384, 0, 0.866025, 0.5, -0.17
 environment = SubResource("Environment_4hy1x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77637, -0.673828, 0)
