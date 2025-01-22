@@ -40,16 +40,12 @@ func claw_pinched():
 	pinched = true
 	
 	if close_part != null:
-		pinched_part = close_part
-		pinched_part.reparent(tip)
-		pinched_part.freeze = true
+		pinched_part = close_part.pinch(tip)
 
 func claw_released():
 	pinched = false
 	if pinched_part != null: 
-		pinched_part.reparent(get_tree().get_root())
-		pinched_part.freeze = false
-		pinched_part.duplicated_collider.queue_free()
+		pinched_part.release()
 		pinched_part = null
 	
 func pinch() -> void:
