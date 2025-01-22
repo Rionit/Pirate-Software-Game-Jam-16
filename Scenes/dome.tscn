@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://dj21v7c4awumw"]
+[gd_scene load_steps=8 format=4 uid="uid://dj21v7c4awumw"]
 
 [ext_resource type="Texture2D" uid="uid://d3kemij5doay0" path="res://Meshes/Dome/dome_panorama.jpg" id="1_tkosf"]
+[ext_resource type="Shader" path="res://Shaders/shadow_catcher.gdshader" id="2_2ao4t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8f20j"]
 resource_name = "Panorama"
@@ -44,8 +45,20 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cuuni")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_coybf"]
+render_priority = 0
+shader = ExtResource("2_2ao4t")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ml5pc"]
+material = SubResource("ShaderMaterial_coybf")
+orientation = 1
+
 [node name="dome" type="Node3D"]
 
 [node name="Dome" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_5puqo")
 skeleton = NodePath("")
+
+[node name="ShadowCatcher" type="MeshInstance3D" parent="."]
+transform = Transform3D(206.205, 0, 0, 0, 206.205, 0, 0, 0, 206.205, 0, 0.0559177, 9.34638e-08)
+mesh = SubResource("QuadMesh_ml5pc")

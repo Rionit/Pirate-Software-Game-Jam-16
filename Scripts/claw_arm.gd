@@ -45,7 +45,7 @@ func claw_pinched():
 func claw_released():
 	pinched = false
 	if pinched_part != null: 
-		pinched_part.release()
+		pinched_part.release(angular_velocity)
 		pinched_part = null
 	
 func pinch() -> void:
