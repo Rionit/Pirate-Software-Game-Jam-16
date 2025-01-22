@@ -235,6 +235,33 @@ material = SubResource("StandardMaterial3D_m6ima")
 radius = 0.25
 height = 0.5
 
+[sub_resource type="Animation" id="Animation_1cpv4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton/Claw_Right/Claw_Right:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton/Claw_Left/Claw_Left:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_7kj4g"]
 resource_name = "pinch"
 tracks/0/type = "value"
@@ -315,33 +342,6 @@ tracks/2/keys = {
 "args": [],
 "method": &"claw_released"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_1cpv4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Armature/Skeleton/Claw_Right/Claw_Right:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Armature/Skeleton/Claw_Left/Claw_Left:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_221kg"]
@@ -459,7 +459,6 @@ bone_name = "Claw_Left"
 bone_idx = 6
 
 [node name="Claw_Left" type="MeshInstance3D" parent="Armature/Skeleton/Claw_Left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_p41f0")
 skeleton = NodePath("")
 
@@ -476,7 +475,6 @@ bone_name = "Claw_Right"
 bone_idx = 7
 
 [node name="Claw_Right" type="MeshInstance3D" parent="Armature/Skeleton/Claw_Right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_8wgrx")
 skeleton = NodePath("")
 
