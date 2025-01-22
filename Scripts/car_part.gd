@@ -26,6 +26,7 @@ func _ready() -> void:
 func pinch(tip: Node3D):
 	self.reparent(tip)
 	self.freeze = true
+	damage(1.0)
 	return self
 
 func release(angular_velocity: float, velocity: Vector3):

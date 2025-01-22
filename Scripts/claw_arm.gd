@@ -38,7 +38,6 @@ func _process(delta: float) -> void:
 
 func claw_pinched():
 	pinched = true
-	
 	if close_part != null:
 		pinched_part = close_part.pinch(tip)
 
@@ -48,12 +47,27 @@ func claw_released():
 		pinched_part.release(angular_velocity, velocity)
 		pinched_part = null
 	
-func pinch() -> void:
-	if pinched:
+func transition_claw(from, to):
+	# Calculate the current position
+	var current_pos = animation_player.current_animation_position
+	var length = animation_player.get_animation(from).length
+	var progress = current_pos / length
+	
+	animation_player.play(to)
+	animation_player.seek((1.0 - progress), true)
+	
+func switch_claw() -> void:
+	if animation_player.is_playing():
+		match animation_player.current_animation:
+			"pinch":
+				transition_claw("pinch", "release")
+			"release":
+				transition_claw("release", "pinch")
+	elif pinched:
 		animation_player.play("release")
 	else:
 		animation_player.play("pinch")
-
+			
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("rotate_claw_left"):
 		angular_velocity = min(angular_velocity + ACCELERATION, MAX_ROTATION_SPEED)
@@ -61,11 +75,6 @@ func _physics_process(delta: float) -> void:
 		angular_velocity = max(angular_velocity - ACCELERATION, -MAX_ROTATION_SPEED)
 	else:
 		angular_velocity = move_toward(angular_velocity, 0, delta * DESCELERATION)
-	
-	if Input.is_action_just_pressed("pinch"):
-		pinch()
-	
-	var dir = look_direction.normalized()
 	
 	if Input.is_action_pressed("up"):
 		velocity.y = min(velocity.y + ACCELERATION, MAX_MOVE_SPEED)
@@ -89,6 +98,10 @@ func _physics_process(delta: float) -> void:
 	# POSITION - we just want x and y cause z is controled in player
 	ik_target.position.x += velocity.x * delta
 	ik_target.position.y += velocity.y * delta
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pinch"):
+		switch_claw()
 
 func tip_entered_body(body: Node3D) -> void:
 	print("Tip entered " + body.name)
