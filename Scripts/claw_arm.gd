@@ -71,12 +71,15 @@ func _physics_process(delta: float) -> void:
 		velocity.y = min(velocity.y + ACCELERATION, MAX_MOVE_SPEED)
 	elif Input.is_action_pressed("down"):
 		velocity.y = max(velocity.y - ACCELERATION, -MAX_MOVE_SPEED)
-	elif Input.is_action_pressed("front"):
+	else:
+		velocity.y = move_toward(velocity.y, 0, delta * DESCELERATION)
+		
+	if Input.is_action_pressed("front"):
 		velocity.x = min(velocity.x + ACCELERATION, MAX_MOVE_SPEED)
 	elif Input.is_action_pressed("back"):
 		velocity.x = max(velocity.x - ACCELERATION, -MAX_MOVE_SPEED)
 	else:
-		velocity = lerp(velocity, Vector3.ZERO, delta * DESCELERATION)
+		velocity.x = move_toward(velocity.x, 0, delta * DESCELERATION)
 	
 	# ROTATION
 	var claw_rotation := skeleton.get_bone_pose_rotation(claw_idx).get_euler()
