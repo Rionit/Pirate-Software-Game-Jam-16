@@ -14,12 +14,13 @@ script = ExtResource("1_xfo1h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.01129, 0)
 
 [node name="ClawArm" parent="Machine" instance=ExtResource("1_n1uco")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4844, -2, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0877, -2, 1.25181)
 
 [node name="Camera3D" type="Camera3D" parent="Machine"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Cabin" type="Node3D" parent="Machine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60326, 0, -0.748186)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Machine/Cabin"]
 transform = Transform3D(3.0642, 0, 0, 0, 4.97043, 0, 0, 0, 3.80784, -3.50873, 0.344113, 1.89386)

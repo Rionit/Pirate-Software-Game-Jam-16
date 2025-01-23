@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://gs7k6u5af1fu"]
+[gd_scene load_steps=11 format=4 uid="uid://gs7k6u5af1fu"]
 
+[ext_resource type="Script" path="res://Scripts/glass_pile.gd" id="1_axa4y"]
 [ext_resource type="Texture2D" uid="uid://ctlujf4scbd4c" path="res://Meshes/Glass Dumpster/dome_image_3.png" id="1_ep8pe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ioek"]
@@ -42,9 +43,54 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u0wvy")
 
-[node name="GlassDumpster" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ehfp"]
+size = Vector3(30.5596, 12.578, 0.593872)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xocm8"]
+size = Vector3(0.539063, 12.6291, 20.3164)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3pa4y"]
+size = Vector3(0.76416, 10.7766, 20.2561)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ogomp"]
+size = Vector3(30.4541, 1, 20.292)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r6sbt"]
+size = Vector3(28.7041, 8.18823, 19.0586)
+
+[node name="GlassDumpster" type="StaticBody3D" node_paths=PackedStringArray("area")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_axa4y")
+area = NodePath("Area3D")
 
 [node name="GlassDumpster" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.82642, 0)
 mesh = SubResource("ArrayMesh_7ekpe")
 skeleton = NodePath("")
+
+[node name="WallL" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.34988, -9.82111)
+shape = SubResource("BoxShape3D_6ehfp")
+
+[node name="WallR" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.34988, 9.85203)
+shape = SubResource("BoxShape3D_6ehfp")
+
+[node name="Wallback" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9623, 6.32326, 0)
+shape = SubResource("BoxShape3D_xocm8")
+
+[node name="WallFront" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8424, 5.42525, 0)
+shape = SubResource("BoxShape3D_3pa4y")
+
+[node name="WallGround" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.567704, 0)
+shape = SubResource("BoxShape3D_ogomp")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.29749, 0)
+shape = SubResource("BoxShape3D_r6sbt")
