@@ -3,6 +3,9 @@ Hello, this is a work in progress game jam submission!
 You can find it in it's current state here:
 https://rionit.itch.io/scrap-reaper
 
+I was inspired by this video:
+https://www.instagram.com/p/DEmeIG1MLrR/
+
 Here are some screenshots:
 
 <img width="868" alt="1" src="https://github.com/user-attachments/assets/2099731c-6dbb-489f-ad3c-1c5688aa8965" />
