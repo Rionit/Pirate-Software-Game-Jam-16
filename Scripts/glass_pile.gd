@@ -1,2 +1,2 @@
 extends TrashPile
-class_name RadiatorsPile
+class_name GlassPile

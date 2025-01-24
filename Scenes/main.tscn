@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dq8cp8tbiusly"]
+[gd_scene load_steps=12 format=3 uid="uid://dq8cp8tbiusly"]
 
 [ext_resource type="PackedScene" uid="uid://dkxt8pog23mmg" path="res://Scenes/player.tscn" id="1_akknk"]
 [ext_resource type="PackedScene" uid="uid://c0opyhoefwu3g" path="res://Scenes/honda_accord.tscn" id="2_m3n5v"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dj21v7c4awumw" path="res://Scenes/dome.tscn" id="4_cv1b4"]
 [ext_resource type="PackedScene" uid="uid://gs7k6u5af1fu" path="res://Scenes/glass_dumpster.tscn" id="5_0wp7l"]
 [ext_resource type="PackedScene" uid="uid://cjdf1ago15by0" path="res://Scenes/radiators_dumpster.tscn" id="6_p31hf"]
+[ext_resource type="PackedScene" uid="uid://bgtwppfrrm3rt" path="res://Scenes/engines_dumpster.tscn" id="7_r4yj5"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_abnbi"]
 panorama = ExtResource("3_bmd01")
@@ -63,7 +64,10 @@ shape = SubResource("BoxShape3D_e3v32")
 transform = Transform3D(0.11, 0, -0.190526, 0, 0.22, 0, 0.190526, 0, 0.11, 0, 0, 0)
 
 [node name="GlassDumpster" parent="." instance=ExtResource("5_0wp7l")]
-transform = Transform3D(0.0872331, 0, -0.150533, 0, 0.173983, 0, 0.150533, 0, 0.0872331, 0.526195, 0, 8.16607)
+transform = Transform3D(0.0812574, 0, -0.140221, 0, 0.162065, 0, 0.140221, 0, 0.0812574, 0.526195, 0, 8.16607)
 
 [node name="RadiatorsDumpster" parent="." instance=ExtResource("6_p31hf")]
 transform = Transform3D(-0.0328322, 0, 0.19813, 0, 0.200832, 0, -0.19813, 0, -0.0328322, -4.14671, 0, -8.12904)
+
+[node name="engines_dumpster" parent="." instance=ExtResource("7_r4yj5")]
+transform = Transform3D(0.167831, 0, -0.18194, 0, 0.247527, 0, 0.18194, 0, 0.167831, 5.58156, 0, 4.87779)
