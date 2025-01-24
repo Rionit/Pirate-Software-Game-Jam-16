@@ -13,7 +13,8 @@
 resource_name = "Body"
 cull_mode = 2
 albedo_texture = ExtResource("1_m4lpq")
-roughness = 0.821115
+metallic = 1.0
+roughness = 0.7
 texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_h4hnf"]

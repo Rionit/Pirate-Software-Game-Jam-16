@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://gs7k6u5af1fu"]
 
-[ext_resource type="Script" path="res://Scripts/glass_pile.gd" id="1_axa4y"]
+[ext_resource type="Script" path="res://Scripts/trash_pile.gd" id="1_4mn2g"]
 [ext_resource type="Texture2D" uid="uid://ctlujf4scbd4c" path="res://Meshes/Glass Dumpster/dome_image_3.png" id="1_ep8pe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ioek"]
@@ -59,10 +59,11 @@ size = Vector3(30.4541, 1, 20.292)
 size = Vector3(28.7041, 8.18823, 19.0586)
 
 [node name="GlassDumpster" type="StaticBody3D" node_paths=PackedStringArray("area")]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("1_axa4y")
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_4mn2g")
 area = NodePath("Area3D")
+trash_type = 1
 
 [node name="GlassDumpster" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.82642, 0)

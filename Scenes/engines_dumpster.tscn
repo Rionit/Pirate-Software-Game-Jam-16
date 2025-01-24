@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://bgtwppfrrm3rt"]
 
 [ext_resource type="Texture2D" uid="uid://vdkbst2qmixo" path="res://Meshes/Engines Dumpster/engines_dumpster_image_5.png" id="1_msrci"]
-[ext_resource type="Script" path="res://Scripts/engines_pile.gd" id="1_xoqo0"]
+[ext_resource type="Script" path="res://Scripts/trash_pile.gd" id="1_yxicy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cveox"]
 resource_name = "EnginesMat"
@@ -85,9 +85,9 @@ data = PackedVector3Array(0, 0, -5.6089, 6.9344, 0, -11.2178, 0, 0, -11.2178, 0,
 size = Vector3(13.8389, 5.80994, 22.4143)
 
 [node name="engines_dumpster" type="StaticBody3D" node_paths=PackedStringArray("area")]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("1_xoqo0")
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_yxicy")
 area = NodePath("Area3D")
 trash_type = 3
 

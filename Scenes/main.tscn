@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dq8cp8tbiusly"]
+[gd_scene load_steps=16 format=3 uid="uid://dq8cp8tbiusly"]
 
 [ext_resource type="PackedScene" uid="uid://dkxt8pog23mmg" path="res://Scenes/player.tscn" id="1_akknk"]
 [ext_resource type="PackedScene" uid="uid://c0opyhoefwu3g" path="res://Scenes/honda_accord.tscn" id="2_m3n5v"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://gs7k6u5af1fu" path="res://Scenes/glass_dumpster.tscn" id="5_0wp7l"]
 [ext_resource type="PackedScene" uid="uid://cjdf1ago15by0" path="res://Scenes/radiators_dumpster.tscn" id="6_p31hf"]
 [ext_resource type="PackedScene" uid="uid://bgtwppfrrm3rt" path="res://Scenes/engines_dumpster.tscn" id="7_r4yj5"]
+[ext_resource type="PackedScene" uid="uid://dycxentrqfn6l" path="res://Scenes/axles_dumpster.tscn" id="8_5ib1y"]
+[ext_resource type="PackedScene" uid="uid://dmv78ko1rhy6o" path="res://Scenes/metal_dumpster.tscn" id="9_k5m0s"]
+[ext_resource type="PackedScene" uid="uid://d3sd81nox8cxa" path="res://Scenes/interior_dumpster.tscn" id="10_veq5q"]
+[ext_resource type="PackedScene" uid="uid://kcwdq4cpchhf" path="res://Scenes/battery_dumpster.tscn" id="11_4kbek"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_abnbi"]
 panorama = ExtResource("3_bmd01")
@@ -35,8 +39,9 @@ adjustment_enabled = true
 adjustment_brightness = 1.1
 adjustment_saturation = 0.9
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_e3v32"]
-size = Vector3(38.8984, 1.33398, 32.4922)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_b40ag"]
+height = 0.304822
+radius = 22.8741
 
 [node name="Main" type="Node3D"]
 
@@ -52,22 +57,34 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4hy1x")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Ground" type="StaticBody3D" parent="."]
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77637, -0.673828, 0)
-shape = SubResource("BoxShape3D_e3v32")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.147508, 0)
+shape = SubResource("CylinderShape3D_b40ag")
 
 [node name="Dome" parent="." instance=ExtResource("4_cv1b4")]
 transform = Transform3D(0.11, 0, -0.190526, 0, 0.22, 0, 0.190526, 0, 0.11, 0, 0, 0)
 
 [node name="GlassDumpster" parent="." instance=ExtResource("5_0wp7l")]
-transform = Transform3D(0.0812574, 0, -0.140221, 0, 0.162065, 0, 0.140221, 0, 0.0812574, 0.526195, 0, 8.16607)
+transform = Transform3D(-0.103131, 0, -0.125015, 0, 0.162065, 0, 0.125015, 0, -0.103131, -7.4725, 0.00539923, 5.81707)
 
 [node name="RadiatorsDumpster" parent="." instance=ExtResource("6_p31hf")]
-transform = Transform3D(-0.0328322, 0, 0.19813, 0, 0.200832, 0, -0.19813, 0, -0.0328322, -4.14671, 0, -8.12904)
+transform = Transform3D(-0.0634756, 0, 0.190537, 0, 0.200832, 0, -0.190537, 0, -0.0634756, -3.62128, 0, -5.35247)
 
 [node name="engines_dumpster" parent="." instance=ExtResource("7_r4yj5")]
-transform = Transform3D(0.167831, 0, -0.18194, 0, 0.247527, 0, 0.18194, 0, 0.167831, 5.58156, 0, 4.87779)
+transform = Transform3D(0.0288062, 0, -0.245845, 0, 0.247526, 0, 0.245845, 0, 0.0288062, -2.13012, 0, 7.73389)
+
+[node name="axles_dumpster" parent="." instance=ExtResource("8_5ib1y")]
+transform = Transform3D(0.00464507, 0, 0.237174, 0, 0.237219, 0, -0.237174, 0, 0.00464507, -0.269834, 0, -5.71293)
+
+[node name="metal_dumpster" parent="." instance=ExtResource("9_k5m0s")]
+transform = Transform3D(0.140983, 1.18961e-05, -0.200664, 3.62334e-05, 0.245239, 4.00023e-05, 0.200664, -5.26453e-05, 0.140983, 4.64075, 2.38419e-07, 5.01053)
+
+[node name="interior_dumpster" parent="." instance=ExtResource("10_veq5q")]
+transform = Transform3D(-0.107527, 0, 0.236155, 0, 0.259482, 0, -0.236155, 0, -0.107527, 3.43401, 4.76837e-07, 10.5592)
+
+[node name="battery_dumpster" parent="." instance=ExtResource("11_4kbek")]
+transform = Transform3D(-0.155348, 0, 0.0975291, 0, 0.183426, 0, -0.0975291, 0, -0.155348, -6.1414, 0, -2.92749)

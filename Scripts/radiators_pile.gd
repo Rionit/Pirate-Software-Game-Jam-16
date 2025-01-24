@@ -1,2 +1,0 @@
-extends TrashPile
-class_name RadiatorsPile
