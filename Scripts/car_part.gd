@@ -50,4 +50,5 @@ func _process(delta: float) -> void:
 	pass
 
 func damage(amount: float) -> void:
+	if blend_shape_idx == -1: return
 	mesh.set_blend_shape_value(blend_shape_idx, clamp(amount, -1, 1))
