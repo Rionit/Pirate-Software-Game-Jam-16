@@ -1,6 +1,8 @@
 extends RigidBody3D
 class_name CarPart
 
+const JUNK_PARTICLES = preload("res://Scenes/junk_particles.tscn")
+
 signal collider_duplicated(_collider: CollisionShape3D)
 
 @onready var collider: CollisionShape3D = $CollisionShape3D
@@ -26,6 +28,7 @@ func _ready() -> void:
 func pinch(tip: Node3D):
 	self.reparent(tip)
 	self.freeze = true
+	JUNK_PARTICLES.instantiate().init_on_point(get_tree().root, tip)
 	damage(1.0)
 	return self
 
