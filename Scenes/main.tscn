@@ -65,6 +65,10 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.147508, 0)
 shape = SubResource("CylinderShape3D_b40ag")
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00627, 0)
+size = Vector3(47.7244, 2, 47.2695)
+
 [node name="Dome" parent="." instance=ExtResource("4_cv1b4")]
 transform = Transform3D(0.11, 0, -0.190526, 0, 0.22, 0, 0.190526, 0, 0.11, 0, 0, 0)
 

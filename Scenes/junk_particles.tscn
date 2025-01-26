@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://4rqjqcn5eoey"]
+
+[ext_resource type="Texture2D" uid="uid://b8logaw8u6qd" path="res://Images/scrap_billboards.png" id="1_jn7sq"]
+[ext_resource type="Script" path="res://Scripts/junk_particles.gd" id="2_try4t"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3i4qx"]
+lifetime_randomness = 0.2
+angle_min = -360.0
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 30.0
+initial_velocity_max = 5.0
+scale_min = 0.4
+scale_max = 0.6
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
+anim_offset_max = 1.0
+collision_mode = 1
+collision_friction = 0.7
+collision_bounce = 0.3
+collision_use_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kw2g0"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_jn7sq")
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.5
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 10
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = -6.038
+
+[sub_resource type="QuadMesh" id="QuadMesh_8epni"]
+material = SubResource("StandardMaterial3D_kw2g0")
+
+[node name="JunkParticles" type="GPUParticles3D"]
+emitting = false
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_3i4qx")
+draw_pass_1 = SubResource("QuadMesh_8epni")
+script = ExtResource("2_try4t")

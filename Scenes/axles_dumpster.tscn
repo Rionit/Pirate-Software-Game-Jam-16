@@ -89,12 +89,13 @@ data = PackedVector3Array(-8.0088, 0, 5.8438, 8.0088, 0, -5.8438, 8.0088, 0, 5.8
 [sub_resource type="BoxShape3D" id="BoxShape3D_xkc6h"]
 size = Vector3(15.9822, 1.16797, 11.6426)
 
-[node name="axles_dumpster" type="StaticBody3D" node_paths=PackedStringArray("area")]
+[node name="axles_dumpster" type="StaticBody3D" node_paths=PackedStringArray("area", "particle_spawn")]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_nuyrw")
 area = NodePath("Area3D")
 trash_type = 5
+particle_spawn = NodePath("")
 
 [node name="Axles" type="MeshInstance3D" parent="."]
 transform = Transform3D(7.91552, 0, 0, 0, 1, 0, 0, 0, -5.82195, 0, 0.438997, 0)
