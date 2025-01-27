@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://d0yyaf3xp7gic"]
+[gd_scene load_steps=30 format=4 uid="uid://d0yyaf3xp7gic"]
 
 [ext_resource type="Script" path="res://Scripts/claw_arm.gd" id="1_2dnwu"]
 [ext_resource type="Texture2D" uid="uid://dvrsqa00g1b77" path="res://Meshes/Claw Arm/claw_arm_image_2.png" id="1_gymtd"]
@@ -230,13 +230,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_30jyc")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6ima"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ghxwc"]
+size = Vector3(1.34009, 3.0058, 1.34082)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xt5j"]
 albedo_color = Color(1, 0, 0, 1)
 
-[sub_resource type="SphereMesh" id="SphereMesh_d1242"]
-material = SubResource("StandardMaterial3D_m6ima")
-radius = 0.25
-height = 0.5
+[sub_resource type="SphereMesh" id="SphereMesh_nnh6x"]
+material = SubResource("StandardMaterial3D_2xt5j")
 
 [sub_resource type="Animation" id="Animation_1cpv4"]
 length = 0.001
@@ -441,7 +442,7 @@ bones/10/rotation = Quaternion(0.173576, 0.173575, 0.685473, 0.68547)
 bones/10/scale = Vector3(1, 1, 1)
 
 [node name="Claw _Clamp" type="BoneAttachment3D" parent="Armature/Skeleton"]
-transform = Transform3D(1, 1.34719e-07, -9.48266e-07, -1.46375e-07, 1, 0.000273734, 9.84051e-07, -0.000273764, 1, -2.08927, -7.98004e-06, 1.60251e-05)
+transform = Transform3D(0.478299, 0.878197, 0.000240147, -0.878197, 0.478299, 0.00013037, -2.99819e-07, -0.000273436, 1, -5.31527, -2.79967, -3.51489e-07)
 bone_name = "Claw _Clamp"
 bone_idx = 5
 
@@ -468,7 +469,7 @@ transform = Transform3D(1, -2.84453e-12, 1.69962e-11, -1.88738e-15, 1.00004, 1.0
 shape = SubResource("SphereShape3D_7w0wb")
 
 [node name="Claw_Left" type="BoneAttachment3D" parent="Armature/Skeleton"]
-transform = Transform3D(1, 1.34719e-07, -9.48266e-07, -1.46375e-07, 1, 0.000273734, 9.84051e-07, -0.000273764, 1, -1.38271, -0.000153414, -0.48549)
+transform = Transform3D(0.478299, 0.878197, 0.000240147, -0.878197, 0.478299, 0.00013037, -2.99819e-07, -0.000273436, 1, -4.97745, -3.42023, -0.485508)
 bone_name = "Claw_Left"
 bone_idx = 6
 
@@ -486,7 +487,7 @@ transform = Transform3D(1, 2.1011e-14, -1.7053e-13, -1.69031e-14, 1, 0, 0, 0, 1,
 shape = SubResource("ConvexPolygonShape3D_5kcym")
 
 [node name="Claw_Right" type="BoneAttachment3D" parent="Armature/Skeleton"]
-transform = Transform3D(1, 1.34719e-07, -9.48266e-07, -1.46375e-07, 1, 0.000273734, 9.84051e-07, -0.000273764, 1, -1.38274, 0.000115469, 0.485531)
+transform = Transform3D(0.478299, 0.878197, 0.000240147, -0.878197, 0.478299, 0.00013037, -2.99819e-07, -0.000273436, 1, -4.97723, -3.42008, 0.485513)
 bone_name = "Claw_Right"
 bone_idx = 7
 
@@ -504,7 +505,7 @@ transform = Transform3D(1, 2.10387e-14, -1.7053e-13, -1.69031e-14, 1, 0, 0, 0, 1
 shape = SubResource("ConvexPolygonShape3D_a0jva")
 
 [node name="Front Shaft" type="BoneAttachment3D" parent="Armature/Skeleton"]
-transform = Transform3D(1, 1.9406e-07, -9.63204e-07, -2.05888e-07, 1, 2.08616e-07, 9.99313e-07, -1.78814e-07, 1, -3.22877, -0.00655019, 1.63841e-05)
+transform = Transform3D(0.478299, 0.878197, -5.96046e-08, -0.878197, 0.478299, -4.47035e-07, -2.84557e-07, 1.49012e-07, 1, -5.86604, -1.80209, 1.46832e-06)
 bone_name = "Front Shaft"
 bone_idx = 8
 
@@ -522,7 +523,7 @@ transform = Transform3D(1, 1.25068e-14, 0, 4.69008e-15, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_mfq4g")
 
 [node name="Middle Shaft" type="BoneAttachment3D" parent="Armature/Skeleton"]
-transform = Transform3D(1, 8.3947e-07, -1.03857e-06, -8.51297e-07, 1, 7.15256e-07, 1.07468e-06, -6.85453e-07, 1, -8.37158, -0.0168167, 1.09581e-05)
+transform = Transform3D(0.783216, 0.621749, 7.7486e-07, -0.621749, 0.783216, 2.98023e-08, -5.37877e-07, -5.06639e-07, 1, -9.56182, 1.67122, 3.74222e-06)
 bone_name = "Middle Shaft"
 bone_idx = 9
 
@@ -540,7 +541,7 @@ transform = Transform3D(1, -2.97737e-14, 0, 8.39787e-14, 1, 0, 1.13687e-13, -5.6
 shape = SubResource("ConvexPolygonShape3D_hyn2h")
 
 [node name="Main Shaft" type="BoneAttachment3D" parent="Armature/Skeleton"]
-transform = Transform3D(1, -1.90118e-08, 7.74185e-09, -1.90118e-08, 1, 0, 7.74185e-09, 0, 1, -10.9998, -0.00479773, 0.648033)
+transform = Transform3D(0.93404, -0.357168, 3.27826e-07, 0.357168, 0.93404, 0, -3.34984e-07, 8.9407e-08, 1, -11.6128, 3.31472, 0.64803)
 bone_name = "Main Shaft"
 bone_idx = 10
 
@@ -555,14 +556,26 @@ root_bone = &"Main"
 tip_bone = &"IK_Claw"
 use_magnet = true
 magnet = Vector3(0, 50, 0)
-target_node = NodePath("../../IKTarget")
+target_node = NodePath("../../IKBody")
 script = ExtResource("3_gthxj")
 
-[node name="IKTarget" type="Marker3D" parent="Armature"]
+[node name="IKBody" type="CharacterBody3D" parent="Armature"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+collision_layer = 4
+collision_mask = 4
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature/IKTarget"]
-visible = false
-mesh = SubResource("SphereMesh_d1242")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/IKBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50168, 0)
+shape = SubResource("BoxShape3D_ghxwc")
+
+[node name="IkTarget" type="Marker3D" parent="Armature"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature/IkTarget"]
+transform = Transform3D(0.274206, 0, 0, 0, 0.274206, 0, 0, 0, 0.274206, 0, 0, 0)
+mesh = SubResource("SphereMesh_nnh6x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

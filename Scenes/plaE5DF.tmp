@@ -1,7 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkxt8pog23mmg"]
+[gd_scene load_steps=7 format=3 uid="uid://dkxt8pog23mmg"]
 
 [ext_resource type="PackedScene" uid="uid://d0yyaf3xp7gic" path="res://Scenes/claw_arm.tscn" id="1_n1uco"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xfo1h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xt5j"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_om633"]
+material = SubResource("StandardMaterial3D_2xt5j")
 
 [sub_resource type="BoxMesh" id="BoxMesh_abm5y"]
 
@@ -10,6 +16,14 @@
 [node name="Player" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.248724, 0)
 script = ExtResource("1_xfo1h")
+
+[node name="IkTarget" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0877, 0.0112901, 1.25181)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="IkTarget"]
+transform = Transform3D(0.274206, 0, 0, 0, 0.274206, 0, 0, 0, 0.274206, 0, 0, 0)
+mesh = SubResource("SphereMesh_om633")
 
 [node name="Machine" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.01129, 0)

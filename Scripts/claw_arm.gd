@@ -1,8 +1,9 @@
 extends Node3D
 
-@onready var ik_target: Marker3D = $Armature/IKTarget
-@onready var skeleton: Skeleton3D = %Skeleton
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var ik_body: CharacterBody3D = %IKBody
+@onready var ik_target: Marker3D = %IkTarget
+@onready var skeleton: Skeleton3D = %Skeleton
 @onready var tip: Area3D = %Tip
 
 @export var look_direction := Vector3(1, 0, 0)
@@ -15,6 +16,8 @@ var pinched := true
 var angular_velocity := 0.0
 var velocity := Vector3.ZERO
 
+var max_speed = 10.0 
+var min_speed = 0.0 
 const MAX_MOVE_SPEED = 5
 const MAX_ROTATION_SPEED = 5.0
 const ACCELERATION = 0.05
@@ -98,6 +101,19 @@ func _physics_process(delta: float) -> void:
 	# POSITION - we just want x and y cause z is controled in player
 	ik_target.position.x += velocity.x * delta
 	ik_target.position.y += velocity.y * delta
+	
+	var ik_target_dir = (ik_target.global_position - ik_body.global_position)
+	var distance_to_target = ik_target_dir.length() 
+	var speed_factor = clamp(distance_to_target / 1.0, 0.0, 1.0)  
+
+	# Calculate the speed based on the distance to the target
+	var speed = lerp(min_speed, max_speed, speed_factor)
+
+	# Set the velocity towards the target
+	ik_body.velocity = ik_target_dir.normalized() * speed
+
+	# Move the IK body
+	ik_body.move_and_slide()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pinch"):

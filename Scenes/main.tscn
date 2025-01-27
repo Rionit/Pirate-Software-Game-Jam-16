@@ -58,8 +58,8 @@ shadow_enabled = true
 environment = SubResource("Environment_4hy1x")
 
 [node name="Ground" type="StaticBody3D" parent="."]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.147508, 0)
@@ -74,21 +74,35 @@ transform = Transform3D(0.11, 0, -0.190526, 0, 0.22, 0, 0.190526, 0, 0.11, 0, 0,
 
 [node name="GlassDumpster" parent="." instance=ExtResource("5_0wp7l")]
 transform = Transform3D(-0.103131, 0, -0.125015, 0, 0.162065, 0, 0.125015, 0, -0.103131, -7.4725, 0.00539923, 5.81707)
+collision_layer = 7
+collision_mask = 7
 
 [node name="RadiatorsDumpster" parent="." instance=ExtResource("6_p31hf")]
 transform = Transform3D(-0.0634756, 0, 0.190537, 0, 0.200832, 0, -0.190537, 0, -0.0634756, -3.62128, 0, -5.35247)
+collision_layer = 7
+collision_mask = 7
 
 [node name="engines_dumpster" parent="." instance=ExtResource("7_r4yj5")]
 transform = Transform3D(0.0288062, 0, -0.245845, 0, 0.247526, 0, 0.245845, 0, 0.0288062, -2.13012, 0, 7.73389)
+collision_layer = 7
+collision_mask = 7
 
 [node name="axles_dumpster" parent="." instance=ExtResource("8_5ib1y")]
 transform = Transform3D(0.00464507, 0, 0.237174, 0, 0.237219, 0, -0.237174, 0, 0.00464507, -0.269834, 0, -5.71293)
+collision_layer = 7
+collision_mask = 7
 
 [node name="metal_dumpster" parent="." instance=ExtResource("9_k5m0s")]
 transform = Transform3D(0.140983, 1.18961e-05, -0.200664, 3.62334e-05, 0.245239, 4.00023e-05, 0.200664, -5.26453e-05, 0.140983, 4.64075, 2.38419e-07, 5.01053)
+collision_layer = 7
+collision_mask = 7
 
 [node name="interior_dumpster" parent="." instance=ExtResource("10_veq5q")]
 transform = Transform3D(-0.107527, 0, 0.236155, 0, 0.259482, 0, -0.236155, 0, -0.107527, 3.43401, 4.76837e-07, 10.5592)
+collision_layer = 7
+collision_mask = 7
 
 [node name="battery_dumpster" parent="." instance=ExtResource("11_4kbek")]
 transform = Transform3D(-0.155348, 0, 0.0975291, 0, 0.183426, 0, -0.0975291, 0, -0.155348, -6.1414, 0, -2.92749)
+collision_layer = 7
+collision_mask = 7
