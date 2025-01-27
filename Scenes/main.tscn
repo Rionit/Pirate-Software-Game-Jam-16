@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dq8cp8tbiusly"]
+[gd_scene load_steps=18 format=3 uid="uid://dq8cp8tbiusly"]
 
 [ext_resource type="PackedScene" uid="uid://dkxt8pog23mmg" path="res://Scenes/player.tscn" id="1_akknk"]
 [ext_resource type="PackedScene" uid="uid://c0opyhoefwu3g" path="res://Scenes/honda_accord.tscn" id="2_m3n5v"]
 [ext_resource type="Texture2D" uid="uid://dkbghts361edn" path="res://Images/panorama.jpg" id="3_bmd01"]
 [ext_resource type="PackedScene" uid="uid://dj21v7c4awumw" path="res://Scenes/dome.tscn" id="4_cv1b4"]
 [ext_resource type="PackedScene" uid="uid://gs7k6u5af1fu" path="res://Scenes/glass_dumpster.tscn" id="5_0wp7l"]
+[ext_resource type="Script" path="res://Scripts/falling_object_catcher.gd" id="5_ed6ke"]
 [ext_resource type="PackedScene" uid="uid://cjdf1ago15by0" path="res://Scenes/radiators_dumpster.tscn" id="6_p31hf"]
 [ext_resource type="PackedScene" uid="uid://bgtwppfrrm3rt" path="res://Scenes/engines_dumpster.tscn" id="7_r4yj5"]
 [ext_resource type="PackedScene" uid="uid://dycxentrqfn6l" path="res://Scenes/axles_dumpster.tscn" id="8_5ib1y"]
@@ -43,7 +44,14 @@ adjustment_saturation = 0.9
 height = 0.304822
 radius = 22.8741
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_s56cn"]
+size = Vector3(100, 15, 100)
+
 [node name="Main" type="Node3D"]
+
+[node name="ObjectSpawn" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.89506, 11.612, -4.68564)
 
 [node name="Player" parent="." instance=ExtResource("1_akknk")]
 
@@ -57,20 +65,31 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4hy1x")
 
-[node name="Ground" type="StaticBody3D" parent="."]
+[node name="Dome" parent="." instance=ExtResource("4_cv1b4")]
+transform = Transform3D(0.11, 0, -0.190526, 0, 0.22, 0, 0.190526, 0, 0.11, 0, 0, 0)
+
+[node name="Ground" type="StaticBody3D" parent="Dome"]
+transform = Transform3D(2.27272, 0, 3.93647, 0, 4.54545, 0, -3.93647, 0, 2.27272, 0, 0, 0)
 collision_layer = 7
 collision_mask = 7
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dome/Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.147508, 0)
 shape = SubResource("CylinderShape3D_b40ag")
 
-[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Ground"]
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Dome/Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00627, 0)
 size = Vector3(47.7244, 2, 47.2695)
 
-[node name="Dome" parent="." instance=ExtResource("4_cv1b4")]
-transform = Transform3D(0.11, 0, -0.190526, 0, 0.22, 0, 0.190526, 0, 0.11, 0, 0, 0)
+[node name="FallingObjectCatcher" type="Area3D" parent="Dome"]
+transform = Transform3D(2.27272, 0, 3.93647, 0, 4.54545, 0, -3.93647, 0, 2.27272, 0, 0, 0)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("5_ed6ke")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dome/FallingObjectCatcher"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
+shape = SubResource("BoxShape3D_s56cn")
 
 [node name="GlassDumpster" parent="." instance=ExtResource("5_0wp7l")]
 transform = Transform3D(-0.103131, 0, -0.125015, 0, 0.162065, 0, 0.125015, 0, -0.103131, -7.4725, 0.00539923, 5.81707)
@@ -106,3 +125,5 @@ collision_mask = 7
 transform = Transform3D(-0.155348, 0, 0.0975291, 0, 0.183426, 0, -0.0975291, 0, -0.155348, -6.1414, 0, -2.92749)
 collision_layer = 7
 collision_mask = 7
+
+[connection signal="body_entered" from="Dome/FallingObjectCatcher" to="Dome/FallingObjectCatcher" method="_on_body_entered"]
