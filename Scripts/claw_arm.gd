@@ -1,12 +1,14 @@
 extends Node3D
+class_name ClawArm
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var claw_cam_direction: Marker3D = %ClawCamDirection
+@onready var claw_cam_position: Marker3D = %ClawCamPosition
+@onready var claw_cam_up: Marker3D = %ClawCamUp
 @onready var ik_body: CharacterBody3D = %IKBody
 @onready var ik_target: Marker3D = %IkTarget
 @onready var skeleton: Skeleton3D = %Skeleton
 @onready var tip: Area3D = %Tip
-
-@export var look_direction := Vector3(1, 0, 0)
 
 var pinched_part: CarPart = null
 var close_part: CarPart = null

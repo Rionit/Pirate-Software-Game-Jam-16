@@ -1,7 +1,9 @@
 extends Node3D
 
 @onready var machine: Node3D = $Machine
-@onready var claw_arm: Node3D = $Machine/ClawArm
+@onready var claw_arm: ClawArm = $Machine/ClawArm
+@onready var claw_cam: Camera3D = %ClawCam
+@onready var claw_cam_viewport: SubViewport = $Machine/ClawCamViewport
 
 const PAN_SPEED = 50
 const ACCELERATION = 0.5
@@ -11,11 +13,13 @@ var angular_velocity := 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	claw_cam.look_at_from_position(claw_arm.claw_cam_position.global_position, 
+								   claw_arm.claw_cam_direction.global_position,
+								   claw_arm.claw_cam_up.global_position - claw_arm.claw_cam_position.global_position)
 
 func _physics_process(delta):
 	if Input.is_action_pressed("left"):
@@ -30,4 +34,3 @@ func _physics_process(delta):
 
 func rotate_machine(angle: float):
 	machine.rotate_y(deg_to_rad(angle))
-	claw_arm.look_direction = claw_arm.look_direction.rotated(Vector3.UP, deg_to_rad(angle))

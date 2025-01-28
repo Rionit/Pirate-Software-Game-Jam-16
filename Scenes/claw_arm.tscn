@@ -441,32 +441,44 @@ bones/10/position = Vector3(0.308409, 9.29401, 0.56993)
 bones/10/rotation = Quaternion(0.173576, 0.173575, 0.685473, 0.68547)
 bones/10/scale = Vector3(1, 1, 1)
 
-[node name="Claw _Clamp" type="BoneAttachment3D" parent="Armature/Skeleton"]
+[node name="Claw_Clamp" type="BoneAttachment3D" parent="Armature/Skeleton"]
 transform = Transform3D(1, 1.34719e-07, -9.48266e-07, -1.46375e-07, 1, 0.000273734, 9.84051e-07, -0.000273764, 1, -2.08927, -7.98004e-06, 1.60251e-05)
 bone_name = "Claw _Clamp"
 bone_idx = 5
 
-[node name="ClawClampBody" type="StaticBody3D" parent="Armature/Skeleton/Claw _Clamp"]
+[node name="ClawClampBody" type="StaticBody3D" parent="Armature/Skeleton/Claw_Clamp"]
 collision_layer = 3
 collision_mask = 3
 
-[node name="Claw _Clamp" type="MeshInstance3D" parent="Armature/Skeleton/Claw _Clamp/ClawClampBody"]
+[node name="Claw _Clamp" type="MeshInstance3D" parent="Armature/Skeleton/Claw_Clamp/ClawClampBody"]
 transform = Transform3D(1, 6.77236e-15, -5.68434e-14, -2.72005e-15, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_7e1a6")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton/Claw _Clamp/ClawClampBody"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton/Claw_Clamp/ClawClampBody"]
 transform = Transform3D(1, 6.77236e-15, -5.68434e-14, -2.72005e-15, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_p5b5s")
 
-[node name="Tip" type="Area3D" parent="Armature/Skeleton/Claw _Clamp"]
+[node name="Tip" type="Area3D" parent="Armature/Skeleton/Claw_Clamp"]
 unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton/Claw _Clamp/Tip"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton/Claw_Clamp/Tip"]
 transform = Transform3D(1, -2.84453e-12, 1.69962e-11, -1.88738e-15, 1.00004, 1.04774e-09, 0, 0, 1.00004, 1.86212, -2.86102e-06, -5.8208e-10)
 shape = SubResource("SphereShape3D_7w0wb")
+
+[node name="ClawCamPosition" type="Marker3D" parent="Armature/Skeleton/Claw_Clamp"]
+unique_name_in_owner = true
+transform = Transform3D(1, -3.59712e-14, 1.7053e-13, -1.88738e-15, 1, 0, 0, 0, 1, 0.35, 0, -3.34345e-07)
+
+[node name="ClawCamDirection" type="Marker3D" parent="Armature/Skeleton/Claw_Clamp"]
+unique_name_in_owner = true
+transform = Transform3D(1, -7.49401e-15, 5.68434e-14, -1.88738e-15, 1, 0, 0, 0, 1, 2, 0, -1.968e-06)
+
+[node name="ClawCamUp" type="Marker3D" parent="Armature/Skeleton/Claw_Clamp"]
+unique_name_in_owner = true
+transform = Transform3D(1, -5.02098e-14, 2.27374e-13, -1.88738e-15, 1, 0, 0, 0, 1, 0.35, 1, 0.00027343)
 
 [node name="Claw_Left" type="BoneAttachment3D" parent="Armature/Skeleton"]
 transform = Transform3D(1, 1.34719e-07, -9.48266e-07, -1.46375e-07, 1, 0.000273734, 9.84051e-07, -0.000273764, 1, -1.38271, -0.000153414, -0.48549)
@@ -582,5 +594,5 @@ libraries = {
 "": SubResource("AnimationLibrary_221kg")
 }
 
-[connection signal="body_entered" from="Armature/Skeleton/Claw _Clamp/Tip" to="." method="tip_entered_body"]
-[connection signal="body_exited" from="Armature/Skeleton/Claw _Clamp/Tip" to="." method="tip_exited_body"]
+[connection signal="body_entered" from="Armature/Skeleton/Claw_Clamp/Tip" to="." method="tip_entered_body"]
+[connection signal="body_exited" from="Armature/Skeleton/Claw_Clamp/Tip" to="." method="tip_exited_body"]

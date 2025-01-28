@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkxt8pog23mmg"]
+[gd_scene load_steps=6 format=3 uid="uid://dkxt8pog23mmg"]
 
 [ext_resource type="PackedScene" uid="uid://d0yyaf3xp7gic" path="res://Scenes/claw_arm.tscn" id="1_n1uco"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xfo1h"]
@@ -6,6 +6,9 @@
 [sub_resource type="BoxMesh" id="BoxMesh_abm5y"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_b0tqw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5hmpd"]
+viewport_path = NodePath("Machine/ClawCamViewport")
 
 [node name="Player" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.248724, 0)
@@ -31,3 +34,13 @@ skeleton = NodePath("../..")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Machine/Cabin"]
 transform = Transform3D(3.17624, 0, 0, 0, 1.62875, 0, 0, 0, 4.61759, -3.44409, -1.44508, 1.88361)
 mesh = SubResource("BoxMesh_b0tqw")
+
+[node name="ClawCamDisplay" type="Sprite3D" parent="Machine"]
+transform = Transform3D(-6.05618e-09, 0, 0.138549, 0, 0.138549, 0, -0.138549, 0, -6.05618e-09, 1.2, -0.5, -1.2)
+texture = SubResource("ViewportTexture_5hmpd")
+
+[node name="ClawCamViewport" type="SubViewport" parent="Machine"]
+
+[node name="ClawCam" type="Camera3D" parent="Machine/ClawCamViewport"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
