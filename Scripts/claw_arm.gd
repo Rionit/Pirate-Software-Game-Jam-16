@@ -93,6 +93,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, delta * DESCELERATION)
 	
+	# BOUNDS
+	var height = ik_target.global_position.y + velocity.y * delta
+	var distance = Vector2(ik_target.global_position.x, ik_target.global_position.z).length()
+	distance += velocity.x * delta
+	if distance <= 2.0 or distance >= 20.0 or height <= 0.0 or height >= 10.0:
+		velocity = Vector3.ZERO
+
 	# ROTATION
 	var claw_rotation := skeleton.get_bone_pose_rotation(claw_idx).get_euler()
 	claw_rotation.y = fmod(claw_rotation.y + deg_to_rad(angular_velocity), 360)
