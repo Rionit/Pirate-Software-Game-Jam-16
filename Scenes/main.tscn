@@ -1,12 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dq8cp8tbiusly"]
+[gd_scene load_steps=17 format=3 uid="uid://dq8cp8tbiusly"]
 
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_4p8tu"]
 [ext_resource type="PackedScene" uid="uid://dkxt8pog23mmg" path="res://Scenes/player.tscn" id="1_akknk"]
-[ext_resource type="PackedScene" uid="uid://c0opyhoefwu3g" path="res://Scenes/honda_accord.tscn" id="2_m3n5v"]
 [ext_resource type="Texture2D" uid="uid://dkbghts361edn" path="res://Images/panorama.jpg" id="3_bmd01"]
 [ext_resource type="PackedScene" uid="uid://dj21v7c4awumw" path="res://Scenes/dome.tscn" id="4_cv1b4"]
 [ext_resource type="PackedScene" uid="uid://gs7k6u5af1fu" path="res://Scenes/glass_dumpster.tscn" id="5_0wp7l"]
 [ext_resource type="Script" path="res://Scripts/falling_object_catcher.gd" id="5_ed6ke"]
-[ext_resource type="PackedScene" uid="uid://cjdf1ago15by0" path="res://Scenes/radiators_dumpster.tscn" id="6_p31hf"]
 [ext_resource type="PackedScene" uid="uid://bgtwppfrrm3rt" path="res://Scenes/engines_dumpster.tscn" id="7_r4yj5"]
 [ext_resource type="PackedScene" uid="uid://dycxentrqfn6l" path="res://Scenes/axles_dumpster.tscn" id="8_5ib1y"]
 [ext_resource type="PackedScene" uid="uid://dmv78ko1rhy6o" path="res://Scenes/metal_dumpster.tscn" id="9_k5m0s"]
@@ -41,22 +40,20 @@ adjustment_brightness = 1.1
 adjustment_saturation = 0.9
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_b40ag"]
-height = 0.304822
-radius = 22.8741
+height = 0.3
+radius = 22.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s56cn"]
 size = Vector3(100, 15, 100)
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_4p8tu")
 
 [node name="ObjectSpawn" type="Marker3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.89506, 11.612, -4.68564)
 
 [node name="Player" parent="." instance=ExtResource("1_akknk")]
-
-[node name="honda_accord" parent="." instance=ExtResource("2_m3n5v")]
-transform = Transform3D(-0.95884, 0, -0.283948, 0, 1, 0, 0.283948, 0, -0.95884, 8.91265, 1.96838, -4.94167)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.984808, -0.0868241, 0.150384, 0, 0.866025, 0.5, -0.173648, 0.492404, -0.852868, 2.66287, 7.5, -20)
@@ -66,7 +63,7 @@ shadow_enabled = true
 environment = SubResource("Environment_4hy1x")
 
 [node name="Dome" parent="." instance=ExtResource("4_cv1b4")]
-transform = Transform3D(0.11, 0, -0.190526, 0, 0.22, 0, 0.190526, 0, 0.11, 0, 0, 0)
+transform = Transform3D(0.0999998, 0, -0.173205, 0, 0.2, 0, 0.173205, 0, 0.0999998, 0, 0, 0)
 
 [node name="Ground" type="StaticBody3D" parent="Dome"]
 transform = Transform3D(2.27272, 0, 3.93647, 0, 4.54545, 0, -3.93647, 0, 2.27272, 0, 0, 0)
@@ -92,37 +89,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
 shape = SubResource("BoxShape3D_s56cn")
 
 [node name="GlassDumpster" parent="." instance=ExtResource("5_0wp7l")]
-transform = Transform3D(-0.103131, 0, -0.125015, 0, 0.162065, 0, 0.125015, 0, -0.103131, -7.4725, 0.00539923, 5.81707)
-collision_layer = 7
-collision_mask = 7
-
-[node name="RadiatorsDumpster" parent="." instance=ExtResource("6_p31hf")]
-transform = Transform3D(-0.0634756, 0, 0.190537, 0, 0.200832, 0, -0.190537, 0, -0.0634756, -3.62128, 0, -5.35247)
+transform = Transform3D(-0.125121, 0, -0.103003, 0, 0.162065, 0, 0.103003, 0, -0.125121, -7.45363, 0.00539923, 5.20757)
 collision_layer = 7
 collision_mask = 7
 
 [node name="engines_dumpster" parent="." instance=ExtResource("7_r4yj5")]
-transform = Transform3D(0.0288062, 0, -0.245845, 0, 0.247526, 0, 0.245845, 0, 0.0288062, -2.13012, 0, 7.73389)
+transform = Transform3D(-0.035058, 0, -0.185842, 0, 0.189119, 0, 0.185842, 0, -0.035058, -2.80908, -4.76837e-07, 7.30062)
 collision_layer = 7
 collision_mask = 7
 
 [node name="axles_dumpster" parent="." instance=ExtResource("8_5ib1y")]
-transform = Transform3D(0.00464507, 0, 0.237174, 0, 0.237219, 0, -0.237174, 0, 0.00464507, -0.269834, 0, -5.71293)
+transform = Transform3D(-0.0146431, 0, 0.236767, 0, 0.237219, 0, -0.236767, 0, -0.0146431, -0.348803, 0, -5.83722)
 collision_layer = 7
 collision_mask = 7
 
 [node name="metal_dumpster" parent="." instance=ExtResource("9_k5m0s")]
-transform = Transform3D(0.140983, 1.18961e-05, -0.200664, 3.62334e-05, 0.245239, 4.00023e-05, 0.200664, -5.26453e-05, 0.140983, 4.64075, 2.38419e-07, 5.01053)
+transform = Transform3D(0.173366, 1.46285e-05, -0.246755, 4.45559e-05, 0.301568, 4.91905e-05, 0.246755, -6.47375e-05, 0.173366, 3.95624, 0.000136696, 5.49146)
 collision_layer = 7
 collision_mask = 7
 
 [node name="interior_dumpster" parent="." instance=ExtResource("10_veq5q")]
-transform = Transform3D(-0.107527, 0, 0.236155, 0, 0.259482, 0, -0.236155, 0, -0.107527, 3.43401, 4.76837e-07, 10.5592)
+transform = Transform3D(0.0327063, 0, 0.266253, 0, 0.268253, 0, -0.266253, 0, 0.0327063, -1.46621, 4.76837e-07, 11.2404)
 collision_layer = 7
 collision_mask = 7
 
 [node name="battery_dumpster" parent="." instance=ExtResource("11_4kbek")]
-transform = Transform3D(-0.155348, 0, 0.0975291, 0, 0.183426, 0, -0.0975291, 0, -0.155348, -6.1414, 0, -2.92749)
+transform = Transform3D(-0.0577127, 0, 0.17411, 0, 0.183426, 0, -0.17411, 0, -0.0577127, -3.45181, 0, -4.58393)
 collision_layer = 7
 collision_mask = 7
 

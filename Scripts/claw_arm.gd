@@ -32,7 +32,7 @@ func _ready() -> void:
 func init_claw():
 	claw_idx = skeleton.find_bone("Claw") 
 	var claw_rotation := skeleton.get_bone_pose_rotation(claw_idx).get_euler()
-	claw_rotation.y = deg_to_rad(28.5) # roll
+	claw_rotation.y = deg_to_rad(28.5) 	# roll
 	claw_rotation.x = 0 				# pitch
 	claw_rotation.z = deg_to_rad(90) 	# yaw
 	skeleton.set_bone_pose_rotation(claw_idx, Quaternion.from_euler(claw_rotation))
@@ -102,7 +102,7 @@ func _physics_process(delta: float) -> void:
 	var height = ik_target.global_position.y + velocity.y * delta
 	var distance = Vector2(ik_target.global_position.x, ik_target.global_position.z).length()
 	distance += velocity.x * delta
-	if distance <= 2.0 or distance >= 20.0 or height <= 0.0 or height >= 10.0:
+	if distance <= 2.0 or distance >= 22.5 or height <= 0.0 or height >= 10.0:
 		velocity = Vector3.ZERO
 
 	# ROTATION
