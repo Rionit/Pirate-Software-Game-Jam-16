@@ -2,7 +2,9 @@ extends RigidBody3D
 class_name CarPart
 
 const JUNK_PARTICLES = preload("res://Scenes/junk_particles.tscn")
+const OUTLINE = preload("res://Shaders/outline.gdshader")
 const SHINE = preload("res://Shaders/shine.gdshader")
+const PSX = preload("res://Shaders/psx.gdshader")
 
 signal collider_duplicated(_collider: CollisionShape3D)
 signal pinched
@@ -22,17 +24,16 @@ func _ready() -> void:
 		print("No MeshInstance3D found as a child!")
 	blend_shape_idx = mesh.find_blend_shape_by_name("Damage")
 	
-	# SHINE SHADER SETUP
-	shader_material.shader = SHINE
-	shader_material.set_shader_parameter("shine_width", 50.0)
-	shader_material.set_shader_parameter("shine_color", Color.AQUA)
-	shader_material.resource_local_to_scene = true
+	var material:ShaderMaterial = mesh.get_active_material(0)
+	if material != null:
+		material.set_shader_parameter("shine_width", 50.0)
+		material.set_shader_parameter("shine_color", Color.AQUA)
 	
-	# FADE DITHER
-	var material = mesh.get_active_material(0)
-	material.distance_fade_mode = StandardMaterial3D.DISTANCE_FADE_PIXEL_DITHER
-	material.distance_fade_max_distance = 1.0  # 1 meter
-	material.distance_fade_min_distance = 0.0  # Start fading at 0 meters
+	# OUTLINE SHADER SETUP
+	shader_material.shader = OUTLINE
+	shader_material.set_shader_parameter("outline_width", 2.0)
+	shader_material.set_shader_parameter("outline_color", Color.AQUA)
+	shader_material.resource_local_to_scene = true
 	
 	# NAMING NODES
 	name = mesh.name
@@ -50,10 +51,14 @@ func _ready() -> void:
 	collision_mask = 0b10
 
 func highlight(state := true):
+	var material:ShaderMaterial = mesh.get_active_material(0)
+	if material == null: return
 	if state:
-		mesh.get_active_material(0).next_pass = shader_material
+		material.next_pass = shader_material
+		material.set_shader_parameter("is_shining", true)
 	else:
-		mesh.get_active_material(0).next_pass = null
+		material.next_pass = null
+		material.set_shader_parameter("is_shining", false)
 	
 func pinch(tip: Node3D):
 	if duplicated_collider != null:

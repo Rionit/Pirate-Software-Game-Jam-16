@@ -1,15 +1,19 @@
-[gd_scene load_steps=24 format=4 uid="uid://dmv78ko1rhy6o"]
+[gd_scene load_steps=32 format=4 uid="uid://dmv78ko1rhy6o"]
 
 [ext_resource type="Texture2D" uid="uid://bphg1rw638nc" path="res://Meshes/Metal Dumpster/metal_dumpster_image_5.png" id="1_f1yfk"]
 [ext_resource type="Script" path="res://Scripts/trash_pile.gd" id="1_jx1lp"]
+[ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="2_feoc7"]
 [ext_resource type="Texture2D" uid="uid://7o15trvwx4wr" path="res://Meshes/Metal Dumpster/metal_dumpster_image_7.png" id="2_ltavb"]
+[ext_resource type="Texture2D" uid="uid://vdkbst2qmixo" path="res://Meshes/Engines Dumpster/engines_dumpster_image_5.png" id="4_1i5xa"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8oatb"]
-resource_name = "MetalMat"
-cull_mode = 2
-albedo_texture = ExtResource("2_ltavb")
-metallic = 1.0
-roughness = 0.5
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gkw83"]
+render_priority = 0
+shader = ExtResource("2_feoc7")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("1_f1yfk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3j34g"]
 _surfaces = [{
@@ -35,7 +39,7 @@ _surfaces = [{
 "index_count": 600,
 "index_data": PackedByteArray("eAADAB4AeAAfAAMABAAnADAABAACACcAMAAmADkAMAAnACYAOQAlAEIAOQAmACUAQgAkAEsAQgAlACQASwAjAFQASwAkACMAVAAiAF0AVAAjACIAXQAhAGYAXQAiACEAZgAgAG8AZgAhACAAbwAfAHgAbwAgAB8AAAAoAA0AAAAMACgADAApACgADAALACkACwAqACkACwAKACoACgArACoACgAJACsACQAsACsACQAIACwACAAtACwACAAHAC0ABwAuAC0ABwAGAC4ABgAvAC4ABgAFAC8ABQAwAC8ABQAEADAADQAxAA4ADQAoADEAKAAyADEAKAApADIAKQAzADIAKQAqADMAKgA0ADMAKgArADQAKwA1ADQAKwAsADUALAA2ADUALAAtADYALQA3ADYALQAuADcALgA4ADcALgAvADgALwA5ADgALwAwADkADgA6AA8ADgAxADoAMQA7ADoAMQAyADsAMgA8ADsAMgAzADwAMwA9ADwAMwA0AD0ANAA+AD0ANAA1AD4ANQA/AD4ANQA2AD8ANgBAAD8ANgA3AEAANwBBAEAANwA4AEEAOABCAEEAOAA5AEIADwBDABAADwA6AEMAOgBEAEMAOgA7AEQAOwBFAEQAOwA8AEUAPABGAEUAPAA9AEYAPQBHAEYAPQA+AEcAPgBIAEcAPgA/AEgAPwBJAEgAPwBAAEkAQABKAEkAQABBAEoAQQBLAEoAQQBCAEsAEABMABEAEABDAEwAQwBNAEwAQwBEAE0ARABOAE0ARABFAE4ARQBPAE4ARQBGAE8ARgBQAE8ARgBHAFAARwBRAFAARwBIAFEASABSAFEASABJAFIASQBTAFIASQBKAFMASgBUAFMASgBLAFQAEQBVABIAEQBMAFUATABWAFUATABNAFYATQBXAFYATQBOAFcATgBYAFcATgBPAFgATwBZAFgATwBQAFkAUABaAFkAUABRAFoAUQBbAFoAUQBSAFsAUgBcAFsAUgBTAFwAUwBdAFwAUwBUAF0AEgBeABMAEgBVAF4AVQBfAF4AVQBWAF8AVgBgAF8AVgBXAGAAVwBhAGAAVwBYAGEAWABiAGEAWABZAGIAWQBjAGIAWQBaAGMAWgBkAGMAWgBbAGQAWwBlAGQAWwBcAGUAXABmAGUAXABdAGYAEwBnABQAEwBeAGcAXgBoAGcAXgBfAGgAXwBpAGgAXwBgAGkAYABqAGkAYABhAGoAYQBrAGoAYQBiAGsAYgBsAGsAYgBjAGwAYwBtAGwAYwBkAG0AZABuAG0AZABlAG4AZQBvAG4AZQBmAG8AFABwABUAFABnAHAAZwBxAHAAZwBoAHEAaAByAHEAaABpAHIAaQBzAHIAaQBqAHMAagB0AHMAagBrAHQAawB1AHQAawBsAHUAbAB2AHUAbABtAHYAbQB3AHYAbQBuAHcAbgB4AHcAbgBvAHgAFQAWAAEAFQBwABYAcAAXABYAcABxABcAcQAYABcAcQByABgAcgAZABgAcgBzABkAcwAaABkAcwB0ABoAdAAbABoAdAB1ABsAdQAcABsAdQB2ABwAdgAdABwAdgB3AB0AdwAeAB0AdwB4AB4A"),
 "lods": [0.897599, PackedByteArray("HgAfAAMAIAAfAB4AbQAgAB4AbQAeAB0AbQAdABwAZAAgAG0AZAAhACAAbABtABwAZABtAGwAbAAcABsAbAAbABoAYQBsABoAYQBkAGwAYQAaABkAGABhABkAFwBhABgAWABkAGEATQBhABcATQBYAGEAEQBNABcAEQAXABQAFAAXABYAFAAWABUAFQAWAAEAEgARABQAEgAUABMADwBNABEAEAAPABEADwA7AE0AOwBYAE0ADQAPAA4ADQAMAA8ADAA7AA8AAAAMAA0ADAALADsACwA0ADsACwAKADQACgAJADQACQA2ADQACQAIADYACAAHADYABwA3ADYABwAGADcABgAFADcANAA2AEAANgA3AEAABQAmADcANwAmACUANwAlAEAABQAnACYABQAEACcABAACACcAQAAlACQANABAAD0AOwA0AD0AOwA9AEYAOwBGAFgAPQBAAEgAPQBIAEYAQABJAEgARgBZAFgARgBIAFkAWABZAGQAWQBbAGQAWQBIAH8ASABJAH8AfwAhAGQAQABKAEkASQBKAH8AQAAkAEoAfwBdACEASgBdAH8ASgAkAF0AXQAiACEAJAAjAF0AXQAjACIA"), 3.54564, PackedByteArray("HgAfAAMAIAAfAB4AIAAeAB0AIAAdABwAIAAcABsAIAAbABoAIAAaAHwAGAAgABkAFwAgABgAIgAhACAAfQAjACIAfgB9ACIAIAB+ACIACQB+AAoAEQAgABcAEQAXABQAFAAXABYAFAAWABUAFQAWAAEAEgARABQAEgAUABMADwAgABEAEAAPABEADwB+ACAAegB5AH4AeQAHAH4ABwAGAH4ABgAFAH4ABQAmAH4ABQAnACYABQAEACcABAACACcAewB+AA8ACwB7AA8ADAALAA8ADQAMAA8AAAAMAA0ADQAPAA4A")],
-"material": SubResource("StandardMaterial3D_8oatb"),
+"material": SubResource("ShaderMaterial_gkw83"),
 "name": "MetalMat",
 "primitive": 3,
 "uv_scale": Vector4(2.2598, 2.7024, 0, 0),
@@ -44,6 +48,15 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3j34g")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8gytp"]
+render_priority = 0
+shader = ExtResource("2_feoc7")
+shader_parameter/affine_mapping = true
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_ltavb")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3rea0"]
 _surfaces = [{
@@ -69,7 +82,7 @@ _surfaces = [{
 "index_count": 156,
 "index_data": PackedByteArray("GQALACMAGQAIAAsABwAXAAoABwAUABcAJAARAC8AJAANABEADAAEABAADAAAAAQAGgAOACUAGgABAA4ALAADABwALAAPAAMAFQAgAAkAFQAoACAAKwA9ACEAKwBEAD0ABgAnABMABgAYACcAGAAlACcAGAAaACUAEgAqABYAEgAmACoAJgAvACoAJgAkAC8AAgAfAAUAAgAbAB8AGwAjAB8AGwAZACMAHQBOAC0AHQAwAE4ARgAzADoARgBLADMAUAApAC4AKQBKAEMASgBNAEcATQBQAFMAUABKACkASgBQAE0AOQBJAEUAOQBAAEkAPwBCAEgAPwA8AEIAMQBSAE8AMQA3AFIANgBMAFEANgA0AEwAPgAeACIAMgA1ADgAPgAyAB4AOwA+AEEAMgA7ADUAMgA+ADsA"),
 "lods": [2.11722, PackedByteArray("GwALAD4AGwAIAAsAGwA+AB4AAgAbAB4AAgAeAAUABwAXAAoABwAUABcAJAARAC4AJAANABEAEgAkAC4AEgAuABYADAAEABAADAAAAAQAGgAOACUAGgABAA4ABgAaACUABgAlABMALAADABwALAAPAAMAHABVACwAVAAsAFUAFQA8AAkA")],
-"material": SubResource("StandardMaterial3D_8oatb"),
+"material": SubResource("ShaderMaterial_8gytp"),
 "name": "MetalMat",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -78,6 +91,15 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3rea0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oeix0"]
+render_priority = 0
+shader = ExtResource("2_feoc7")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_ltavb")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_aymv4"]
 _surfaces = [{
@@ -103,7 +125,7 @@ _surfaces = [{
 "index_count": 54,
 "index_data": PackedByteArray("AAAHAAMAAAABAAcABAAPAAUABAAIAA8ACgATABAACgANABMAAgAMAAkAAgAjAAwABgAYABkABgASABgAEQAaABcAEQAUABoAFQAcABsAFQAdABwADgAeABYADgAgAB4AIgAfAAsAIgAhAB8A"),
 "lods": [0.351753, PackedByteArray("AAABAAMAAwABAAUABQAXABkABQAaABcAAQAaAAUAAQAdABoAGgAdABwAAQAfAB0AIgAfAAEAIgAhAB8A")],
-"material": SubResource("StandardMaterial3D_8oatb"),
+"material": SubResource("ShaderMaterial_oeix0"),
 "name": "MetalMat",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -112,6 +134,15 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_aymv4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jsg8m"]
+render_priority = 0
+shader = ExtResource("2_feoc7")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_ltavb")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7uqsu"]
 _surfaces = [{
@@ -137,7 +168,7 @@ _surfaces = [{
 "index_count": 54,
 "index_data": PackedByteArray("AAAKAAQAAAACAAoAAwAQAAUAAwAHABAACQAUABEACQANABQAAQAMAAgAAQAjAAwABgAYABkABgASABgADwAaABcADwATABoAFgAcABsAFgAeABwADgAdABUADgAgAB0AIgAfAAsAIgAhAB8A"),
 "lods": [0.295522, PackedByteArray("AAABAAMAAQAfAAMAAQAiAB8AIgAhAB8AAwAfABcAHwAdABcAAwAXAAUABQAXABkAFwAdABwAFwAcABoA")],
-"material": SubResource("StandardMaterial3D_8oatb"),
+"material": SubResource("ShaderMaterial_jsg8m"),
 "name": "MetalMat",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -146,6 +177,15 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7uqsu")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ou5ec"]
+render_priority = 0
+shader = ExtResource("2_feoc7")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_ltavb")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ns4ge"]
 _surfaces = [{
@@ -171,7 +211,7 @@ _surfaces = [{
 "index_count": 54,
 "index_data": PackedByteArray("AAAKAAQAAAACAAoAAwASAAYAAwAJABIABwAWABEABwAMABYAAQANAAgAAQAiAA0ABQAXABkABQAPABcAEAAbABgAEAAVABsAFAAcABoAFAAeABwACwAdABMACwAfAB0AIwAgAA4AIwAhACAA"),
 "lods": [0.351753, PackedByteArray("AwAAAAUABQAXABkABQAaABcAAAAdAAUABQAdABoAHQAcABoAAAABAB0AAQAfAB0AIgAfAAEAIgAhAB8A")],
-"material": SubResource("StandardMaterial3D_8oatb"),
+"material": SubResource("ShaderMaterial_ou5ec"),
 "name": "MetalMat",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -180,6 +220,15 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ns4ge")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wb28c"]
+render_priority = 0
+shader = ExtResource("2_feoc7")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_ltavb")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_l61vy"]
 _surfaces = [{
@@ -205,7 +254,7 @@ _surfaces = [{
 "index_count": 54,
 "index_data": PackedByteArray("AAAIAAQAAAABAAgAAwAPAAUAAwAHAA8ACgATABAACgANABMAAgAMAAkAAgAjAAwABgAYABkABgASABgAEQAaABcAEQAUABoAFQAcABsAFQAdABwADgAeABYADgAgAB4AIgAfAAsAIgAhAB8A"),
 "lods": [0.322152, PackedByteArray("AAAkAAMAAwAkACUAJAAaACUAJQAaABcAJgAXABkAJAAdABoAGgAdABwAJAAnAB0AIgAnACQAIgAhACcA")],
-"material": SubResource("StandardMaterial3D_8oatb"),
+"material": SubResource("ShaderMaterial_wb28c"),
 "name": "MetalMat",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -214,6 +263,15 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_l61vy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_njq7e"]
+render_priority = 0
+shader = ExtResource("2_feoc7")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_ltavb")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_q8c3m"]
 _surfaces = [{
@@ -239,7 +297,7 @@ _surfaces = [{
 "index_count": 54,
 "index_data": PackedByteArray("AAAKAAQAAAACAAoAAwARAAUAAwAJABEABwAVABAABwALABUAAQAMAAgAAQAiAAwABgAYABkABgASABgADwAbABcADwAUABsAEwAcABoAEwAdABwADgAeABYADgAgAB4AIwAfAA0AIwAhAB8A"),
 "lods": [0.218591, PackedByteArray("AAAkAAMAAwAkABcAAwAXAAUAAQAdABcAFwAdABoAHQAcABoAJAAiAB0AIgAnAB0AIgAhACcAJQAmABkA")],
-"material": SubResource("StandardMaterial3D_8oatb"),
+"material": SubResource("ShaderMaterial_njq7e"),
 "name": "MetalMat",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -249,12 +307,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q8c3m")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ae1mm"]
-resource_name = "EnginesMat"
-cull_mode = 2
-albedo_texture = ExtResource("1_f1yfk")
-metallic = 0.2
-roughness = 0.9
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrnho"]
+render_priority = 0
+shader = ExtResource("2_feoc7")
+shader_parameter/affine_mapping = true
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("4_1i5xa")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_n67pi"]
 _surfaces = [{
@@ -280,7 +340,7 @@ _surfaces = [{
 "index_count": 456,
 "index_data": PackedByteArray("QgAJADYAQgAjAAkAhgANAFwAhgBSAA0AWAARAGQAWAA9ABEAggBOAGIAggBKAE4AdgBGAGoAdgAxAEYAXgApAG4AXgAPACkAbQAsAHEAbQAoACwAcgAwAHUAcgAtADAAZgA1AHoAZgATADUAeQBWAH4AeQA0AFYAfQBJAIEAfQBVAEkAOQAdAEAAOQADAB0AQAAgAEEAQAAdACAAQQAjAEIAQQAgACMAFwBCABQAFwBBAEIAGgBBABcAGgBAAEEAAABAABoAAAA5AEAAaAA/AFoAaABEAD8AYABQAIQAYABMAFAAFAA2AAYAFABCADYACgCDADcACgBfAIMAAQBZADsAAQBnAFkAIQB/ACQAIQB7AH8AHgB8ACIAHgB3AHwABQB4AB8ABQBlAHgAGQBzABsAGQBwAHMAFQBvABgAFQBrAG8ACABsABYACABdAGwAHABpAAIAHAB0AGkAJQBhAAsAJQCAAGEAOgBjAAQAOgBXAGMAOABbAAcAOACFAFsA1wCQAK8A1wDDAJAAHAGTAOgAHAH0AJMA8gCZAM4A8gD8AJkAGgHmAOIAGgH6AOYADgHcALwADgECAdwA9gC0AJQA9gAGAbQABQG3ALMABQEJAbcACgG7ALgACgENAbsA/gDCAJoA/gASAcIAEQHuAMEAEQEWAe4AFQHhAO0AFQEZAeEAxwCnAIoAxwDPAKcA0ACsAKgA0ADUAKwA0wCwAKsA0wDYALAAoQDaANUAoQCeANoApgDWANIApgCiANYAiQDRAMkAiQClANEAAAHMANsAAAHwAMwA+ADqAOUA+AAeAeoAnQDFANkAnQCPAMUAkQAdAfcAkQDGAB0BhwDvAP8AhwDIAO8ArQAXARMBrQCxABcBqQAUAQ8BqQCuABQBjAAQAf0AjACqABABoAALAQgBoACjAAsBmwAHAQMBmwCfAAcBjgAEAfUAjgCcAAQBpAABAQwBpACIAAEBsgD5ABgBsgCSAPkAygD7APEAygCLAPsAxADzABsBxACNAPMAPACXABAAPADLAJcADgC2ACcADgCWALYAJgC6ACsAJgC1ALoAKgC9AC4AKgC5AL0AEgDAADMAEgCYAMAASADkAE0ASADgAOQAVADfAEcAVADsAN8ASwDnAE8ASwDjAOcALwDeAEUALwC+AN4AUQCVAAwAUQDpAJUAMgDrAFMAMgC/AOsAQwDNAD4AQwDdAM0A"),
 "lods": [1.10146, PackedByteArray("XwANAFsAXwBQAA0AXwBMAFAANwBfAFsACgBfADcANwBbAAcAZwARAGMAZwA9ABEAZwBEAD0AOgBnAGMAAQBnADoAOgBjAAQAYQBJAE4AYQBVAEkAZQBVAGEAZQA0AFUAZQATADQAJABlAGEABQBlACQAJABhAAsAaQAwAEYAaQAsADAAXQAsAGkAXQAoACwAXQAPACgAFQBdAGkACABdABUAFQBpAAIAOQADACMAFAA5ACMAAAA5ABQAFAAjAAkAFAAJADYAFAA2AAYAwwCQAKcAxwDDAKcAxwCnAIoAoQDDAMcAoQCPAMMAiQChAMcAHAGTAOgAHAH0AJMA+AAcAegA+ADoAOUA8ACZAMwA8AD8AJkAAAHwAMwAAAHMANsAGQHmAOEAGQH6AOYAEQEZAeEAEQHhAO0AEQHtAMEA/gARAcEA/gDBAJoADQHcALsADQECAdwADQG7ALcADQG3ALMA9gANAbMA9gCzAJQAkQAbAfcAkQDEABsBxADzABsBxACNAPMAhwDvAP8AhwDIAO8AyAD7AO8AyACLAPsAqQAXAQ8BqQD5ABcBqQCSAPkAjACpAA8BjAAPAf0AjgALAfUAjgCfAAsBnwABAQsBnwCIAAEBPACXABAAPADLAJcAQwDLADwAQwDdAMsADgC1ACYADgCWALUAJgC1ALoAJgC6ACsAKgC9AC4AKgC5AL0ALgC9AN4ALgDeAEUAEgC/ADIAEgCYAL8AMgC/AOsAMgDrAFMARwDkAE0ARwDfAOQAVADfAEcAVADsAN8ASwDnAE8ASwDjAOcATwDnAJUATwCVAAwA")],
-"material": SubResource("StandardMaterial3D_ae1mm"),
+"material": SubResource("ShaderMaterial_yrnho"),
 "name": "EnginesMat",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -303,7 +363,7 @@ script = ExtResource("1_jx1lp")
 area = NodePath("Area3D")
 
 [node name="Metal" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.991052, 0.0292206, -0.13024, -0.0164134, 0.995017, 0.0983454, 0.132464, -0.0953278, 0.986593, -2.74694, 6.85566, -5.2491)
+transform = Transform3D(0.952972, 0.0291875, -0.130898, -0.0157827, 0.99389, 0.098842, 0.127374, -0.0952198, 0.991575, -2.74694, 6.85566, -5.2491)
 mesh = SubResource("ArrayMesh_lj4ba")
 skeleton = NodePath("")
 

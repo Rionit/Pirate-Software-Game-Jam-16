@@ -1,16 +1,21 @@
-[gd_scene load_steps=18 format=4 uid="uid://kcwdq4cpchhf"]
+[gd_scene load_steps=22 format=4 uid="uid://kcwdq4cpchhf"]
 
 [ext_resource type="Texture2D" uid="uid://bf2gf768k4fo6" path="res://Meshes/Battery Dumpster/battery_dumpster_image_9.png" id="1_qgv8s"]
 [ext_resource type="Script" path="res://Scripts/trash_pile.gd" id="1_sauwb"]
 [ext_resource type="Texture2D" uid="uid://m3el26inq0n8" path="res://Meshes/Battery Dumpster/battery_dumpster_image_6.png" id="2_6m6hh"]
+[ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="2_21eir"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_btw12"]
 data = PackedVector3Array(-8.0088, 0, 5.8438, 8.0088, 0, -5.8438, 8.0088, 0, 5.8438, -8.0088, 0, 5.8438, -8.0088, 0, -5.8438, 8.0088, 0, -5.8438, -8.0088, 0, -5.8438, 9.3943, 6.0459, -6.4522, 8.0088, 0, -5.8438, -8.0088, 0, -5.8438, -8.2909, 6.0459, -6.4522, 9.3943, 6.0459, -6.4522, 8.0088, 0, -5.8438, 9.3943, 6.0459, 6.4522, 8.0088, 0, 5.8438, 8.0088, 0, -5.8438, 9.3943, 6.0459, -6.4522, 9.3943, 6.0459, 6.4522, 8.0088, 0, 5.8438, -8.2909, 6.0459, 6.4522, -8.0088, 0, 5.8438, 8.0088, 0, 5.8438, 9.3943, 6.0459, 6.4522, -8.2909, 6.0459, 6.4522, -8.0088, -0.1297, 5.9419, 8.1121, -0.1154, -5.9237, -8.0088, -0.1297, -5.9419, -8.0088, -0.1297, 5.9419, 8.1121, -0.1154, 5.9237, 8.1121, -0.1154, -5.9237, -8.0088, -0.1297, -5.9419, 9.5353, 6.007, -6.5507, -8.2909, 6.0249, -6.5973, -8.0088, -0.1297, -5.9419, 8.1121, -0.1154, -5.9237, 9.5353, 6.007, -6.5507, 8.1121, -0.1154, -5.9237, 9.5353, 6.007, 6.5507, 9.5353, 6.007, -6.5507, 8.1121, -0.1154, -5.9237, 8.1121, -0.1154, 5.9237, 9.5353, 6.007, 6.5507, 8.1121, -0.1154, 5.9237, -8.2909, 6.0249, 6.5973, 9.5353, 6.007, 6.5507, 8.1121, -0.1154, 5.9237, -8.0088, -0.1297, 5.9419, -8.2909, 6.0249, 6.5973, -8.0088, 0, 5.8438, -8.0088, -0.1297, -5.9419, -8.0088, 0, -5.8438, -8.0088, 0, 5.8438, -8.0088, -0.1297, 5.9419, -8.0088, -0.1297, -5.9419, 9.3943, 6.0459, 6.4522, -8.2909, 6.0249, 6.5973, -8.2909, 6.0459, 6.4522, 9.3943, 6.0459, 6.4522, 9.5353, 6.007, 6.5507, -8.2909, 6.0249, 6.5973, 9.3943, 6.0459, -6.4522, 9.5353, 6.007, 6.5507, 9.3943, 6.0459, 6.4522, 9.3943, 6.0459, -6.4522, 9.5353, 6.007, -6.5507, 9.5353, 6.007, 6.5507, -8.2909, 6.0459, -6.4522, 9.5353, 6.007, -6.5507, 9.3943, 6.0459, -6.4522, -8.2909, 6.0459, -6.4522, -8.2909, 6.0249, -6.5973, 9.5353, 6.007, -6.5507, -8.0088, 0, -5.8438, -8.2909, 6.0249, -6.5973, -8.2909, 6.0459, -6.4522, -8.0088, 0, -5.8438, -8.0088, -0.1297, -5.9419, -8.2909, 6.0249, -6.5973, -8.2909, 6.0459, 6.4522, -8.0088, -0.1297, 5.9419, -8.0088, 0, 5.8438, -8.2909, 6.0459, 6.4522, -8.2909, 6.0249, 6.5973, -8.0088, -0.1297, 5.9419)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0cgf"]
-resource_name = "BatteryMat"
-cull_mode = 2
-albedo_texture = ExtResource("1_qgv8s")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7o8d"]
+render_priority = 0
+shader = ExtResource("2_21eir")
+shader_parameter/affine_mapping = true
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("1_qgv8s")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6cco8"]
 _surfaces = [{
@@ -36,7 +41,7 @@ _surfaces = [{
 "index_count": 486,
 "index_data": PackedByteArray("YwADABsAYwAcAAMABAAjACsABAACACMAKwAiADMAKwAjACIAMwAhADsAMwAiACEAOwAgAEMAOwAhACAAQwAfAEsAQwAgAB8ASwAeAFMASwAfAB4AUwAdAFsAUwAeAB0AWwAcAGMAWwAdABwAAAAkAAwAAAALACQACwAlACQACwAKACUACgAmACUACgAJACYACQAnACYACQAIACcACAAoACcACAAHACgABwApACgABwAGACkABgAqACkABgAFACoABQArACoABQAEACsADAAsAA0ADAAkACwAJAAtACwAJAAlAC0AJQAuAC0AJQAmAC4AJgAvAC4AJgAnAC8AJwAwAC8AJwAoADAAKAAxADAAKAApADEAKQAyADEAKQAqADIAKgAzADIAKgArADMADQA0AA4ADQAsADQALAA1ADQALAAtADUALQA2ADUALQAuADYALgA3ADYALgAvADcALwA4ADcALwAwADgAMAA5ADgAMAAxADkAMQA6ADkAMQAyADoAMgA7ADoAMgAzADsADgA8AA8ADgA0ADwANAA9ADwANAA1AD0ANQA+AD0ANQA2AD4ANgA/AD4ANgA3AD8ANwBAAD8ANwA4AEAAOABBAEAAOAA5AEEAOQBCAEEAOQA6AEIAOgBDAEIAOgA7AEMADwBEABAADwA8AEQAPABFAEQAPAA9AEUAPQBGAEUAPQA+AEYAPgBHAEYAPgA/AEcAPwBIAEcAPwBAAEgAQABJAEgAQABBAEkAQQBKAEkAQQBCAEoAQgBLAEoAQgBDAEsAEABMABEAEABEAEwARABNAEwARABFAE0ARQBOAE0ARQBGAE4ARgBPAE4ARgBHAE8ARwBQAE8ARwBIAFAASABRAFAASABJAFEASQBSAFEASQBKAFIASgBTAFIASgBLAFMAEQBUABIAEQBMAFQATABVAFQATABNAFUATQBWAFUATQBOAFYATgBXAFYATgBPAFcATwBYAFcATwBQAFgAUABZAFgAUABRAFkAUQBaAFkAUQBSAFoAUgBbAFoAUgBTAFsAEgBcABMAEgBUAFwAVABdAFwAVABVAF0AVQBeAF0AVQBWAF4AVgBfAF4AVgBXAF8AVwBgAF8AVwBYAGAAWABhAGAAWABZAGEAWQBiAGEAWQBaAGIAWgBjAGIAWgBbAGMAEwAUAAEAEwBcABQAXAAVABQAXABdABUAXQAWABUAXQBeABYAXgAXABYAXgBfABcAXwAYABcAXwBgABgAYAAZABgAYABhABkAYQAaABkAYQBiABoAYgAbABoAYgBjABsA"),
 "lods": [0.110278, PackedByteArray("HAADABsAYQAcABsAYQAbABoAYQAaABkAYQAZABgAcABhABgAbQBhAHAAbgAcAGEAbgAdABwAUQAdAG4AUQAeAB0AawBuAHEAUQBuAGsAQQAeAFEAQQAfAB4AQQAgAB8ATgBRAGsATgBrAGoARwBBAFEARwBRAE4AOgAgAEEAOgAhACAAIgAhADoANwA6AEEANwBBAEcAMAAiADoAMAA6ADcAKAAiADAAKAAjACIABAACACMABQAEACMABQAjACgABgAFACgABwAGACgACAAHACgACQAIACgACQAoAAoACgAoADAACgAwAC0ALQAwADcACwAKAC0AAAALAC0AAAAtAAwADAAtAA0ALQA3ADUADQAtADUANQA3AEcADQA1AA4ANQBHAEUADgA1AEQANQBFAEQARQBHAE4ARABFAE4ADgBEAA8ADwBEABAAEABEABEARABOABEAEQBOAGkAEQBpABIATgBqAGkAEgBpABMAEwAUAAEAEwAVABQAEwBdABUAaQBdABMAXQAWABUAaQBqAG8AaQBvAF0AXQBvABYAagBsAG8AbwAXABYAbwAYABcA"), 0.320246, PackedByteArray("HAADABsAZQAcABsAZQAdABwAZQAeAB0AaAAbABoAaAAaABkAaAAZABgAaAAYABcAZwAXABYAZwAWABUAEwBnABUAEwAVABQAEwAUAAEAEgBmABMAEQBkABIAEAAPABEADwBkABEADgBkAA8ADQBkAA4AZAAfAB4AIQAfAGQAIQAgAB8AIgAhAGQADQAiAGQAAAANAAwAAAALAA0ACwAKAA0ACgAiAA0ACQAiAAoACQAIACIACAAHACIABwAGACIABgAFACIABQAjACIABQAEACMABAACACMA")],
-"material": SubResource("StandardMaterial3D_n0cgf"),
+"material": SubResource("ShaderMaterial_m7o8d"),
 "name": "BatteryMat",
 "primitive": 3,
 "uv_scale": Vector4(1.57444, 2.47602, 0, 0),
@@ -45,6 +50,15 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6cco8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_km16o"]
+render_priority = 0
+shader = ExtResource("2_21eir")
+shader_parameter/affine_mapping = true
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("1_qgv8s")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_t17r2"]
 _surfaces = [{
@@ -68,7 +82,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AgALAAUAAgAIAAsABgAVAAkABgASABUAFAARABcAFAAOABEADAADAA8ADAAAAAMABwANABMABwABAA0AFgAEAAoAFgAQAAQA"),
-"material": SubResource("StandardMaterial3D_n0cgf"),
+"material": SubResource("ShaderMaterial_km16o"),
 "name": "BatteryMat",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -77,6 +91,15 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_t17r2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddiwx"]
+render_priority = 0
+shader = ExtResource("2_21eir")
+shader_parameter/affine_mapping = true
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("1_qgv8s")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_pkgsd"]
 _surfaces = [{
@@ -100,7 +123,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AgALAAUAAgAIAAsABgAVAAkABgASABUAFAARABcAFAAOABEADAADAA8ADAAAAAMABwANABMABwABAA0AFgAEAAoAFgAQAAQA"),
-"material": SubResource("StandardMaterial3D_n0cgf"),
+"material": SubResource("ShaderMaterial_ddiwx"),
 "name": "BatteryMat",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -109,6 +132,15 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pkgsd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yiagk"]
+render_priority = 0
+shader = ExtResource("2_21eir")
+shader_parameter/affine_mapping = true
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("1_qgv8s")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_m3wwb"]
 _surfaces = [{
@@ -132,7 +164,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AgALAAUAAgAIAAsABgAVAAkABgASABUAFAARABcAFAAOABEADAADAA8ADAAAAAMABwANABMABwABAA0AFgAEAAoAFgAQAAQA"),
-"material": SubResource("StandardMaterial3D_n0cgf"),
+"material": SubResource("ShaderMaterial_yiagk"),
 "name": "BatteryMat",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -142,11 +174,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m3wwb")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfmcj"]
-resource_name = "Axles"
-cull_mode = 2
-albedo_texture = ExtResource("2_6m6hh")
-metallic = 0.1
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vpprb"]
+render_priority = 0
+shader = ExtResource("2_21eir")
+shader_parameter/affine_mapping = true
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_6m6hh")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4ljsp"]
 _surfaces = [{
@@ -170,7 +205,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 84,
 "index_data": PackedByteArray("AQAMAAUAAQAIAAwABwAYAAsABwAVABgADQAUAAYADQAbABQABAAOAAAABAARAA4AHAAnACMAHAAgACcAJAA1ADIAJAAoADUAKQAwADcAKQAiADAAIQArAC4AIQAdACsAAwAmAAoAAwAfACYAEgAqAA8AEgAtACoAGgAvABMAGgA2AC8AFgA0ABkAFgAxADQACQAzABcACQAlADMAEAAeAAIAEAAsAB4A"),
-"material": SubResource("StandardMaterial3D_vfmcj"),
+"material": SubResource("ShaderMaterial_vpprb"),
 "name": "Axles",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -183,12 +218,11 @@ shadow_mesh = SubResource("ArrayMesh_4ljsp")
 [sub_resource type="BoxShape3D" id="BoxShape3D_rcn77"]
 size = Vector3(15.957, 2.29578, 11.5762)
 
-[node name="battery_dumpster" type="StaticBody3D" node_paths=PackedStringArray("area", "particle_spawn")]
+[node name="battery_dumpster" type="StaticBody3D" node_paths=PackedStringArray("area")]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_sauwb")
 area = NodePath("Area3D")
-particle_spawn = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
