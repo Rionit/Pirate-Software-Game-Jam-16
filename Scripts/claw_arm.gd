@@ -130,10 +130,14 @@ func _input(event: InputEvent) -> void:
 
 func tip_entered_body(body: Node3D) -> void:
 	print("Tip entered " + body.name)
-	if body is CarPart:
+	if body is CarPart and pinched_part == null and close_part == null:
+		if close_part != null:
+			close_part.highlight(false)
 		close_part = body
+		close_part.highlight()
 
 func tip_exited_body(body: Node3D) -> void:
 	print("Tip exited " + body.name)
 	if close_part == body:
+		close_part.highlight(false)
 		close_part = null
