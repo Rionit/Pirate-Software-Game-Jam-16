@@ -28,6 +28,12 @@ func _ready() -> void:
 	shader_material.set_shader_parameter("shine_color", Color.AQUA)
 	shader_material.resource_local_to_scene = true
 	
+	# FADE DITHER
+	var material = mesh.get_active_material(0)
+	material.distance_fade_mode = StandardMaterial3D.DISTANCE_FADE_PIXEL_DITHER
+	material.distance_fade_max_distance = 1.0  # 1 meter
+	material.distance_fade_min_distance = 0.0  # Start fading at 0 meters
+	
 	# NAMING NODES
 	name = mesh.name
 	collider.name = name + "_Collider"

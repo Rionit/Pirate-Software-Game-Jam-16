@@ -9,7 +9,6 @@
 load_path = "res://.godot/imported/honda_accord_Image_0.png-835471dbd82c96a22e165889b856b30b.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekdhk"]
-resource_local_to_scene = true
 resource_name = "Body"
 cull_mode = 2
 albedo_texture = SubResource("CompressedTexture2D_5x43f")
@@ -46,7 +45,6 @@ points = PackedVector3Array(0.496595, -1.03848, 0.911553, 1.78798, -1.30516, 0.1
 load_path = "res://.godot/imported/honda_accord_Image_0.png-835471dbd82c96a22e165889b856b30b.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbb0q"]
-resource_local_to_scene = true
 resource_name = "Body"
 cull_mode = 2
 albedo_texture = SubResource("CompressedTexture2D_oksyg")
@@ -54,6 +52,8 @@ metallic = 1.0
 roughness = 0.7
 rim_tint = 1.0
 texture_filter = 2
+distance_fade_mode = 2
+distance_fade_max_distance = 1.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_h4hnf"]
 resource_local_to_scene = true
@@ -82,7 +82,6 @@ points = PackedVector3Array(-0.537191, -1.33972, -1.0123, -0.537191, -1.24021, -
 load_path = "res://.godot/imported/honda_accord_Image_0.png-835471dbd82c96a22e165889b856b30b.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wq1cl"]
-resource_local_to_scene = true
 resource_name = "Body"
 cull_mode = 2
 albedo_texture = SubResource("CompressedTexture2D_juh2v")
@@ -397,7 +396,6 @@ points = PackedVector3Array(-0.000456333, 2.44167, 1.0933, -0.000456333, 2.44167
 load_path = "res://.godot/imported/honda_accord_Image_0.png-835471dbd82c96a22e165889b856b30b.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq5wc"]
-resource_local_to_scene = true
 resource_name = "Body"
 cull_mode = 2
 albedo_texture = SubResource("CompressedTexture2D_nnjwk")
@@ -405,6 +403,8 @@ metallic = 1.0
 roughness = 0.7
 rim_tint = 1.0
 texture_filter = 2
+distance_fade_mode = 2
+distance_fade_max_distance = 1.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0j6f7"]
 resource_local_to_scene = true

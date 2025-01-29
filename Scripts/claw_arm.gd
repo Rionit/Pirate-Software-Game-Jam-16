@@ -49,6 +49,8 @@ func claw_pinched():
 func claw_released():
 	pinched = false
 	if pinched_part != null: 
+		# angular was not corresponding with real physical angular rotation speed
+		# also it was bugging a lot
 		#pinched_part.release(angular_velocity, velocity)
 		pinched_part.release(0.0, velocity.rotated(Vector3.UP, get_parent_node_3d().rotation.y))
 		pinched_part = null
