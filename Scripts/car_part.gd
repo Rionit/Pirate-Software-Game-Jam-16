@@ -17,6 +17,8 @@ signal pinched
 var shader_material := ShaderMaterial.new()
 var duplicated_collider: CollisionShape3D
 var blend_shape_idx: int
+var last_parent: Node3D
+var is_separated := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -61,26 +63,36 @@ func highlight(state := true):
 		material.set_shader_parameter("is_shining", false)
 	
 func pinch(tip: Node3D):
-	if duplicated_collider != null:
-		duplicated_collider.queue_free()
-
-	self.reparent(tip)
-	self.freeze = true
+	if car != null and name == "Body" and car.parts_pinched < car.colliders.size() - 1:
+		last_parent = car.get_parent_node_3d()
+		car.reparent(tip)
+		car.car_body.freeze = true
+		damage(0.2)
+	else:
+		if duplicated_collider != null:
+			duplicated_collider.queue_free()
+		self.reparent(tip)
+		self.freeze = true
+		if not is_separated: pinched.emit()
+		damage(0.5)
+		is_separated = true
+	
 	JUNK_PARTICLES.instantiate().init_on_point(get_tree().root, tip)
-	damage(1.0)
-	pinched.emit()
 	return self
 
 func release(angular_velocity: float, velocity: Vector3):
-	self.reparent(get_tree().get_root())
-	self.freeze = false
-	self.angular_velocity.y = -angular_velocity
-	self.linear_velocity = velocity
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	if car != null and name == "Body" and car.parts_pinched <= car.colliders.size() - 1:
+		car.reparent(last_parent)
+		car.car_body.freeze = false
+		car.car_body.angular_velocity.y = -angular_velocity
+		car.car_body.linear_velocity = velocity
+	else:
+		self.reparent(get_tree().get_root())
+		self.freeze = false
+		self.angular_velocity.y = -angular_velocity
+		self.linear_velocity = velocity
 
 func damage(amount: float) -> void:
 	if blend_shape_idx == -1: return
-	mesh.set_blend_shape_value(blend_shape_idx, clamp(amount, -1, 1))
+	var current = mesh.get_blend_shape_value(blend_shape_idx)
+	mesh.set_blend_shape_value(blend_shape_idx, clamp(current + amount, -1, 1))

@@ -6,7 +6,7 @@ signal car_destroyed
 @onready var car_body: Node3D = $CarBody
 
 var colliders: Array
-var parts_pinched := 0
+var parts_pinched : int = 0
 
 func _ready() -> void:
 	for col in colliders:

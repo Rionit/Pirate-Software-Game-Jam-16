@@ -950,7 +950,7 @@ points = PackedVector3Array(-0.000109434, -0.303429, -0.553915, -0.391689, -0.30
 script = ExtResource("1_lkd2i")
 
 [node name="CarBody" type="RigidBody3D" parent="."]
-mass = 10.0
+mass = 50.0
 
 [node name="CarPart" parent="CarBody" node_paths=PackedStringArray("mesh") instance=ExtResource("3_nr02l")]
 mesh = NodePath("Window_Front")
