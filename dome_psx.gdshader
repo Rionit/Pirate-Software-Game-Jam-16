@@ -64,7 +64,9 @@ void fragment()
         final_color.rgb = mix(final_color.rgb, shine_color.rgb, shine_alpha);
     }
 
-    ALBEDO = final_color.rgb;
+    ALBEDO = vec3(0.0);
+	SPECULAR = 0.0;
+    EMISSION = final_color.rgb;
     ALPHA = final_color.a;
     ALPHA_SCISSOR_THRESHOLD = alpha_scissor;
 }
