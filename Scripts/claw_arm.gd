@@ -49,7 +49,8 @@ func claw_pinched():
 func claw_released():
 	pinched = false
 	if pinched_part != null: 
-		pinched_part.release(angular_velocity, velocity)
+		#pinched_part.release(angular_velocity, velocity)
+		pinched_part.release(0.0, velocity.rotated(Vector3.UP, get_parent_node_3d().rotation.y))
 		pinched_part = null
 	
 func transition_claw(from, to):
