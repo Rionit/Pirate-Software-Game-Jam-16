@@ -94,11 +94,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("rotate_claw_left"):
 		angular_velocity = min(angular_velocity + ACCELERATION, MAX_ROTATION_SPEED)
 		
+		# SFX
 		if not claw_rotation_sfx.playing:
 			Audio.play(claw_rotation_sfx, ACTUATOR_BACKWARD)
 	elif Input.is_action_pressed("rotate_claw_right"):
 		angular_velocity = max(angular_velocity - ACCELERATION, -MAX_ROTATION_SPEED)
 		
+		# SFX
 		if not claw_rotation_sfx.playing:
 			Audio.play(claw_rotation_sfx, ACTUATOR_FORWARD)
 	else:

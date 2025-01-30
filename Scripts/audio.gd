@@ -5,7 +5,7 @@ const ONE_SHOT_PLAYER = preload("res://Scenes/one_shot_player.tscn")
 
 static func play(player: AudioStreamPlayer3D, sound: AudioStream = null, 
 volume: float = 1.0, pitch: float = 1.0):
-	if player.playing and sound == null:
+	if player.playing:
 		return
 	
 	if sound != null:

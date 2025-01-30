@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://dq8cp8tbiusly"]
+[gd_scene load_steps=18 format=3 uid="uid://dq8cp8tbiusly"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_4p8tu"]
 [ext_resource type="PackedScene" uid="uid://dkxt8pog23mmg" path="res://Scenes/player.tscn" id="1_akknk"]
+[ext_resource type="PackedScene" uid="uid://c6kt5lhy3tera" path="res://Scenes/audio.tscn" id="2_hlwq7"]
 [ext_resource type="Texture2D" uid="uid://dkbghts361edn" path="res://Images/panorama.jpg" id="3_bmd01"]
 [ext_resource type="PackedScene" uid="uid://dj21v7c4awumw" path="res://Scenes/dome.tscn" id="4_cv1b4"]
 [ext_resource type="PackedScene" uid="uid://gs7k6u5af1fu" path="res://Scenes/glass_dumpster.tscn" id="5_0wp7l"]
@@ -48,6 +49,8 @@ size = Vector3(100, 15, 100)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_4p8tu")
+
+[node name="Audio" parent="." instance=ExtResource("2_hlwq7")]
 
 [node name="ObjectSpawn" type="Marker3D" parent="."]
 unique_name_in_owner = true
@@ -109,13 +112,15 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="interior_dumpster" parent="." instance=ExtResource("10_veq5q")]
-transform = Transform3D(0.0327063, 0, 0.266253, 0, 0.268253, 0, -0.266253, 0, 0.0327063, -1.46621, 4.76837e-07, 11.2404)
+transform = Transform3D(0.253477, 0, -0.0878045, 0, 0.268253, 0, 0.0878045, 0, 0.253477, -8.24086, -4.76837e-07, -1.70128)
 collision_layer = 7
 collision_mask = 7
+trash_type = 2
 
 [node name="battery_dumpster" parent="." instance=ExtResource("11_4kbek")]
 transform = Transform3D(-0.0577127, 0, 0.17411, 0, 0.183426, 0, -0.17411, 0, -0.0577127, -3.45181, 0, -4.58393)
 collision_layer = 7
 collision_mask = 7
+trash_type = 4
 
 [connection signal="body_entered" from="Dome/FallingObjectCatcher" to="Dome/FallingObjectCatcher" method="_on_body_entered"]
