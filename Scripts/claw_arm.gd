@@ -1,6 +1,17 @@
 extends Node3D
 class_name ClawArm
 
+const HISS_2 = preload("res://Sounds/SFX/hiss_2.mp3")
+const CLAW_OPEN = preload("res://Sounds/SFX/claw_open.mp3")
+const CLAW_CLOSE = preload("res://Sounds/SFX/claw_close.mp3")
+const HYDRAULIC_HOIST = preload("res://Sounds/SFX/hydraulic_hoist.mp3")
+const ELECTRIC_HOIST = preload("res://Sounds/SFX/electric_hoist.mp3")
+const ACTUATOR_FORWARD = preload("res://Sounds/SFX/actuator_forward.mp3")
+const ACTUATOR_BACKWARD = preload("res://Sounds/SFX/actuator_backward.mp3")
+
+@onready var claw_rotation_sfx: AudioStreamPlayer3D = %ClawRotationSFX
+@onready var machine_movement_sfx: AudioStreamPlayer3D = %MachineMovementSFX
+@onready var machine_lift_sfx: AudioStreamPlayer3D = %MachineLiftSFX
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var claw_cam_direction: Marker3D = %ClawCamDirection
 @onready var claw_cam_position: Marker3D = %ClawCamPosition
@@ -72,30 +83,56 @@ func switch_claw() -> void:
 			"release":
 				transition_claw("release", "pinch")
 	elif pinched:
+		Audio.play(Audio.spawn(tip, HISS_2, "Machine"), null, 1.0, randf_range(0.8, 1.2))
+		Audio.play(Audio.spawn(tip, CLAW_OPEN, "Machine"), null, 1.0, randf_range(1.0, 1.2))
 		animation_player.play("release")
 	else:
+		Audio.play(Audio.spawn(tip, CLAW_CLOSE, "Machine"), null, 1.0, randf_range(0.8, 1.0))
 		animation_player.play("pinch")
 			
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("rotate_claw_left"):
 		angular_velocity = min(angular_velocity + ACCELERATION, MAX_ROTATION_SPEED)
+		
+		if not claw_rotation_sfx.playing:
+			Audio.play(claw_rotation_sfx, ACTUATOR_BACKWARD)
 	elif Input.is_action_pressed("rotate_claw_right"):
 		angular_velocity = max(angular_velocity - ACCELERATION, -MAX_ROTATION_SPEED)
+		
+		if not claw_rotation_sfx.playing:
+			Audio.play(claw_rotation_sfx, ACTUATOR_FORWARD)
 	else:
+		claw_rotation_sfx.stop()
 		angular_velocity = move_toward(angular_velocity, 0, delta * DESCELERATION)
 	
 	if Input.is_action_pressed("up"):
 		velocity.y = min(velocity.y + ACCELERATION, MAX_MOVE_SPEED)
+		
+		# SFX
+		if not machine_lift_sfx.playing: 
+			Audio.play(machine_lift_sfx)
 	elif Input.is_action_pressed("down"):
 		velocity.y = max(velocity.y - ACCELERATION, -MAX_MOVE_SPEED)
+		
+		# SFX
+		if not machine_lift_sfx.playing: 
+			Audio.play(machine_lift_sfx, null, 1.0, 0.7)
 	else:
+		machine_lift_sfx.stop()
 		velocity.y = move_toward(velocity.y, 0, delta * DESCELERATION)
 		
 	if Input.is_action_pressed("front"):
 		velocity.x = min(velocity.x + ACCELERATION, MAX_MOVE_SPEED)
+		
+		if not machine_movement_sfx.playing: 
+			Audio.play(machine_movement_sfx, ELECTRIC_HOIST, 1.0, 1.0)
 	elif Input.is_action_pressed("back"):
 		velocity.x = max(velocity.x - ACCELERATION, -MAX_MOVE_SPEED)
+		
+		if not machine_movement_sfx.playing: 
+			Audio.play(machine_movement_sfx, ELECTRIC_HOIST, 1.0, 0.8)
 	else:
+		machine_movement_sfx.stop()
 		velocity.x = move_toward(velocity.x, 0, delta * DESCELERATION)
 	
 	# BOUNDS

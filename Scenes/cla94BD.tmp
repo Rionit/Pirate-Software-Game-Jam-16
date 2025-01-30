@@ -1,11 +1,10 @@
-[gd_scene load_steps=38 format=4 uid="uid://d0yyaf3xp7gic"]
+[gd_scene load_steps=37 format=4 uid="uid://d0yyaf3xp7gic"]
 
 [ext_resource type="Script" path="res://Scripts/claw_arm.gd" id="1_2dnwu"]
 [ext_resource type="Texture2D" uid="uid://dvrsqa00g1b77" path="res://Meshes/Claw Arm/claw_arm_image_2.png" id="1_gymtd"]
 [ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="2_mgfk3"]
 [ext_resource type="Script" path="res://Scripts/ik_claw.gd" id="3_gthxj"]
 [ext_resource type="AudioStream" uid="uid://d4lpw8eju2b06" path="res://Sounds/SFX/hydraulic_hoist.mp3" id="4_m6iwr"]
-[ext_resource type="AudioStream" uid="uid://o4d24fkotp5x" path="res://Sounds/SFX/actuator_forward.mp3" id="4_ra0v7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mlp0x"]
 render_priority = 0
@@ -561,11 +560,6 @@ transform = Transform3D(1, -7.49401e-15, 5.68434e-14, -1.88738e-15, 1, 0, 0, 0, 
 unique_name_in_owner = true
 transform = Transform3D(1, -5.02098e-14, 2.27374e-13, -1.88738e-15, 1, 0, 0, 0, 1, 0.35, 1, 0.00027343)
 
-[node name="ClawRotationSFX" type="AudioStreamPlayer3D" parent="Armature/Skeleton/Claw_Clamp"]
-unique_name_in_owner = true
-stream = ExtResource("4_ra0v7")
-bus = &"Machine"
-
 [node name="Claw_Left" type="BoneAttachment3D" parent="Armature/Skeleton"]
 transform = Transform3D(1, 1.34719e-07, -9.48266e-07, -1.46375e-07, 1, 0.000273734, 9.84051e-07, -0.000273764, 1, -1.38271, -0.000153414, -0.48549)
 bone_name = "Claw_Left"
@@ -652,10 +646,6 @@ unique_name_in_owner = true
 transform = Transform3D(1, 3.80237e-08, -1.54837e-08, -1.1395e-24, 1, -4.4156e-16, 0, 0, 1, 0, 0, -0.639263)
 stream = ExtResource("4_m6iwr")
 max_db = 0.0
-bus = &"Machine"
-
-[node name="MachineMovementSFX" type="AudioStreamPlayer3D" parent="Armature/Skeleton/Main Shaft"]
-unique_name_in_owner = true
 bus = &"Machine"
 
 [node name="IKClaw" type="SkeletonIK3D" parent="Armature/Skeleton"]

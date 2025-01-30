@@ -1,7 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkxt8pog23mmg"]
+[gd_scene load_steps=10 format=3 uid="uid://dkxt8pog23mmg"]
 
 [ext_resource type="PackedScene" uid="uid://d0yyaf3xp7gic" path="res://Scenes/claw_arm.tscn" id="1_n1uco"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xfo1h"]
+[ext_resource type="AudioStream" uid="uid://b3dj401ccj5c7" path="res://Sounds/SFX/movement_robotic.mp3" id="3_5dtae"]
+[ext_resource type="AudioStream" uid="uid://b7rnhf0etpesl" path="res://Sounds/SFX/hiss_1.wav" id="3_i7ry5"]
+[ext_resource type="AudioStream" uid="uid://cg4te1t6wq6tk" path="res://Sounds/SFX/engine_idle.mp3" id="4_47ghc"]
+[ext_resource type="AudioStream" uid="uid://dwxnvso234ks5" path="res://Sounds/SFX/engine_start.mp3" id="5_a60ch"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_abm5y"]
 
@@ -16,6 +20,33 @@ script = ExtResource("1_xfo1h")
 
 [node name="Machine" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.01129, 0)
+
+[node name="MachineRotationSFX" type="AudioStreamPlayer3D" parent="Machine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37168, -0.63129, 0)
+stream = ExtResource("3_5dtae")
+bus = &"Machine"
+
+[node name="MachineHissSFX" type="AudioStreamPlayer3D" parent="Machine"]
+stream = ExtResource("3_i7ry5")
+max_db = 0.0
+bus = &"Machine"
+
+[node name="EngineSFX" type="AudioStreamPlayer3D" parent="Machine"]
+stream = ExtResource("4_47ghc")
+volume_db = -5.0
+max_db = -5.0
+bus = &"Machine"
+
+[node name="EngineStartSFX" type="AudioStreamPlayer3D" parent="Machine"]
+stream = ExtResource("5_a60ch")
+volume_db = -5.0
+max_db = -5.0
+autoplay = true
+bus = &"Machine"
+
+[node name="MovementSFX" type="AudioStreamPlayer3D" parent="Machine"]
+max_db = 0.5
+bus = &"Machine"
 
 [node name="Camera3D" type="Camera3D" parent="Machine"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -44,3 +75,5 @@ texture = SubResource("ViewportTexture_5hmpd")
 [node name="ClawCam" type="Camera3D" parent="Machine/ClawCamViewport"]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[connection signal="finished" from="Machine/EngineStartSFX" to="." method="_on_engine_start_sfx_finished"]
