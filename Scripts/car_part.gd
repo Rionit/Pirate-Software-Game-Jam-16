@@ -51,6 +51,12 @@ func _ready() -> void:
 	freeze = true
 	collision_layer = 0b10
 	collision_mask = 0b10
+	contact_monitor = true
+	max_contacts_reported = 1
+	body_entered.connect(hit)
+
+func hit(body: Node):
+	Audio.play(Audio.spawn(self, Audio.get_random_sound(Audio.hit_sounds), "Outside"))
 
 func highlight(state := true):
 	var material:ShaderMaterial = mesh.get_active_material(0)

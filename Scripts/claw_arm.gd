@@ -21,6 +21,8 @@ const ACTUATOR_BACKWARD = preload("res://Sounds/SFX/actuator_backward.mp3")
 @onready var skeleton: Skeleton3D = %Skeleton
 @onready var tip: Area3D = %Tip
 
+@export var pinch_sounds: Array[AudioStream]
+
 var pinched_part: CarPart = null
 var close_part: CarPart = null
 var claw_idx: int
@@ -39,7 +41,7 @@ const DESCELERATION = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	init_claw()
-
+	
 func init_claw():
 	claw_idx = skeleton.find_bone("Claw") 
 	var claw_rotation := skeleton.get_bone_pose_rotation(claw_idx).get_euler()
@@ -56,6 +58,7 @@ func claw_pinched():
 	pinched = true
 	if close_part != null:
 		pinched_part = close_part.pinch(tip)
+		Audio.play(Audio.spawn(tip, Audio.get_random_sound(pinch_sounds), "Outside"), null, -2.0)
 
 func claw_released():
 	pinched = false
