@@ -51,6 +51,10 @@ func trash_collected(result: bool):
 func car_destroyed():
 	spawn_car()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("restart"):
+		get_tree().reload_current_scene()
+
 func spawn_car(car: PackedScene = HONDA_ACCORD):
 	var instance : Car = car.instantiate()
 	add_child(instance)
