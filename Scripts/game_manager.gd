@@ -10,6 +10,8 @@ extends Node3D
 const GAME_OVER_SCREEN = preload("res://Scenes/game_over_screen.tscn")
 const TIME_LABEL = preload("res://Scenes/time_label.tscn")
 const HONDA_ACCORD = preload("res://Scenes/honda_accord.tscn")
+const ERROR = preload("res://Sounds/SFX/error.mp3")
+const SUCCESS = preload("res://Sounds/SFX/success.wav")
 
 @export var start_time_amount : int = 100
 @export var successful_sort : int = 10
@@ -47,7 +49,12 @@ func trash_collected(result: bool):
 	timer.stop()
 	timer.wait_time = max(current + amount, 1)
 	timer.start()
-
+	
+	if result:
+		Audio.play(Audio.spawn(self, SUCCESS, "SFX"))
+	else:
+		Audio.play(Audio.spawn(self, ERROR, "SFX"))
+		
 func car_destroyed():
 	spawn_car()
 
