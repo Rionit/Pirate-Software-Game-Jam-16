@@ -62,10 +62,12 @@ size = Vector3(100, 15, 100)
 [node name="Main" type="Node3D"]
 script = ExtResource("1_4p8tu")
 
+[node name="SecondTimer" type="Timer" parent="."]
+wait_time = 0.1
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 100.0
 one_shot = true
-autostart = true
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -170,6 +172,7 @@ collision_layer = 7
 collision_mask = 7
 trash_type = 4
 
+[connection signal="timeout" from="SecondTimer" to="." method="_on_second_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Dome/FallingObjectCatcher" to="Dome/FallingObjectCatcher" method="_on_body_entered"]
 [connection signal="trash_collected" from="GlassDumpster" to="." method="trash_collected"]

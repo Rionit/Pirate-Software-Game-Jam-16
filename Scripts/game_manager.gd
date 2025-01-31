@@ -4,14 +4,24 @@ extends Node3D
 @onready var music_player_3d: AudioStreamPlayer3D = $MusicPlayer3D
 @onready var countdown: RichTextLabel = $UI/Countdown
 @onready var timer: Timer = $Timer
+@onready var sec_timer: Timer = $SecondTimer
 @onready var ui: Control = $UI
 
+const GAME_OVER_SCREEN = preload("res://Scenes/game_over_screen.tscn")
 const TIME_LABEL = preload("res://Scenes/time_label.tscn")
 const HONDA_ACCORD = preload("res://Scenes/honda_accord.tscn")
+
+@export var start_time_amount : int = 100
+@export var successful_sort : int = 10
+@export var bad_sort : int = -20
+var total_time : int = 0
 
 func _ready() -> void:
 	randomize();
 	spawn_car(HONDA_ACCORD)
+	sec_timer.start()
+	timer.wait_time = start_time_amount
+	timer.start()
 
 func _process(delta: float) -> void:
 	update_timer(timer.time_left)
@@ -30,7 +40,7 @@ func update_timer(time_left: float):
 
 func trash_collected(result: bool):
 	var instance = TIME_LABEL.instantiate()
-	var amount = 100 if result else -10
+	var amount = 10 if result else -20
 	instance.amount = amount
 	ui.add_child(instance)
 	var current = timer.time_left
@@ -49,4 +59,10 @@ func spawn_car(car: PackedScene = HONDA_ACCORD):
 	instance.car_destroyed.connect(car_destroyed)
 
 func _on_timer_timeout() -> void:
-	pass # GAME OVER
+	ui.queue_free()
+	var instance = GAME_OVER_SCREEN.instantiate()
+	instance.elapsed_time = total_time / 10
+	add_child(instance)
+
+func _on_second_timer_timeout() -> void:
+	total_time += 1
