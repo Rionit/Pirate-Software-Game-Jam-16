@@ -1,6 +1,8 @@
 extends StaticBody3D
 class_name TrashPile
 
+signal trash_collected(result: bool)
+
 const JUNK_PARTICLES = preload("res://Scenes/junk_particles.tscn")
 const GLASS_CRASH = preload("res://Sounds/SFX/glass_crash.mp3")
 const BIG_CRASH_W_CAT = preload("res://Sounds/SFX/big_crash_w_cat.mp3")
@@ -41,4 +43,5 @@ func trash_entered(trash: Node3D):
 	if trash is CarPart:
 		play_sound()
 		JUNK_PARTICLES.instantiate().init_on_mesh(get_tree().root, trash.mesh)
+		trash_collected.emit(trash.type == trash_type)
 		trash.queue_free()

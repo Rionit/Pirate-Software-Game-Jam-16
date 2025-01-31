@@ -954,6 +954,7 @@ mass = 50.0
 
 [node name="CarPart" parent="CarBody" node_paths=PackedStringArray("mesh") instance=ExtResource("3_nr02l")]
 mesh = NodePath("Window_Front")
+type = 1
 
 [node name="Window_Front" type="MeshInstance3D" parent="CarBody/CarPart"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
@@ -1010,6 +1011,7 @@ shape = SubResource("ConvexPolygonShape3D_uo7vr")
 [node name="Seat1" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Seat")
+type = 2
 
 [node name="Seat" type="MeshInstance3D" parent="CarBody/Seat1"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, 0.425865, 1.41985, -0.667506)
@@ -1024,6 +1026,7 @@ shape = SubResource("ConvexPolygonShape3D_nk3jg")
 [node name="Seat2" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Seat_001")
+type = 2
 
 [node name="Seat_001" type="MeshInstance3D" parent="CarBody/Seat2"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, 0.425865, 1.41985, 0.67772)
@@ -1038,6 +1041,7 @@ shape = SubResource("ConvexPolygonShape3D_ux86i")
 [node name="Seat3" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Seat_002")
+type = 2
 
 [node name="Seat_002" type="MeshInstance3D" parent="CarBody/Seat3"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, -1.1416, 1.41985, -0.667506)
@@ -1052,6 +1056,7 @@ shape = SubResource("ConvexPolygonShape3D_m5504")
 [node name="Seat4" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Seat_003")
+type = 2
 
 [node name="Seat_003" type="MeshInstance3D" parent="CarBody/Seat4"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, -1.1416, 1.41985, 0.67772)
@@ -1066,6 +1071,7 @@ shape = SubResource("ConvexPolygonShape3D_8tjdj")
 [node name="Palubka" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Palubka")
+type = 2
 
 [node name="Palubka" type="MeshInstance3D" parent="CarBody/Palubka"]
 transform = Transform3D(0.98, 0, 0, 0, -4.28372e-08, 0.98, 0, -0.98, -4.28372e-08, 0, 1.4248, 0)
@@ -1080,6 +1086,7 @@ shape = SubResource("ConvexPolygonShape3D_506q3")
 [node name="AxleBack" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Axle Back")
+type = 5
 
 [node name="Axle Back" type="MeshInstance3D" parent="CarBody/AxleBack"]
 transform = Transform3D(0.0912765, 0, 0, 0, 0.0912765, 0, 0, 0, 1.19048, -2.1687, 0.368611, 0.00660503)
@@ -1094,6 +1101,7 @@ shape = SubResource("ConvexPolygonShape3D_4stya")
 [node name="AxleFront" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Axle Front")
+type = 5
 
 [node name="Axle Front" type="MeshInstance3D" parent="CarBody/AxleFront"]
 transform = Transform3D(0.0912765, 0, 0, 0, 0.0912765, 0, 0, 0, 1.19048, 2.71416, 0.403424, 0.00660503)
@@ -1123,6 +1131,7 @@ shape = SubResource("ConcavePolygonShape3D_ujpyn")
 [node name="Battery" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Battery")
+type = 4
 
 [node name="Battery" type="MeshInstance3D" parent="CarBody/Battery"]
 transform = Transform3D(0.683386, 0, 0, 0, 0.452484, 0, 0, 0, 1, 2.85694, 0.927623, -0.0764085)
@@ -1151,6 +1160,7 @@ shape = SubResource("ConvexPolygonShape3D_mxn18")
 [node name="Motor" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Motor")
+type = 3
 
 [node name="Motor" type="MeshInstance3D" parent="CarBody/Motor"]
 transform = Transform3D(0.683386, 0, 0, 0, 0.452484, 0, 0, 0, 1, 2.91875, 0.92433, 0)
@@ -1193,6 +1203,7 @@ shape = SubResource("ConvexPolygonShape3D_1stde")
 [node name="WindowBack" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Window_Back")
+type = 1
 
 [node name="Window_Back" type="MeshInstance3D" parent="CarBody/WindowBack"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)

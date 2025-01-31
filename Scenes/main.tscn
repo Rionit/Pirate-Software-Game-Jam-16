@@ -1,10 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://dq8cp8tbiusly"]
+[gd_scene load_steps=22 format=3 uid="uid://dq8cp8tbiusly"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_4p8tu"]
 [ext_resource type="PackedScene" uid="uid://dkxt8pog23mmg" path="res://Scenes/player.tscn" id="1_akknk"]
+[ext_resource type="AudioStream" uid="uid://bx344mhmlobc1" path="res://Sounds/Music/drum_loop.mp3" id="2_1jcvf"]
 [ext_resource type="PackedScene" uid="uid://c6kt5lhy3tera" path="res://Scenes/audio.tscn" id="2_hlwq7"]
 [ext_resource type="Texture2D" uid="uid://dkbghts361edn" path="res://Images/panorama.jpg" id="3_bmd01"]
+[ext_resource type="AudioStream" uid="uid://ddr7xsq5nae3o" path="res://Sounds/Music/analog_bass.mp3" id="3_vhupr"]
 [ext_resource type="PackedScene" uid="uid://dj21v7c4awumw" path="res://Scenes/dome.tscn" id="4_cv1b4"]
+[ext_resource type="AudioStream" uid="uid://cbkp0a11y1i0" path="res://Sounds/Music/flute_loop.mp3" id="4_dakx6"]
 [ext_resource type="PackedScene" uid="uid://gs7k6u5af1fu" path="res://Scenes/glass_dumpster.tscn" id="5_0wp7l"]
 [ext_resource type="Script" path="res://Scripts/falling_object_catcher.gd" id="5_ed6ke"]
 [ext_resource type="PackedScene" uid="uid://bgtwppfrrm3rt" path="res://Scenes/engines_dumpster.tscn" id="7_r4yj5"]
@@ -12,6 +15,15 @@
 [ext_resource type="PackedScene" uid="uid://dmv78ko1rhy6o" path="res://Scenes/metal_dumpster.tscn" id="9_k5m0s"]
 [ext_resource type="PackedScene" uid="uid://d3sd81nox8cxa" path="res://Scenes/interior_dumpster.tscn" id="10_veq5q"]
 [ext_resource type="PackedScene" uid="uid://kcwdq4cpchhf" path="res://Scenes/battery_dumpster.tscn" id="11_4kbek"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_vh7v0"]
+stream_count = 3
+stream_0/stream = ExtResource("2_1jcvf")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("3_vhupr")
+stream_1/volume = -60.0
+stream_2/stream = ExtResource("4_dakx6")
+stream_2/volume = -60.0
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_abnbi"]
 panorama = ExtResource("3_bmd01")
@@ -49,6 +61,41 @@ size = Vector3(100, 15, 100)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_4p8tu")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 100.0
+one_shot = true
+autostart = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Countdown" type="RichTextLabel" parent="UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -43.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 4
+bbcode_enabled = true
+text = "[center][wave amp=30.0 freq=2.0 connected=1][tornado radius=2.0 freq=1.0 connected=1]{text}[/tornado][/wave][/center]"
+
+[node name="MusicPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamSynchronized_vh7v0")
+autoplay = true
+max_polyphony = 2
+bus = &"Music"
 
 [node name="Audio" parent="." instance=ExtResource("2_hlwq7")]
 
@@ -123,4 +170,11 @@ collision_layer = 7
 collision_mask = 7
 trash_type = 4
 
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Dome/FallingObjectCatcher" to="Dome/FallingObjectCatcher" method="_on_body_entered"]
+[connection signal="trash_collected" from="GlassDumpster" to="." method="trash_collected"]
+[connection signal="trash_collected" from="engines_dumpster" to="." method="trash_collected"]
+[connection signal="trash_collected" from="axles_dumpster" to="." method="trash_collected"]
+[connection signal="trash_collected" from="metal_dumpster" to="." method="trash_collected"]
+[connection signal="trash_collected" from="interior_dumpster" to="." method="trash_collected"]
+[connection signal="trash_collected" from="battery_dumpster" to="." method="trash_collected"]

@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://bjp3e8ke0g5pq"]
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://bjp3e8ke0g5pq"]
 
 [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_87yi4"]
 resource_name = "LowPassFilter"
@@ -9,6 +9,13 @@ resonance = 1.0
 resource_name = "LowPassFilter"
 cutoff_hz = 3000.0
 resonance = 1.0
+
+[sub_resource type="AudioEffectBandPassFilter" id="AudioEffectBandPassFilter_a413c"]
+resource_name = "BandPassFilter"
+cutoff_hz = 2395.0
+
+[sub_resource type="AudioEffectStereoEnhance" id="AudioEffectStereoEnhance_10a2s"]
+resource_name = "StereoEnhance"
 
 [resource]
 bus/1/name = &"Machine"
@@ -27,3 +34,13 @@ bus/2/volume_db = 0.0
 bus/2/send = &"Master"
 bus/2/effect/0/effect = SubResource("AudioEffectLowPassFilter_hcr4f")
 bus/2/effect/0/enabled = true
+bus/3/name = &"Music"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = -4.50411
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectBandPassFilter_a413c")
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource("AudioEffectStereoEnhance_10a2s")
+bus/3/effect/1/enabled = true
