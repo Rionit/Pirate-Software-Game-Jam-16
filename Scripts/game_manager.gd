@@ -14,7 +14,7 @@ const ERROR = preload("res://Sounds/SFX/error.mp3")
 const SUCCESS = preload("res://Sounds/SFX/success.wav")
 
 @export var start_time_amount : int = 100
-@export var successful_sort : int = 10
+@export var successful_sort : int = 20
 @export var bad_sort : int = -20
 var total_time : int = 0
 
@@ -42,7 +42,7 @@ func update_timer(time_left: float):
 
 func trash_collected(result: bool):
 	var instance = TIME_LABEL.instantiate()
-	var amount = 10 if result else -20
+	var amount = successful_sort if result else bad_sort
 	instance.amount = amount
 	ui.add_child(instance)
 	var current = timer.time_left
