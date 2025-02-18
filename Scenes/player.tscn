@@ -68,7 +68,6 @@ mesh = SubResource("BoxMesh_b0tqw")
 
 [node name="ClawCamDisplay" type="Sprite3D" parent="Machine"]
 transform = Transform3D(-6.05618e-09, 0, 0.138549, 0, 0.138549, 0, -0.138549, 0, -6.05618e-09, 1.2, -0.5, -1.2)
-visible = false
 texture = SubResource("ViewportTexture_5hmpd")
 
 [node name="ClawCamViewport" type="SubViewport" parent="Machine"]

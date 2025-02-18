@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cly3lujeyqwda"]
+[gd_scene load_steps=3 format=3 uid="uid://cly3lujeyqwda"]
 
 [ext_resource type="Script" path="res://Scripts/game_over_screen.gd" id="1_ajr5w"]
+[ext_resource type="Theme" uid="uid://bxnae1arshtlw" path="res://Themes/ui.tres" id="2_fou0y"]
 
 [node name="GameOverScreen" type="Control"]
 process_mode = 3
@@ -25,18 +26,20 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/outline_size = 4
+theme = ExtResource("2_fou0y")
 theme_override_font_sizes/font_size = 70
 text = "GAME OVER!"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_fou0y")
 theme_override_font_sizes/font_size = 30
 text = "Let me try again!"
 
 [node name="Time" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_fou0y")
 theme_override_constants/outline_size = 4
 text = "You have played for: "
 horizontal_alignment = 1

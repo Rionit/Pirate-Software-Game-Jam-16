@@ -58,7 +58,7 @@ func _ready() -> void:
 	max_contacts_reported = 1
 	body_entered.connect(hit)
 
-func hit(body: Node):
+func hit(_body: Node):
 	Audio.play(Audio.spawn(self, Audio.get_random_sound(Audio.hit_sounds), "Outside"))
 
 func highlight(state := true):

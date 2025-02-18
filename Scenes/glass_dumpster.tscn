@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://gs7k6u5af1fu"]
+[gd_scene load_steps=13 format=4 uid="uid://gs7k6u5af1fu"]
 
 [ext_resource type="Script" path="res://Scripts/trash_pile.gd" id="1_4mn2g"]
 [ext_resource type="Texture2D" uid="uid://ctlujf4scbd4c" path="res://Meshes/Glass Dumpster/dome_image_3.png" id="1_ep8pe"]
 [ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="2_vwteu"]
+[ext_resource type="PackedScene" uid="uid://cix64nx1cvp11" path="res://Scenes/label_3d.tscn" id="4_1qk5t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nv312"]
 render_priority = 0
@@ -11,6 +12,11 @@ shader_parameter/affine_mapping = true
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/is_shining = false
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/cycle_interval = 1.0
+shader_parameter/shine_speed = 3.0
+shader_parameter/shine_width = 3.0
 shader_parameter/albedo = ExtResource("1_ep8pe")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_u0wvy"]
@@ -101,3 +107,7 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.29749, 0)
 shape = SubResource("BoxShape3D_r6sbt")
+
+[node name="Label3D" parent="." instance=ExtResource("4_1qk5t")]
+transform = Transform3D(-6.50277e-07, 0, -1, 0, 10.4984, 0, 14.8765, 0, -4.37114e-08, -17.8144, 6.45232, 0)
+title = "Glass"

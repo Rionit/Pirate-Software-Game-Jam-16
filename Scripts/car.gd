@@ -15,7 +15,7 @@ func _ready() -> void:
 	car_body.max_contacts_reported = 1
 	car_body.body_entered.connect(hit)
 
-func hit(body: Node):
+func hit(_body: Node):
 	Audio.play(Audio.spawn(self, Audio.get_random_sound(Audio.hit_sounds), "Outside"))
 
 func collider_duplicated(collider: CollisionShape3D):

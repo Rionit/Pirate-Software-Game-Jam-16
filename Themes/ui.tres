@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bxnae1arshtlw"]
+
+[ext_resource type="FontFile" uid="uid://cj1glqpvwqdii" path="res://Fonts/Baron Kuffner.otf" id="1_h33vx"]
+
+[resource]
+Button/constants/outline_size = 4
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_h33vx")
+Label/constants/outline_size = 4
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_h33vx")
+RichTextLabel/constants/outline_size = 4
+RichTextLabel/fonts/normal_font = ExtResource("1_h33vx")

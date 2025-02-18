@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://dq8cp8tbiusly"]
+[gd_scene load_steps=23 format=3 uid="uid://dq8cp8tbiusly"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_4p8tu"]
 [ext_resource type="PackedScene" uid="uid://dkxt8pog23mmg" path="res://Scenes/player.tscn" id="1_akknk"]
 [ext_resource type="AudioStream" uid="uid://bx344mhmlobc1" path="res://Sounds/Music/drum_loop.mp3" id="2_1jcvf"]
+[ext_resource type="Theme" uid="uid://bxnae1arshtlw" path="res://Themes/ui.tres" id="2_c70xg"]
 [ext_resource type="PackedScene" uid="uid://c6kt5lhy3tera" path="res://Scenes/audio.tscn" id="2_hlwq7"]
 [ext_resource type="Texture2D" uid="uid://dkbghts361edn" path="res://Images/panorama.jpg" id="3_bmd01"]
 [ext_resource type="AudioStream" uid="uid://ddr7xsq5nae3o" path="res://Sounds/Music/analog_bass.mp3" id="3_vhupr"]
@@ -70,7 +71,6 @@ wait_time = 100.0
 one_shot = true
 
 [node name="UI" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,13 +86,14 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -43.0
+offset_top = -63.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/outline_size = 4
+theme = ExtResource("2_c70xg")
+theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "[center][wave amp=30.0 freq=2.0 connected=1][tornado radius=2.0 freq=1.0 connected=1]{text}[/tornado][/wave][/center]"
+text = "[center]{text}[/center]"
 
 [node name="MusicPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamSynchronized_vh7v0")

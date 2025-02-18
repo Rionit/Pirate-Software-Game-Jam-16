@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://dycxentrqfn6l"]
+[gd_scene load_steps=13 format=4 uid="uid://dycxentrqfn6l"]
 
 [ext_resource type="Script" path="res://Scripts/trash_pile.gd" id="1_nuyrw"]
 [ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="3_vf83x"]
+[ext_resource type="PackedScene" uid="uid://cix64nx1cvp11" path="res://Scenes/label_3d.tscn" id="4_hbb0p"]
 [ext_resource type="Texture2D" uid="uid://m3el26inq0n8" path="res://Meshes/Battery Dumpster/battery_dumpster_image_6.png" id="4_sr6ri"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lr2pu"]
@@ -132,3 +133,7 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.633921, 0)
 shape = SubResource("BoxShape3D_xkc6h")
+
+[node name="Label3D" parent="." instance=ExtResource("4_hbb0p")]
+transform = Transform3D(-2.35427e-07, 0, -1, 0, 4.96346, 0, 5.38595, 0, -4.37114e-08, -7.80842, 1.19886, 0)
+title = "Axles"

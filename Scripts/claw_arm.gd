@@ -41,6 +41,7 @@ const DESCELERATION = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	init_claw()
+	Global.tip = tip
 	
 func init_claw():
 	claw_idx = skeleton.find_bone("Claw") 
@@ -50,10 +51,6 @@ func init_claw():
 	claw_rotation.z = deg_to_rad(90) 	# yaw
 	skeleton.set_bone_pose_rotation(claw_idx, Quaternion.from_euler(claw_rotation))
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func claw_pinched():
 	pinched = true
 	if close_part != null:

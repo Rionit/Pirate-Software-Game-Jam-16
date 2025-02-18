@@ -25,19 +25,19 @@ func _ready() -> void:
 	timer.wait_time = start_time_amount
 	timer.start()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_timer(timer.time_left)
 
 func update_timer(time_left: float):
 	time_left = max(time_left, 0.01) 
 
-	# Calculate frequency: Increase as time approaches zero
-	var base_freq = 2.0  # Default frequency
-	var max_freq = 10.0  # Maximum frequency
-	var freq = base_freq + (max_freq - base_freq) * (1.0 - (time_left / 10.0)) # Adjust scale as needed
+	## Calculate frequency: Increase as time approaches zero
+	#var base_freq = 2.0  # Default frequency
+	#var max_freq = 10.0  # Maximum frequency
+	#var freq = base_freq + (max_freq - base_freq) * (1.0 - (time_left / 10.0)) # Adjust scale as needed
 
 	# Format the BBCode with two decimal places and dynamic frequency
-	var formatted_text = "[center]%.2f[/center]" % [time_left]
+	var formatted_text = "[tornado radius=10.0 freq=1.0 connected=1][center]%.2f[/center][/tornado]" % [time_left]
 	countdown.text = formatted_text
 
 func trash_collected(result: bool):
@@ -72,7 +72,7 @@ func spawn_car(car: PackedScene = HONDA_ACCORD):
 func _on_timer_timeout() -> void:
 	ui.queue_free()
 	var instance = GAME_OVER_SCREEN.instantiate()
-	instance.elapsed_time = total_time / 10
+	instance.elapsed_time = total_time / 10.0
 	add_child(instance)
 
 func _on_second_timer_timeout() -> void:

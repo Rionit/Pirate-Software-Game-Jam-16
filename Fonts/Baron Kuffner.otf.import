@@ -1,0 +1,34 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://cj1glqpvwqdii"
+path="res://.godot/imported/Baron Kuffner.otf-539e3fedba86528c7b0cf48c5cf6e8e7.fontdata"
+
+[deps]
+
+source_file="res://Fonts/Baron Kuffner.otf"
+dest_files=["res://.godot/imported/Baron Kuffner.otf-539e3fedba86528c7b0cf48c5cf6e8e7.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

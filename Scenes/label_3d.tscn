@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://cix64nx1cvp11"]
+
+[ext_resource type="Script" path="res://Scripts/label_3d.gd" id="1_4oy0v"]
+[ext_resource type="Theme" uid="uid://bxnae1arshtlw" path="res://Themes/ui.tres" id="2_3y2ev"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7awb4"]
+size = Vector2(3, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_m7gji"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k21j4"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_m7gji")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[node name="Label3D" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_4oy0v")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(960, 320)
+render_target_update_mode = 4
+
+[node name="GUI" type="Control" parent="SubViewport"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="SubViewport/GUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.5
+offset_top = -74.5
+offset_right = 350.5
+offset_bottom = 74.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3y2ev")
+theme_override_font_sizes/font_size = 100
+text = "hello this is a test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quad" type="MeshInstance3D" parent="."]
+process_mode = 3
+mesh = SubResource("QuadMesh_7awb4")
+surface_material_override/0 = SubResource("StandardMaterial3D_k21j4")

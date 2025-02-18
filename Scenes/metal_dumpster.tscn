@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=4 uid="uid://dmv78ko1rhy6o"]
+[gd_scene load_steps=32 format=4 uid="uid://dmv78ko1rhy6o"]
 
 [ext_resource type="Script" path="res://Scripts/trash_pile.gd" id="1_jx1lp"]
 [ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="2_feoc7"]
 [ext_resource type="Texture2D" uid="uid://7o15trvwx4wr" path="res://Meshes/Metal Dumpster/metal_dumpster_image_7.png" id="2_ltavb"]
 [ext_resource type="Texture2D" uid="uid://vdkbst2qmixo" path="res://Meshes/Engines Dumpster/engines_dumpster_image_5.png" id="4_1i5xa"]
+[ext_resource type="PackedScene" uid="uid://cix64nx1cvp11" path="res://Scenes/label_3d.tscn" id="5_ljujc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jlewx"]
 render_priority = 0
@@ -450,3 +451,7 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.90745, 0)
 shape = SubResource("BoxShape3D_fkpvk")
+
+[node name="Label3D" parent="." instance=ExtResource("5_ljujc")]
+transform = Transform3D(-2.5945e-07, 0, -1, 0, 5.35882, 0, 5.93552, 0, -4.37114e-08, -9.45624, 3.87684, 0)
+title = "Metal"

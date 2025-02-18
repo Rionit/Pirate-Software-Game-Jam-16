@@ -22,7 +22,7 @@ func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	claw_cam.look_at_from_position(claw_arm.claw_cam_position.global_position, 
 								   claw_arm.claw_cam_direction.global_position,
 								   claw_arm.claw_cam_up.global_position - claw_arm.claw_cam_position.global_position)
