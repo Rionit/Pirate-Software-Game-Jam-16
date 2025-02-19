@@ -17,8 +17,11 @@ enum TrashTypes {METAL, GLASS, INTERIOR, ENGINE, BATTERY, AXLE}
 @export var area: Area3D
 @export var trash_type: TrashTypes
 
+@onready var label: MyLabel3D = $Label3D
+
 func _ready() -> void:
 	area.connect("body_entered", trash_entered)
+	label.text = CarPart.TrashTypes.keys()[trash_type]
 
 func play_sound():
 	match trash_type:

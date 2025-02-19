@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://d0yyaf3xp7gic"]
+[gd_scene load_steps=44 format=4 uid="uid://d0yyaf3xp7gic"]
 
 [ext_resource type="Script" path="res://Scripts/claw_arm.gd" id="1_2dnwu"]
 [ext_resource type="Texture2D" uid="uid://dvrsqa00g1b77" path="res://Meshes/Claw Arm/claw_arm_image_2.png" id="1_gymtd"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://ciu4mm1xdyacf" path="res://Sounds/SFX/metal_creak.mp3" id="4_ryw8q"]
 [ext_resource type="AudioStream" uid="uid://bviosbsqa38mu" path="res://Sounds/SFX/metal_creak_2.mp3" id="5_wc8ab"]
 [ext_resource type="AudioStream" uid="uid://c14dmuv8nsb5j" path="res://Sounds/SFX/pinch_crush.mp3" id="6_em6o2"]
+[ext_resource type="PackedScene" uid="uid://cix64nx1cvp11" path="res://Scenes/label_3d.tscn" id="10_ns1gp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mlp0x"]
 render_priority = 0
@@ -571,6 +572,12 @@ transform = Transform3D(1, -5.02098e-14, 2.27374e-13, -1.88738e-15, 1, 0, 0, 0, 
 unique_name_in_owner = true
 stream = ExtResource("4_ra0v7")
 bus = &"Machine"
+
+[node name="TypeLabel" parent="Armature/Skeleton/Claw_Clamp" instance=ExtResource("10_ns1gp")]
+unique_name_in_owner = true
+transform = Transform3D(-5.46391e-08, -1.25, 5.46392e-08, 0, -5.46392e-08, -1.25, 1.25, -5.46391e-08, 0, 0.244409, -0.85, -2.40514e-07)
+text = ""
+is_fadeable = false
 
 [node name="Claw_Left" type="BoneAttachment3D" parent="Armature/Skeleton"]
 transform = Transform3D(1, 1.34719e-07, -9.48266e-07, -1.46375e-07, 1, 0.000273734, 9.84051e-07, -0.000273764, 1, -1.38271, -0.000153414, -0.48549)

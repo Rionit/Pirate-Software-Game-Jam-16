@@ -20,6 +20,7 @@ const ACTUATOR_BACKWARD = preload("res://Sounds/SFX/actuator_backward.mp3")
 @onready var ik_target: Marker3D = %IkTarget
 @onready var skeleton: Skeleton3D = %Skeleton
 @onready var tip: Area3D = %Tip
+@onready var type_label: MyLabel3D = %TypeLabel
 
 @export var pinch_sounds: Array[AudioStream]
 
@@ -56,6 +57,7 @@ func claw_pinched():
 	if close_part != null:
 		pinched_part = close_part.pinch(tip)
 		Audio.play(Audio.spawn(tip, Audio.get_random_sound(pinch_sounds), "Outside"), null, -2.0)
+		type_label.text = CarPart.TrashTypes.keys()[pinched_part.type]
 
 func claw_released():
 	pinched = false
@@ -65,6 +67,7 @@ func claw_released():
 		#pinched_part.release(angular_velocity, velocity)
 		pinched_part.release(0.0, velocity.rotated(Vector3.UP, get_parent_node_3d().rotation.y))
 		pinched_part = null
+		type_label.text = ""
 	
 func transition_claw(from, to):
 	# Calculate the current position
