@@ -291,5 +291,4 @@ shape = SubResource("BoxShape3D_rcn77")
 
 [node name="Label3D" parent="." instance=ExtResource("5_ulq6k")]
 transform = Transform3D(-4.06807e-07, 0, -1.00293, 0, 8.34738, 0, 9.30663, 0, -4.38393e-08, -7.77766, 1.65091, 0)
-text = ""
 is_fadeable = true

@@ -6,7 +6,7 @@ class_name MyLabel3D
 	set(value):
 		if label == null: return
 		label.text = value
-@export var is_fadeable : bool = false
+@export var is_fadeable : bool = true
 
 @onready var label: Label = $SubViewport/GUI/Label
 @onready var quad: MeshInstance3D = $Quad
@@ -22,8 +22,12 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if !Engine.is_editor_hint():
-		if is_fadeable:
+		if !Global.is_pinching_part:
+			change_alpha(0.0)
+		elif is_fadeable:
 			fade()
+		else:
+			change_alpha(1.0)
 
 func fade():
 	# Get positions and ignore the y (height) component
@@ -33,4 +37,8 @@ func fade():
 
 	# When horizontal_distance is 0, alpha = 1.0; when it's fade_point or more, alpha = 0.0.
 	alpha = clamp(1.0 - (horizontal_distance / fade_point), 0.0, 1.0)
+	change_alpha(alpha)
+
+func change_alpha(alpha: float):
 	quad.get_surface_override_material(0).albedo_color.a = alpha
+	

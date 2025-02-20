@@ -58,6 +58,7 @@ func claw_pinched():
 		pinched_part = close_part.pinch(tip)
 		Audio.play(Audio.spawn(tip, Audio.get_random_sound(pinch_sounds), "Outside"), null, -2.0)
 		type_label.text = CarPart.TrashTypes.keys()[pinched_part.type]
+		Global.is_pinching_part = true
 
 func claw_released():
 	pinched = false
@@ -68,6 +69,7 @@ func claw_released():
 		pinched_part.release(0.0, velocity.rotated(Vector3.UP, get_parent_node_3d().rotation.y))
 		pinched_part = null
 		type_label.text = ""
+		Global.is_pinching_part = false
 	
 func transition_claw(from, to):
 	# Calculate the current position

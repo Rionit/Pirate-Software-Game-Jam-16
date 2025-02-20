@@ -136,4 +136,4 @@ shape = SubResource("BoxShape3D_u3nal")
 
 [node name="Label3D" parent="." instance=ExtResource("4_s1v6a")]
 transform = Transform3D(-4.23675e-07, 0, -1, 0, 9.05805, 0, 9.69256, 0, -4.37114e-08, -10.3297, 3.40016, 0)
-title = "Engines"
+is_fadeable = true

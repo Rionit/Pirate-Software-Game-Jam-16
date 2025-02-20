@@ -573,12 +573,6 @@ unique_name_in_owner = true
 stream = ExtResource("4_ra0v7")
 bus = &"Machine"
 
-[node name="TypeLabel" parent="Armature/Skeleton/Claw_Clamp" instance=ExtResource("10_ns1gp")]
-unique_name_in_owner = true
-transform = Transform3D(-5.46391e-08, -1.25, 5.46392e-08, 0, -5.46392e-08, -1.25, 1.25, -5.46391e-08, 0, 0.244409, -0.85, -2.40514e-07)
-text = ""
-is_fadeable = false
-
 [node name="Claw_Left" type="BoneAttachment3D" parent="Armature/Skeleton"]
 transform = Transform3D(1, 1.34719e-07, -9.48266e-07, -1.46375e-07, 1, 0.000273734, 9.84051e-07, -0.000273764, 1, -1.38271, -0.000153414, -0.48549)
 bone_name = "Claw_Left"
@@ -632,6 +626,11 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton/Front Shaft/StaticBody3D"]
 transform = Transform3D(1, 1.25068e-14, 0, 4.69008e-15, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_mfq4g")
+
+[node name="TypeLabel" parent="Armature/Skeleton/Front Shaft" instance=ExtResource("10_ns1gp")]
+unique_name_in_owner = true
+transform = Transform3D(-3.99756e-08, -1.25, -5.97175e-08, 0.000341915, -3.57628e-07, -1.25, 1.25, -3.55291e-08, 0.000341982, 1.384, -1.15, 0)
+is_fadeable = false
 
 [node name="Middle Shaft" type="BoneAttachment3D" parent="Armature/Skeleton"]
 transform = Transform3D(1, 8.3947e-07, -1.03857e-06, -8.51297e-07, 1, 7.15256e-07, 1.07468e-06, -6.85453e-07, 1, -8.37158, -0.0168167, 1.09581e-05)
