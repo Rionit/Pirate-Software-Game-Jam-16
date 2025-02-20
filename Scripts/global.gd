@@ -5,3 +5,5 @@ var tip: Area3D
 
 # if the claw is holding a pinched car part
 var is_pinching_part: bool
+
+enum TrashTypes {METAL, GLASS, INTERIOR, ENGINE, BATTERY, AXLE, TIRE}

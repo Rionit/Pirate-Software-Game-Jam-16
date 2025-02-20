@@ -12,33 +12,33 @@ const AXLE_CRASH = preload("res://Sounds/SFX/axle_crash.mp3")
 const METAL_PIPE = preload("res://Sounds/SFX/metal_pipe.mp3")
 const METAL_CRASH = preload("res://Sounds/SFX/metal_crash.mp3")
 
-enum TrashTypes {METAL, GLASS, INTERIOR, ENGINE, BATTERY, AXLE}
-
 @export var area: Area3D
-@export var trash_type: TrashTypes
+@export var trash_type: Global.TrashTypes
 
 @onready var label: MyLabel3D = $Label3D
 
 func _ready() -> void:
 	area.connect("body_entered", trash_entered)
-	label.text = CarPart.TrashTypes.keys()[trash_type]
+	label.text = Global.TrashTypes.keys()[trash_type]
 
 func play_sound():
 	match trash_type:
-		TrashTypes.ENGINE:
+		Global.TrashTypes.ENGINE:
 			Audio.play(Audio.spawn(self, BIG_CRASH_W_CAT, "Outside"))
-		TrashTypes.GLASS:
+		Global.TrashTypes.GLASS:
 			Audio.play(Audio.spawn(self, GLASS_CRASH, "Outside"))
-		TrashTypes.INTERIOR:
+		Global.TrashTypes.INTERIOR:
 			Audio.play(Audio.spawn(self, SOFT_CRASH, "Outside"))
-		TrashTypes.BATTERY:
+		Global.TrashTypes.TIRE:
+			Audio.play(Audio.spawn(self, SOFT_CRASH, "Outside"))
+		Global.TrashTypes.BATTERY:
 			Audio.play(Audio.spawn(self, BATTERY_CRASH, "Outside"))
-		TrashTypes.AXLE:
+		Global.TrashTypes.AXLE:
 			if randf() > 0.9:
 				Audio.play(Audio.spawn(self, METAL_PIPE, "Outside"))
 			else:
 				Audio.play(Audio.spawn(self, AXLE_CRASH, "Outside"))
-		TrashTypes.METAL:
+		Global.TrashTypes.METAL:
 			Audio.play(Audio.spawn(self, METAL_CRASH, "Outside"))
 			
 

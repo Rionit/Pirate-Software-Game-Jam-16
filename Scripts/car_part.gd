@@ -13,9 +13,7 @@ signal pinched
 @onready var car: Car = $"../.."
 
 @export var mesh: MeshInstance3D
-@export var type: TrashTypes
-
-enum TrashTypes {METAL, GLASS, INTERIOR, ENGINE, BATTERY, AXLE}
+@export var type: Global.TrashTypes
 
 var shader_material := ShaderMaterial.new()
 var duplicated_collider: CollisionShape3D

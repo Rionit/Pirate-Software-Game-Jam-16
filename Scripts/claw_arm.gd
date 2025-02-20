@@ -57,7 +57,7 @@ func claw_pinched():
 	if close_part != null:
 		pinched_part = close_part.pinch(tip)
 		Audio.play(Audio.spawn(tip, Audio.get_random_sound(pinch_sounds), "Outside"), null, -2.0)
-		type_label.text = CarPart.TrashTypes.keys()[pinched_part.type]
+		type_label.text = Global.TrashTypes.keys()[pinched_part.type]
 		Global.is_pinching_part = true
 
 func claw_released():

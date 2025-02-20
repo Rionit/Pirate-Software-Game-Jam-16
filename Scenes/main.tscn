@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dq8cp8tbiusly"]
+[gd_scene load_steps=24 format=3 uid="uid://dq8cp8tbiusly"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_4p8tu"]
 [ext_resource type="PackedScene" uid="uid://dkxt8pog23mmg" path="res://Scenes/player.tscn" id="1_akknk"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dmv78ko1rhy6o" path="res://Scenes/metal_dumpster.tscn" id="9_k5m0s"]
 [ext_resource type="PackedScene" uid="uid://d3sd81nox8cxa" path="res://Scenes/interior_dumpster.tscn" id="10_veq5q"]
 [ext_resource type="PackedScene" uid="uid://kcwdq4cpchhf" path="res://Scenes/battery_dumpster.tscn" id="11_4kbek"]
+[ext_resource type="PackedScene" uid="uid://cyejmt0mt6eqb" path="res://Scenes/tire_dumpster.tscn" id="17_8cwef"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_vh7v0"]
 stream_count = 3
@@ -58,7 +59,7 @@ height = 0.3
 radius = 22.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s56cn"]
-size = Vector3(100, 15, 100)
+size = Vector3(200, 15, 200)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_4p8tu")
@@ -139,47 +140,51 @@ collision_mask = 3
 script = ExtResource("5_ed6ke")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dome/FallingObjectCatcher"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
+transform = Transform3D(1, 0, -1.7053e-13, 0, 0.999993, 0, 1.7053e-13, 0, 1, 0, -20, 0)
 shape = SubResource("BoxShape3D_s56cn")
 
-[node name="GlassDumpster" parent="." instance=ExtResource("5_0wp7l")]
-transform = Transform3D(-0.125121, 0, -0.103003, 0, 0.162065, 0, 0.103003, 0, -0.125121, -7.45363, 0.00539923, 5.20757)
+[node name="GlassDumpster" parent="Dome" instance=ExtResource("5_0wp7l")]
+transform = Transform3D(0.133214, 0, -0.799298, 0, 0.810325, 0, 0.799298, 0, 0.133214, 3.9154, 0.0269962, 45.2941)
 collision_layer = 7
 collision_mask = 7
 
-[node name="engines_dumpster" parent="." instance=ExtResource("7_r4yj5")]
-transform = Transform3D(-0.035058, 0, -0.185842, 0, 0.189119, 0, 0.185842, 0, -0.035058, -2.80908, -4.76837e-07, 7.30062)
+[node name="engines_dumpster" parent="Dome" instance=ExtResource("7_r4yj5")]
+transform = Transform3D(0.717076, 0, -0.616411, 0, 0.945595, 0, 0.616411, 0, 0.717076, 24.59, -2.38418e-06, 30.4152)
 collision_layer = 7
 collision_mask = 7
 
-[node name="axles_dumpster" parent="." instance=ExtResource("8_5ib1y")]
-transform = Transform3D(-0.0146431, 0, 0.236767, 0, 0.237219, 0, -0.236767, 0, -0.0146431, -0.348803, 0, -5.83722)
+[node name="axles_dumpster" parent="Dome" instance=ExtResource("8_5ib1y")]
+transform = Transform3D(-1.06184, 0, 0.528511, 0, 1.18609, 0, -0.528511, 0, -1.06184, -26.1479, 0, -13.0827)
 collision_layer = 7
 collision_mask = 7
 
-[node name="metal_dumpster" parent="." instance=ExtResource("9_k5m0s")]
-transform = Transform3D(0.173366, 1.46285e-05, -0.246755, 4.45559e-05, 0.301568, 4.91905e-05, 0.246755, -6.47375e-05, 0.173366, 3.95624, 0.000136696, 5.49146)
+[node name="metal_dumpster" parent="Dome" instance=ExtResource("9_k5m0s")]
+transform = Transform3D(1.5019, -0.000243751, 0.13381, 0.00022278, 1.50784, 0.000245953, -0.13381, -0.000225187, 1.5019, 33.6693, 0.00068348, -3.4024)
 collision_layer = 7
 collision_mask = 7
 
-[node name="interior_dumpster" parent="." instance=ExtResource("10_veq5q")]
-transform = Transform3D(0.253477, 0, -0.0878045, 0, 0.268253, 0, 0.0878045, 0, 0.253477, -8.24086, -4.76837e-07, -1.70128)
+[node name="interior_dumpster" parent="Dome" instance=ExtResource("10_veq5q")]
+transform = Transform3D(1.0139, 0, 0.878078, 0, 1.34126, 0, -0.878078, 0, 1.0139, -27.9689, -2.38418e-06, 31.4308)
 collision_layer = 7
 collision_mask = 7
 trash_type = 2
 
-[node name="battery_dumpster" parent="." instance=ExtResource("11_4kbek")]
-transform = Transform3D(-0.0577127, 0, 0.17411, 0, 0.183426, 0, -0.17411, 0, -0.0577127, -3.45181, 0, -4.58393)
+[node name="battery_dumpster" parent="Dome" instance=ExtResource("11_4kbek")]
+transform = Transform3D(-0.898201, 0, 0.185371, 0, 0.91713, 0, -0.185371, 0, -0.898201, -28.4785, 0, 3.48697)
 collision_layer = 7
 collision_mask = 7
 trash_type = 4
 
+[node name="tire_dumpster" parent="Dome" instance=ExtResource("17_8cwef")]
+transform = Transform3D(-1.32277, 0, -0.0893199, 0, 1.32578, 0, 0.0893199, 0, -1.32277, -49.9635, 0, -0.722425)
+
 [connection signal="timeout" from="SecondTimer" to="." method="_on_second_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Dome/FallingObjectCatcher" to="Dome/FallingObjectCatcher" method="_on_body_entered"]
-[connection signal="trash_collected" from="GlassDumpster" to="." method="trash_collected"]
-[connection signal="trash_collected" from="engines_dumpster" to="." method="trash_collected"]
-[connection signal="trash_collected" from="axles_dumpster" to="." method="trash_collected"]
-[connection signal="trash_collected" from="metal_dumpster" to="." method="trash_collected"]
-[connection signal="trash_collected" from="interior_dumpster" to="." method="trash_collected"]
-[connection signal="trash_collected" from="battery_dumpster" to="." method="trash_collected"]
+[connection signal="trash_collected" from="Dome/GlassDumpster" to="." method="trash_collected"]
+[connection signal="trash_collected" from="Dome/engines_dumpster" to="." method="trash_collected"]
+[connection signal="trash_collected" from="Dome/axles_dumpster" to="." method="trash_collected"]
+[connection signal="trash_collected" from="Dome/metal_dumpster" to="." method="trash_collected"]
+[connection signal="trash_collected" from="Dome/interior_dumpster" to="." method="trash_collected"]
+[connection signal="trash_collected" from="Dome/battery_dumpster" to="." method="trash_collected"]
+[connection signal="trash_collected" from="Dome/tire_dumpster" to="." method="trash_collected"]
