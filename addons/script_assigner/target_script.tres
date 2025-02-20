@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dwctlwymqy746"]
+
+[ext_resource type="Script" path="res://addons/script_assigner/target_script.gd" id="1_e006i"]
+[ext_resource type="Script" path="res://Scripts/car_part.gd" id="2_jslcq"]
+
+[resource]
+script = ExtResource("1_e006i")
+target_script = ExtResource("2_jslcq")

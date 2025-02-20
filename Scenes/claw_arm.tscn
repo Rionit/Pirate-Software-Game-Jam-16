@@ -630,7 +630,6 @@ shape = SubResource("ConvexPolygonShape3D_mfq4g")
 [node name="TypeLabel" parent="Armature/Skeleton/Front Shaft" instance=ExtResource("10_ns1gp")]
 unique_name_in_owner = true
 transform = Transform3D(-3.99756e-08, -1.25, -5.97175e-08, 0.000341915, -3.57628e-07, -1.25, 1.25, -3.55291e-08, 0.000341982, 1.384, -1.15, 0)
-is_fadeable = false
 
 [node name="Middle Shaft" type="BoneAttachment3D" parent="Armature/Skeleton"]
 transform = Transform3D(1, 8.3947e-07, -1.03857e-06, -8.51297e-07, 1, 7.15256e-07, 1.07468e-06, -6.85453e-07, 1, -8.37158, -0.0168167, 1.09581e-05)

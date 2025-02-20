@@ -10,7 +10,7 @@ signal collider_duplicated(_collider: CollisionShape3D)
 signal pinched
 
 @onready var collider: CollisionShape3D = $CollisionShape3D
-@onready var car: Car = $"../.."
+@onready var car: Car = $".."
 
 @export var mesh: MeshInstance3D
 @export var type: Global.TrashTypes
@@ -73,7 +73,7 @@ func pinch(tip: Node3D):
 	if car != null and name == "Body" and car.parts_pinched < car.colliders.size() - 1:
 		last_parent = car.get_parent_node_3d()
 		car.reparent(tip)
-		car.car_body.freeze = true
+		car.freeze = true
 		damage(0.2)
 	else:
 		if duplicated_collider != null:
@@ -90,9 +90,9 @@ func pinch(tip: Node3D):
 func release(angular_velocity: float, velocity: Vector3):
 	if car != null and name == "Body" and car.parts_pinched <= car.colliders.size() - 1:
 		car.reparent(last_parent)
-		car.car_body.freeze = false
-		car.car_body.angular_velocity.y = -angular_velocity
-		car.car_body.linear_velocity = velocity
+		car.freeze = false
+		car.angular_velocity.y = -angular_velocity
+		car.linear_velocity = velocity
 	else:
 		self.reparent(get_tree().get_root())
 		self.freeze = false

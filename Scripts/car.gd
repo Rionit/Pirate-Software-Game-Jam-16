@@ -1,19 +1,17 @@
-extends Node3D
+extends RigidBody3D
 class_name Car
 
 signal car_destroyed
-
-@onready var car_body: RigidBody3D = $CarBody
 
 var colliders: Array
 var parts_pinched : int = 0
 
 func _ready() -> void:
 	for col in colliders:
-		car_body.add_child(col)
-	car_body.contact_monitor = true
-	car_body.max_contacts_reported = 1
-	car_body.body_entered.connect(hit)
+		add_child(col)
+	contact_monitor = true
+	max_contacts_reported = 1
+	body_entered.connect(hit)
 
 func hit(_body: Node):
 	Audio.play(Audio.spawn(self, Audio.get_random_sound(Audio.hit_sounds), "Outside"))

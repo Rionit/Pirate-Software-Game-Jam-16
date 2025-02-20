@@ -28,6 +28,10 @@ window/size/window_height_override=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/car_maker/plugin.cfg", "res://addons/godot-plugin-refresher/plugin.cfg")
+
 [input]
 
 front={

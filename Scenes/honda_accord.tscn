@@ -946,327 +946,324 @@ shadow_mesh = SubResource("ArrayMesh_8j0oq")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a05xi"]
 points = PackedVector3Array(-0.000109434, -0.303429, -0.553915, -0.391689, -0.303429, -0.391688, -0.000109434, 0.303428, -0.553915, 0.391578, -0.303429, -0.391688, -0.391689, 0.303428, -0.391688, -0.553916, -0.303429, -0.00010848, 0.391578, 0.303428, -0.391688, 0.553914, -0.303429, -0.00010848, -0.553916, 0.303428, -0.00010848, -0.391689, -0.303429, 0.391579, 0.553914, 0.303428, -0.00010848, 0.391578, -0.303429, 0.391579, -0.391689, 0.303428, 0.391579, -0.000109434, -0.303429, 0.553915, 0.391578, 0.303428, 0.391579, -0.000109434, 0.303428, 0.553915)
 
-[node name="honda_accord" type="Node3D"]
+[node name="honda_accord" type="RigidBody3D"]
 script = ExtResource("1_lkd2i")
 
-[node name="CarBody" type="RigidBody3D" parent="."]
-mass = 50.0
-
-[node name="CarPart" parent="CarBody" node_paths=PackedStringArray("mesh") instance=ExtResource("3_nr02l")]
+[node name="WindowFront" parent="." node_paths=PackedStringArray("mesh") instance=ExtResource("3_nr02l")]
 mesh = NodePath("Window_Front")
 type = 1
 
-[node name="Window_Front" type="MeshInstance3D" parent="CarBody/CarPart"]
+[node name="Window_Front" type="MeshInstance3D" parent="WindowFront"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_1pyx1")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/CarPart"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WindowFront"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 shape = SubResource("ConvexPolygonShape3D_78ro4")
 
-[node name="DoorR" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="DoorR" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Door_R")
 
-[node name="Door_R" type="MeshInstance3D" parent="CarBody/DoorR"]
+[node name="Door_R" type="MeshInstance3D" parent="DoorR"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_h4hnf")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/DoorR"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorR"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 shape = SubResource("ConvexPolygonShape3D_iqpqx")
 
-[node name="DoorL" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="DoorL" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Door_L")
 
-[node name="Door_L" type="MeshInstance3D" parent="CarBody/DoorL"]
+[node name="Door_L" type="MeshInstance3D" parent="DoorL"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_d2ms4")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/DoorL"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorL"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 shape = SubResource("ConvexPolygonShape3D_pt763")
 
-[node name="Trunk" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="Trunk" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Trunk")
 
-[node name="Trunk" type="MeshInstance3D" parent="CarBody/Trunk"]
+[node name="Trunk" type="MeshInstance3D" parent="Trunk"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_885mt")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/Trunk"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trunk"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 shape = SubResource("ConvexPolygonShape3D_uo7vr")
 
-[node name="Seat1" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="Seat1" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Seat")
 type = 2
 
-[node name="Seat" type="MeshInstance3D" parent="CarBody/Seat1"]
+[node name="Seat" type="MeshInstance3D" parent="Seat1"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, 0.425865, 1.41985, -0.667506)
 mesh = SubResource("ArrayMesh_ut5wx")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/Seat1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Seat1"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, 0.425865, 1.41985, -0.667506)
 shape = SubResource("ConvexPolygonShape3D_nk3jg")
 
-[node name="Seat2" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="Seat2" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Seat_001")
 type = 2
 
-[node name="Seat_001" type="MeshInstance3D" parent="CarBody/Seat2"]
+[node name="Seat_001" type="MeshInstance3D" parent="Seat2"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, 0.425865, 1.41985, 0.67772)
 mesh = SubResource("ArrayMesh_jq5gt")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/Seat2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Seat2"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, 0.425865, 1.41985, 0.67772)
 shape = SubResource("ConvexPolygonShape3D_ux86i")
 
-[node name="Seat3" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="Seat3" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Seat_002")
 type = 2
 
-[node name="Seat_002" type="MeshInstance3D" parent="CarBody/Seat3"]
+[node name="Seat_002" type="MeshInstance3D" parent="Seat3"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, -1.1416, 1.41985, -0.667506)
 mesh = SubResource("ArrayMesh_jj0tn")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/Seat3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Seat3"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, -1.1416, 1.41985, -0.667506)
 shape = SubResource("ConvexPolygonShape3D_m5504")
 
-[node name="Seat4" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="Seat4" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Seat_003")
 type = 2
 
-[node name="Seat_003" type="MeshInstance3D" parent="CarBody/Seat4"]
+[node name="Seat_003" type="MeshInstance3D" parent="Seat4"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, -1.1416, 1.41985, 0.67772)
 mesh = SubResource("ArrayMesh_2s6ug")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/Seat4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Seat4"]
 transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, -1.1416, 1.41985, 0.67772)
 shape = SubResource("ConvexPolygonShape3D_8tjdj")
 
-[node name="Palubka" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="Palubka" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Palubka")
 type = 2
 
-[node name="Palubka" type="MeshInstance3D" parent="CarBody/Palubka"]
+[node name="Palubka" type="MeshInstance3D" parent="Palubka"]
 transform = Transform3D(0.98, 0, 0, 0, -4.28372e-08, 0.98, 0, -0.98, -4.28372e-08, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_70uur")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/Palubka"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Palubka"]
 transform = Transform3D(1, 0, 0, 0, -3.56794e-07, 1, 0, -0.997669, -3.57628e-07, 0, 1.4248, 0)
 shape = SubResource("ConvexPolygonShape3D_506q3")
 
-[node name="AxleBack" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="AxleBack" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Axle Back")
 type = 5
 
-[node name="Axle Back" type="MeshInstance3D" parent="CarBody/AxleBack"]
+[node name="Axle Back" type="MeshInstance3D" parent="AxleBack"]
 transform = Transform3D(0.0912765, 0, 0, 0, 0.0912765, 0, 0, 0, 1.19048, -2.1687, 0.368611, 0.00660503)
 mesh = SubResource("ArrayMesh_fcs1a")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/AxleBack"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AxleBack"]
 transform = Transform3D(0.0912765, 0, 0, 0, 0.0912765, 0, 0, 0, 1.19048, -2.1687, 0.368611, 0.00660503)
 shape = SubResource("ConvexPolygonShape3D_4stya")
 
-[node name="AxleFront" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="AxleFront" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Axle Front")
 type = 5
 
-[node name="Axle Front" type="MeshInstance3D" parent="CarBody/AxleFront"]
+[node name="Axle Front" type="MeshInstance3D" parent="AxleFront"]
 transform = Transform3D(0.0912765, 0, 0, 0, 0.0912765, 0, 0, 0, 1.19048, 2.71416, 0.403424, 0.00660503)
 mesh = SubResource("ArrayMesh_c3e4q")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/AxleFront"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AxleFront"]
 transform = Transform3D(0.0912765, 0, 0, 0, 0.0912765, 0, 0, 0, 1.19048, 2.71416, 0.403424, 0.00660503)
 shape = SubResource("ConvexPolygonShape3D_431dh")
 
-[node name="Body" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="Body" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Body")
 
-[node name="Body" type="MeshInstance3D" parent="CarBody/Body"]
+[node name="Body" type="MeshInstance3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_0j6f7")
 skeleton = NodePath("")
 "blend_shapes/Cube Squash" = 0.0
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/Body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 shape = SubResource("ConcavePolygonShape3D_ujpyn")
 
-[node name="Battery" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="Battery" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Battery")
 type = 4
 
-[node name="Battery" type="MeshInstance3D" parent="CarBody/Battery"]
+[node name="Battery" type="MeshInstance3D" parent="Battery"]
 transform = Transform3D(0.683386, 0, 0, 0, 0.452484, 0, 0, 0, 1, 2.85694, 0.927623, -0.0764085)
 mesh = SubResource("ArrayMesh_17ekk")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/Battery"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Battery"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30996, 1.12092, 0.955405)
 shape = SubResource("BoxShape3D_acr2a")
 
-[node name="Hood" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="Hood" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Hood")
 
-[node name="Hood" type="MeshInstance3D" parent="CarBody/Hood"]
+[node name="Hood" type="MeshInstance3D" parent="Hood"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_qfffp")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/Hood"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hood"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 shape = SubResource("ConvexPolygonShape3D_mxn18")
 
-[node name="Motor" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="Motor" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Motor")
 type = 3
 
-[node name="Motor" type="MeshInstance3D" parent="CarBody/Motor"]
+[node name="Motor" type="MeshInstance3D" parent="Motor"]
 transform = Transform3D(0.683386, 0, 0, 0, 0.452484, 0, 0, 0, 1, 2.91875, 0.92433, 0)
 mesh = SubResource("ArrayMesh_eifhr")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/Motor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Motor"]
 transform = Transform3D(0.683386, 0, 0, 0, 0.452484, 0, 0, 0, 1, 2.91875, 0.92433, 0)
 shape = SubResource("ConvexPolygonShape3D_3ig6o")
 
-[node name="Bumper" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="Bumper" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Bumper")
 
-[node name="Bumper" type="MeshInstance3D" parent="CarBody/Bumper"]
+[node name="Bumper" type="MeshInstance3D" parent="Bumper"]
 transform = Transform3D(1.00826, 0, 0, 0, -3.60581e-07, 1.00826, 0, -1.00826, -3.60581e-07, -0.0319459, 1.4248, 0)
 mesh = SubResource("ArrayMesh_3xjx7")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/Bumper"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bumper"]
 transform = Transform3D(1.00826, 0, 0, 0, -3.60581e-07, 1.00826, 0, -1.00826, -3.60581e-07, -0.0319459, 1.4248, 0)
 shape = SubResource("ConvexPolygonShape3D_8gqv8")
 
-[node name="Roof" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="Roof" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Roof")
 
-[node name="Roof" type="MeshInstance3D" parent="CarBody/Roof"]
+[node name="Roof" type="MeshInstance3D" parent="Roof"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_nttle")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/Roof"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 shape = SubResource("ConvexPolygonShape3D_1stde")
 
-[node name="WindowBack" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="WindowBack" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Window_Back")
 type = 1
 
-[node name="Window_Back" type="MeshInstance3D" parent="CarBody/WindowBack"]
+[node name="Window_Back" type="MeshInstance3D" parent="WindowBack"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_x7d43")
 skeleton = NodePath("")
 blend_shapes/Damage = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/WindowBack"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WindowBack"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 shape = SubResource("ConvexPolygonShape3D_1aspt")
 
-[node name="WheelFL" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="WheelFL" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Wheel_FL")
 type = 6
 
-[node name="Wheel_FL" type="MeshInstance3D" parent="CarBody/WheelFL"]
+[node name="Wheel_FL" type="MeshInstance3D" parent="WheelFL"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 2.71416, 0.52872, -1.12525)
 mesh = SubResource("ArrayMesh_wpkey")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/WheelFL"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WheelFL"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 2.71416, 0.52872, -1.12525)
 shape = SubResource("ConvexPolygonShape3D_hflje")
 
-[node name="WheelBL" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="WheelBL" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Wheel_BL")
 type = 6
 
-[node name="Wheel_BL" type="MeshInstance3D" parent="CarBody/WheelBL"]
+[node name="Wheel_BL" type="MeshInstance3D" parent="WheelBL"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, -2.1687, 0.52872, -1.12525)
 mesh = SubResource("ArrayMesh_4ur22")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/WheelBL"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WheelBL"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, -2.1687, 0.52872, -1.12525)
 shape = SubResource("ConvexPolygonShape3D_ido7d")
 
-[node name="WheelBR" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="WheelBR" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Wheel_BR")
 type = 6
 
-[node name="Wheel_BR" type="MeshInstance3D" parent="CarBody/WheelBR"]
+[node name="Wheel_BR" type="MeshInstance3D" parent="WheelBR"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, -2.1687, 0.528721, 1.13846)
 mesh = SubResource("ArrayMesh_tkd2t")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/WheelBR"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WheelBR"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, -2.1687, 0.528721, 1.13846)
 shape = SubResource("ConvexPolygonShape3D_5nh73")
 
-[node name="WheelFR" type="RigidBody3D" parent="CarBody" node_paths=PackedStringArray("mesh")]
+[node name="WheelFR" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
 script = ExtResource("9_uakqk")
 mesh = NodePath("Wheel_FR")
 type = 6
 
-[node name="Wheel_FR" type="MeshInstance3D" parent="CarBody/WheelFR"]
+[node name="Wheel_FR" type="MeshInstance3D" parent="WheelFR"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 2.71416, 0.528721, 1.13846)
 mesh = SubResource("ArrayMesh_olba1")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBody/WheelFR"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WheelFR"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 2.71416, 0.528721, 1.13846)
 shape = SubResource("ConvexPolygonShape3D_a05xi")
