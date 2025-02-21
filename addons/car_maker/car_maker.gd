@@ -1,8 +1,10 @@
 @tool
 extends EditorPlugin
 
-var car_part_script: Script = preload("res://Scripts/car_part.gd")
-var car_script: Script = preload("res://Scripts/car.gd")
+const CAR_PART_SCRIPT: Script = preload("res://Scripts/car_part.gd")
+const CAR_SCRIPT: Script = preload("res://Scripts/car.gd")
+const PSX = preload("res://Shaders/psx.gdshader")
+
 var assign_button: Button
 
 func _enter_tree():
@@ -45,6 +47,16 @@ func assign_mesh(car_part: CarPart):
 		if grand_child is MeshInstance3D:
 			car_part.mesh = grand_child
 
+func change_material(car_part: CarPart):
+	var current_mat = car_part.mesh.get_active_material(0)
+	if current_mat is StandardMaterial3D:
+		var psx_shader_mat = ShaderMaterial.new()
+		psx_shader_mat.shader = PSX
+		psx_shader_mat.set_shader_parameter("albedo", current_mat.albedo_texture)
+		car_part.mesh.mesh.surface_set_material(0, psx_shader_mat)
+	else:
+		print(car_part.name + " does not have a StandardMaterial3D! Maybe it is already converted?")
+	
 func _on_assign_button_pressed():
 	var selection = get_editor_interface().get_selection().get_selected_nodes()
 	if selection.is_empty():
@@ -52,16 +64,16 @@ func _on_assign_button_pressed():
 		return
 
 	var parent_node = selection[0]
-	parent_node.set_script(car_script)
+	parent_node.set_script(CAR_SCRIPT)
 	print("Car script assigned to ", parent_node.name)
 	
 	# Load or reference the script you want to assign.
 	for child in parent_node.get_children():
 		if child is RigidBody3D:
-			child.set_script(car_part_script)
+			child.set_script(CAR_PART_SCRIPT)
 			child.name = child.name.trim_suffix("-rigid")
 			assign_trash_type(child)
 			assign_mesh(child)
-			#change_material(child) # TODO: create this function
+			change_material(child)
 			
 	print("CarPart script assigned to all children of ", parent_node.name)
