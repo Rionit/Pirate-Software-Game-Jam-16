@@ -10,6 +10,7 @@ extends Node3D
 const GAME_OVER_SCREEN = preload("res://Scenes/game_over_screen.tscn")
 const TIME_LABEL = preload("res://Scenes/time_label.tscn")
 const HONDA_ACCORD = preload("res://Scenes/honda_accord.tscn")
+const SUZUKI_GRAND_VITARA = preload("res://Scenes/suzuki_grand_vitara.tscn")
 const ERROR = preload("res://Sounds/SFX/error.mp3")
 const SUCCESS = preload("res://Sounds/SFX/success.wav")
 
@@ -20,7 +21,7 @@ var total_time : int = 0
 
 func _ready() -> void:
 	randomize();
-	spawn_car(HONDA_ACCORD)
+	spawn_car(SUZUKI_GRAND_VITARA)
 	sec_timer.start()
 	timer.wait_time = start_time_amount
 	timer.start()

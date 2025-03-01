@@ -39,7 +39,6 @@ func _ready() -> void:
 	shader_material.resource_local_to_scene = true
 	
 	# NAMING NODES
-	name = mesh.name
 	collider.name = name + "_Collider"
 	
 	# SIGNALS
@@ -70,6 +69,8 @@ func highlight(state := true):
 		material.set_shader_parameter("is_shining", false)
 	
 func pinch(tip: Node3D):
+	print(name)
+	
 	if car != null and name == "Body" and car.parts_pinched < car.colliders.size() - 1:
 		last_parent = car.get_parent_node_3d()
 		car.reparent(tip)
