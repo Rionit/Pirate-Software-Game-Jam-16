@@ -95,7 +95,7 @@ func release(angular_velocity: float, velocity: Vector3):
 		car.angular_velocity.y = -angular_velocity
 		car.linear_velocity = velocity
 	else:
-		self.reparent(get_tree().get_root())
+		self.reparent(Global.level_root)
 		self.freeze = false
 		self.angular_velocity.y = -angular_velocity
 		self.linear_velocity = velocity

@@ -21,6 +21,7 @@ var total_time : int = 0
 
 func _ready() -> void:
 	randomize();
+	Global.level_root = self
 	sec_timer.start()
 	spawn_car(vehicles.pick_random())
 	timer.wait_time = start_time_amount
