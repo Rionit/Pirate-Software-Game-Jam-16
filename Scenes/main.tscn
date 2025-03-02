@@ -1,11 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://dq8cp8tbiusly"]
+[gd_scene load_steps=26 format=3 uid="uid://dq8cp8tbiusly"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_4p8tu"]
 [ext_resource type="PackedScene" uid="uid://dkxt8pog23mmg" path="res://Scenes/player.tscn" id="1_akknk"]
 [ext_resource type="AudioStream" uid="uid://bx344mhmlobc1" path="res://Sounds/Music/drum_loop.mp3" id="2_1jcvf"]
+[ext_resource type="PackedScene" uid="uid://c0opyhoefwu3g" path="res://Scenes/vehicles/honda_accord.tscn" id="2_c8exl"]
 [ext_resource type="Theme" uid="uid://bxnae1arshtlw" path="res://Themes/ui.tres" id="2_c70xg"]
 [ext_resource type="PackedScene" uid="uid://c6kt5lhy3tera" path="res://Scenes/audio.tscn" id="2_hlwq7"]
 [ext_resource type="Texture2D" uid="uid://dkbghts361edn" path="res://Images/panorama.jpg" id="3_bmd01"]
+[ext_resource type="PackedScene" uid="uid://dy0p1f3p4vmb" path="res://Scenes/vehicles/suzuki_grand_vitara.tscn" id="3_gjpnn"]
 [ext_resource type="AudioStream" uid="uid://ddr7xsq5nae3o" path="res://Sounds/Music/analog_bass.mp3" id="3_vhupr"]
 [ext_resource type="PackedScene" uid="uid://dj21v7c4awumw" path="res://Scenes/dome.tscn" id="4_cv1b4"]
 [ext_resource type="AudioStream" uid="uid://cbkp0a11y1i0" path="res://Sounds/Music/flute_loop.mp3" id="4_dakx6"]
@@ -63,6 +65,7 @@ size = Vector3(200, 15, 200)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_4p8tu")
+vehicles = Array[PackedScene]([ExtResource("2_c8exl"), ExtResource("3_gjpnn")])
 
 [node name="SecondTimer" type="Timer" parent="."]
 wait_time = 0.1

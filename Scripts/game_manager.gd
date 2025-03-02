@@ -7,13 +7,13 @@ extends Node3D
 @onready var sec_timer: Timer = $SecondTimer
 @onready var ui: Control = $UI
 
+const HONDA_ACCORD = preload("res://Scenes/vehicles/honda_accord.tscn") # for debug
 const GAME_OVER_SCREEN = preload("res://Scenes/game_over_screen.tscn")
 const TIME_LABEL = preload("res://Scenes/time_label.tscn")
-const HONDA_ACCORD = preload("res://Scenes/honda_accord.tscn")
-const SUZUKI_GRAND_VITARA = preload("res://Scenes/suzuki_grand_vitara.tscn")
 const ERROR = preload("res://Sounds/SFX/error.mp3")
 const SUCCESS = preload("res://Sounds/SFX/success.wav")
 
+@export var vehicles : Array[PackedScene]
 @export var start_time_amount : int = 100
 @export var successful_sort : int = 20
 @export var bad_sort : int = -20
@@ -21,8 +21,8 @@ var total_time : int = 0
 
 func _ready() -> void:
 	randomize();
-	spawn_car(SUZUKI_GRAND_VITARA)
 	sec_timer.start()
+	spawn_car(vehicles.pick_random())
 	timer.wait_time = start_time_amount
 	timer.start()
 
@@ -32,6 +32,7 @@ func _process(_delta: float) -> void:
 func update_timer(time_left: float):
 	time_left = max(time_left, 0.01) 
 
+	# this doesn't work when I change the values at runtime, it resets the effect
 	## Calculate frequency: Increase as time approaches zero
 	#var base_freq = 2.0  # Default frequency
 	#var max_freq = 10.0  # Maximum frequency
@@ -42,10 +43,10 @@ func update_timer(time_left: float):
 	countdown.text = formatted_text
 
 func trash_collected(result: bool):
-	var instance = TIME_LABEL.instantiate()
+	var time_update_label = TIME_LABEL.instantiate()
 	var amount = successful_sort if result else bad_sort
-	instance.amount = amount
-	ui.add_child(instance)
+	time_update_label.amount = amount
+	ui.add_child(time_update_label)
 	var current = timer.time_left
 	timer.stop()
 	timer.wait_time = max(current + amount, 1)
@@ -57,7 +58,7 @@ func trash_collected(result: bool):
 		Audio.play(Audio.spawn(self, ERROR, "SFX"))
 		
 func car_destroyed():
-	spawn_car()
+	spawn_car(vehicles.pick_random())
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("restart"):

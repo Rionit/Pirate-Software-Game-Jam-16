@@ -1,20 +1,20 @@
 [gd_scene load_steps=82 format=4 uid="uid://c0opyhoefwu3g"]
 
-[ext_resource type="Script" path="res://Scripts/car.gd" id="1_lkd2i"]
-[ext_resource type="Texture2D" uid="uid://dxt3bgxrbwjbn" path="res://Meshes/Honda/honda_accord_Image_0.png" id="1_m4lpq"]
-[ext_resource type="Texture2D" uid="uid://ciy8a1p3fd6dv" path="res://Meshes/Honda/honda_accord_Image_0_1.jpg" id="2_8j7ix"]
-[ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="3_kwhb1"]
-[ext_resource type="PackedScene" uid="uid://cci3ne7yjx11w" path="res://Scenes/car_part.tscn" id="3_nr02l"]
-[ext_resource type="Texture2D" uid="uid://b8v07ykp7r1r4" path="res://Meshes/Honda/honda_accord_stock-photo-top-view-of-used-engine-and-auto-parts-bad-car-maintenance-concept-1797837877.jpg" id="3_pb3jf"]
-[ext_resource type="Texture2D" uid="uid://tja1p1ggwe0e" path="res://Meshes/Honda/honda_accord_usedcarbatteriesyoucanrecycleprofitably_Jupiterimages_PHOTOSdotcom.jpg" id="4_yq5bl"]
-[ext_resource type="Texture2D" uid="uid://c7upgn7f7my6x" path="res://Meshes/Honda/honda_accord_image_1.png" id="5_vnvm5"]
-[ext_resource type="Texture2D" uid="uid://bhg5xwsw36jx5" path="res://Meshes/Honda/honda_accord_honda seat.jpg" id="6_l43qf"]
-[ext_resource type="Script" path="res://Scripts/car_part.gd" id="9_uakqk"]
+[ext_resource type="Script" path="res://Scripts/car.gd" id="1_og8ll"]
+[ext_resource type="PackedScene" uid="uid://cci3ne7yjx11w" path="res://Scenes/car_part.tscn" id="2_7k701"]
+[ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="3_fqdli"]
+[ext_resource type="Texture2D" uid="uid://dxt3bgxrbwjbn" path="res://Meshes/Honda/honda_accord_Image_0.png" id="4_t8wmk"]
+[ext_resource type="Script" path="res://Scripts/car_part.gd" id="5_unxre"]
+[ext_resource type="Texture2D" uid="uid://bhg5xwsw36jx5" path="res://Meshes/Honda/honda_accord_honda seat.jpg" id="6_21nrr"]
+[ext_resource type="Texture2D" uid="uid://c7upgn7f7my6x" path="res://Meshes/Honda/honda_accord_image_1.png" id="7_qnlcq"]
+[ext_resource type="Texture2D" uid="uid://tja1p1ggwe0e" path="res://Meshes/Honda/honda_accord_usedcarbatteriesyoucanrecycleprofitably_Jupiterimages_PHOTOSdotcom.jpg" id="8_7ohpq"]
+[ext_resource type="Texture2D" uid="uid://b8v07ykp7r1r4" path="res://Meshes/Honda/honda_accord_stock-photo-top-view-of-used-engine-and-auto-parts-bad-car-maintenance-concept-1797837877.jpg" id="9_xystx"]
+[ext_resource type="Texture2D" uid="uid://ciy8a1p3fd6dv" path="res://Meshes/Honda/honda_accord_Image_0_1.jpg" id="10_fmtlh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w1lb3"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -24,7 +24,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_m4lpq")
+shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1pyx1"]
 resource_local_to_scene = true
@@ -53,7 +53,7 @@ points = PackedVector3Array(0.496595, -1.03848, 0.911553, 1.78798, -1.30516, 0.1
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_310x7"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -63,7 +63,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_m4lpq")
+shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_h4hnf"]
 resource_local_to_scene = true
@@ -91,7 +91,7 @@ points = PackedVector3Array(-0.537191, -1.33972, -1.0123, -0.537191, -1.24021, -
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hu5bk"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -101,7 +101,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_m4lpq")
+shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d2ms4"]
 resource_local_to_scene = true
@@ -129,7 +129,7 @@ points = PackedVector3Array(-0.537443, 1.33968, -1.0123, 1.83594, 1.41846, -0.35
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ioaud"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -139,7 +139,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_m4lpq")
+shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_885mt"]
 resource_local_to_scene = true
@@ -167,7 +167,7 @@ points = PackedVector3Array(-3.84526, -1.39792, -0.0901777, -3.80376, -1.39792, 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h7gbt"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -177,7 +177,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("6_l43qf")
+shader_parameter/albedo = ExtResource("6_21nrr")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ut5wx"]
 resource_local_to_scene = true
@@ -206,7 +206,7 @@ points = PackedVector3Array(-0.294792, 0.437981, -0.267171, -0.294792, 0.437981,
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6cna0"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -216,7 +216,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("6_l43qf")
+shader_parameter/albedo = ExtResource("6_21nrr")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jq5gt"]
 resource_local_to_scene = true
@@ -245,7 +245,7 @@ points = PackedVector3Array(-0.294792, 0.437981, -0.267171, -0.294792, 0.437981,
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iovrw"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -255,7 +255,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("6_l43qf")
+shader_parameter/albedo = ExtResource("6_21nrr")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jj0tn"]
 resource_local_to_scene = true
@@ -284,7 +284,7 @@ points = PackedVector3Array(-0.294792, 0.437981, -0.267171, -0.294792, 0.437981,
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f172x"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -294,7 +294,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("6_l43qf")
+shader_parameter/albedo = ExtResource("6_21nrr")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2s6ug"]
 resource_local_to_scene = true
@@ -323,7 +323,7 @@ points = PackedVector3Array(-0.294792, 0.437981, -0.267171, -0.294792, 0.437981,
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_apk57"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -333,7 +333,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("5_vnvm5")
+shader_parameter/albedo = ExtResource("7_qnlcq")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_70uur"]
 resource_local_to_scene = true
@@ -361,7 +361,7 @@ points = PackedVector3Array(1.83612, 1.3096, 0.27552, 1.83612, 1.41818, -0.35655
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_611a7"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -371,7 +371,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_m4lpq")
+shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fcs1a"]
 resource_local_to_scene = true
@@ -400,7 +400,7 @@ points = PackedVector3Array(-0.000456333, 2.44167, 1.0933, -0.000456333, 2.44167
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r5g0j"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -410,7 +410,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_m4lpq")
+shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_c3e4q"]
 resource_local_to_scene = true
@@ -439,7 +439,7 @@ points = PackedVector3Array(-0.000456333, 2.44167, 1.0933, -0.000456333, 2.44167
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3kmtk"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -449,7 +449,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_m4lpq")
+shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0j6f7"]
 resource_local_to_scene = true
@@ -477,7 +477,7 @@ data = PackedVector3Array(-3.5661, -1.4185, -0.1944, -3.8453, -1.3979, -0.0901, 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_okokb"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -487,7 +487,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_yq5bl")
+shader_parameter/albedo = ExtResource("8_7ohpq")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_17ekk"]
 resource_local_to_scene = true
@@ -516,7 +516,7 @@ size = Vector3(0.548584, 0.574829, 0.436157)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7wmd"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -526,7 +526,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_m4lpq")
+shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qfffp"]
 resource_local_to_scene = true
@@ -555,7 +555,7 @@ points = PackedVector3Array(1.82796, -1.309, 0.226305, 3.65254, -1.309, -0.07561
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ej1mv"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -565,11 +565,11 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("3_pb3jf")
+shader_parameter/albedo = ExtResource("9_xystx")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d8vbw"]
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -579,7 +579,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("3_pb3jf")
+shader_parameter/albedo = ExtResource("9_xystx")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_eifhr"]
 resource_local_to_scene = true
@@ -622,7 +622,7 @@ points = PackedVector3Array(-1.09988, -0.214945, -0.645003, -1.05102, -0.214945,
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ib00r"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -632,7 +632,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_m4lpq")
+shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3xjx7"]
 resource_local_to_scene = true
@@ -661,7 +661,7 @@ points = PackedVector3Array(3.65059, 1.36986, -0.403261, 4.01232, -0.000277638, 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8onnm"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -671,7 +671,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_m4lpq")
+shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nttle"]
 resource_local_to_scene = true
@@ -699,7 +699,7 @@ points = PackedVector3Array(-1.1877, -1.04043, 0.9, 0.543216, -1.04043, 0.9, -1.
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l4n7d"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -709,7 +709,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_m4lpq")
+shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_x7d43"]
 resource_local_to_scene = true
@@ -737,7 +737,7 @@ points = PackedVector3Array(-2.85059, -0.000256419, 0.326802, -2.81309, -0.00025
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wlwur"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -747,7 +747,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("2_8j7ix")
+shader_parameter/albedo = ExtResource("10_fmtlh")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_m14mj"]
 _surfaces = [{
@@ -790,7 +790,7 @@ points = PackedVector3Array(-0.000109434, -0.303429, -0.553915, -0.391689, -0.30
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i0rhr"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -800,7 +800,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("2_8j7ix")
+shader_parameter/albedo = ExtResource("10_fmtlh")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mo7am"]
 _surfaces = [{
@@ -843,7 +843,7 @@ points = PackedVector3Array(-0.000109434, -0.303429, -0.553915, -0.391689, -0.30
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kn7sn"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -853,7 +853,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("2_8j7ix")
+shader_parameter/albedo = ExtResource("10_fmtlh")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_n0xns"]
 _surfaces = [{
@@ -896,7 +896,7 @@ points = PackedVector3Array(-0.00010848, -0.303429, -0.553915, -0.391688, -0.303
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aa78f"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_kwhb1")
+shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
@@ -906,7 +906,7 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("2_8j7ix")
+shader_parameter/albedo = ExtResource("10_fmtlh")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8j0oq"]
 _surfaces = [{
@@ -947,9 +947,9 @@ shadow_mesh = SubResource("ArrayMesh_8j0oq")
 points = PackedVector3Array(-0.000109434, -0.303429, -0.553915, -0.391689, -0.303429, -0.391688, -0.000109434, 0.303428, -0.553915, 0.391578, -0.303429, -0.391688, -0.391689, 0.303428, -0.391688, -0.553916, -0.303429, -0.00010848, 0.391578, 0.303428, -0.391688, 0.553914, -0.303429, -0.00010848, -0.553916, 0.303428, -0.00010848, -0.391689, -0.303429, 0.391579, 0.553914, 0.303428, -0.00010848, 0.391578, -0.303429, 0.391579, -0.391689, 0.303428, 0.391579, -0.000109434, -0.303429, 0.553915, 0.391578, 0.303428, 0.391579, -0.000109434, 0.303428, 0.553915)
 
 [node name="honda_accord" type="RigidBody3D"]
-script = ExtResource("1_lkd2i")
+script = ExtResource("1_og8ll")
 
-[node name="WindowFront" parent="." node_paths=PackedStringArray("mesh") instance=ExtResource("3_nr02l")]
+[node name="WindowFront" parent="." node_paths=PackedStringArray("mesh") instance=ExtResource("2_7k701")]
 mesh = NodePath("Window_Front")
 type = 1
 
@@ -964,7 +964,7 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4
 shape = SubResource("ConvexPolygonShape3D_78ro4")
 
 [node name="DoorR" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Door_R")
 
 [node name="Door_R" type="MeshInstance3D" parent="DoorR"]
@@ -978,7 +978,7 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4
 shape = SubResource("ConvexPolygonShape3D_iqpqx")
 
 [node name="DoorL" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Door_L")
 
 [node name="Door_L" type="MeshInstance3D" parent="DoorL"]
@@ -992,7 +992,7 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4
 shape = SubResource("ConvexPolygonShape3D_pt763")
 
 [node name="Trunk" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Trunk")
 
 [node name="Trunk" type="MeshInstance3D" parent="Trunk"]
@@ -1006,7 +1006,7 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4
 shape = SubResource("ConvexPolygonShape3D_uo7vr")
 
 [node name="Seat1" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Seat")
 type = 2
 
@@ -1021,7 +1021,7 @@ transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, 0.425865
 shape = SubResource("ConvexPolygonShape3D_nk3jg")
 
 [node name="Seat2" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Seat_001")
 type = 2
 
@@ -1036,7 +1036,7 @@ transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, 0.425865
 shape = SubResource("ConvexPolygonShape3D_ux86i")
 
 [node name="Seat3" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Seat_002")
 type = 2
 
@@ -1051,7 +1051,7 @@ transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, -1.1416,
 shape = SubResource("ConvexPolygonShape3D_m5504")
 
 [node name="Seat4" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Seat_003")
 type = 2
 
@@ -1066,7 +1066,7 @@ transform = Transform3D(0.926969, 0, 0, 0, 0.926969, 0, 0, 0, 0.926969, -1.1416,
 shape = SubResource("ConvexPolygonShape3D_8tjdj")
 
 [node name="Palubka" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Palubka")
 type = 2
 
@@ -1081,7 +1081,7 @@ transform = Transform3D(1, 0, 0, 0, -3.56794e-07, 1, 0, -0.997669, -3.57628e-07,
 shape = SubResource("ConvexPolygonShape3D_506q3")
 
 [node name="AxleBack" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Axle Back")
 type = 5
 
@@ -1096,7 +1096,7 @@ transform = Transform3D(0.0912765, 0, 0, 0, 0.0912765, 0, 0, 0, 1.19048, -2.1687
 shape = SubResource("ConvexPolygonShape3D_4stya")
 
 [node name="AxleFront" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Axle Front")
 type = 5
 
@@ -1111,7 +1111,7 @@ transform = Transform3D(0.0912765, 0, 0, 0, 0.0912765, 0, 0, 0, 1.19048, 2.71416
 shape = SubResource("ConvexPolygonShape3D_431dh")
 
 [node name="Body" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Body")
 
 [node name="Body" type="MeshInstance3D" parent="Body"]
@@ -1126,7 +1126,7 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4
 shape = SubResource("ConcavePolygonShape3D_ujpyn")
 
 [node name="Battery" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Battery")
 type = 4
 
@@ -1141,7 +1141,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30996, 1.12092, 0.955405)
 shape = SubResource("BoxShape3D_acr2a")
 
 [node name="Hood" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Hood")
 
 [node name="Hood" type="MeshInstance3D" parent="Hood"]
@@ -1155,7 +1155,7 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4
 shape = SubResource("ConvexPolygonShape3D_mxn18")
 
 [node name="Motor" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Motor")
 type = 3
 
@@ -1170,7 +1170,7 @@ transform = Transform3D(0.683386, 0, 0, 0, 0.452484, 0, 0, 0, 1, 2.91875, 0.9243
 shape = SubResource("ConvexPolygonShape3D_3ig6o")
 
 [node name="Bumper" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Bumper")
 
 [node name="Bumper" type="MeshInstance3D" parent="Bumper"]
@@ -1184,7 +1184,7 @@ transform = Transform3D(1.00826, 0, 0, 0, -3.60581e-07, 1.00826, 0, -1.00826, -3
 shape = SubResource("ConvexPolygonShape3D_8gqv8")
 
 [node name="Roof" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Roof")
 
 [node name="Roof" type="MeshInstance3D" parent="Roof"]
@@ -1198,7 +1198,7 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4
 shape = SubResource("ConvexPolygonShape3D_1stde")
 
 [node name="WindowBack" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Window_Back")
 type = 1
 
@@ -1213,7 +1213,7 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4
 shape = SubResource("ConvexPolygonShape3D_1aspt")
 
 [node name="WheelFL" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Wheel_FL")
 type = 6
 
@@ -1227,7 +1227,7 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 2.7141
 shape = SubResource("ConvexPolygonShape3D_hflje")
 
 [node name="WheelBL" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Wheel_BL")
 type = 6
 
@@ -1241,7 +1241,7 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, -2.168
 shape = SubResource("ConvexPolygonShape3D_ido7d")
 
 [node name="WheelBR" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Wheel_BR")
 type = 6
 
@@ -1255,7 +1255,7 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, -2.168
 shape = SubResource("ConvexPolygonShape3D_5nh73")
 
 [node name="WheelFR" type="RigidBody3D" parent="." node_paths=PackedStringArray("mesh")]
-script = ExtResource("9_uakqk")
+script = ExtResource("5_unxre")
 mesh = NodePath("Wheel_FR")
 type = 6
 
