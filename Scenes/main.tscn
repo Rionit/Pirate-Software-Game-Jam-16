@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://dq8cp8tbiusly"]
 
-[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_4p8tu"]
+[ext_resource type="Script" uid="uid://bc7dkhagds1ls" path="res://Scripts/game_manager.gd" id="1_4p8tu"]
 [ext_resource type="PackedScene" uid="uid://dkxt8pog23mmg" path="res://Scenes/player.tscn" id="1_akknk"]
 [ext_resource type="AudioStream" uid="uid://bx344mhmlobc1" path="res://Sounds/Music/drum_loop.mp3" id="2_1jcvf"]
 [ext_resource type="PackedScene" uid="uid://c0opyhoefwu3g" path="res://Scenes/vehicles/honda_accord.tscn" id="2_c8exl"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dj21v7c4awumw" path="res://Scenes/dome.tscn" id="4_cv1b4"]
 [ext_resource type="AudioStream" uid="uid://cbkp0a11y1i0" path="res://Sounds/Music/flute_loop.mp3" id="4_dakx6"]
 [ext_resource type="PackedScene" uid="uid://gs7k6u5af1fu" path="res://Scenes/glass_dumpster.tscn" id="5_0wp7l"]
-[ext_resource type="Script" path="res://Scripts/falling_object_catcher.gd" id="5_ed6ke"]
+[ext_resource type="Script" uid="uid://nhwp0fbxwyqy" path="res://Scripts/falling_object_catcher.gd" id="5_ed6ke"]
 [ext_resource type="PackedScene" uid="uid://bgtwppfrrm3rt" path="res://Scenes/engines_dumpster.tscn" id="7_r4yj5"]
 [ext_resource type="PackedScene" uid="uid://dycxentrqfn6l" path="res://Scenes/axles_dumpster.tscn" id="8_5ib1y"]
 [ext_resource type="PackedScene" uid="uid://dmv78ko1rhy6o" path="res://Scenes/metal_dumpster.tscn" id="9_k5m0s"]

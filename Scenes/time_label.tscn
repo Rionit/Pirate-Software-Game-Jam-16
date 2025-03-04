@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://crgi5pn1mxa34"]
 
 [ext_resource type="Theme" uid="uid://bxnae1arshtlw" path="res://Themes/ui.tres" id="1_4wx0l"]
-[ext_resource type="Script" path="res://Scripts/time.gd" id="1_4x7i3"]
+[ext_resource type="Script" uid="uid://vmpdadambobn" path="res://Scripts/time.gd" id="1_4x7i3"]
 
 [sub_resource type="Animation" id="Animation_dtnsc"]
 length = 0.001
@@ -97,8 +97,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j866i"]
 _data = {
-"RESET": SubResource("Animation_dtnsc"),
-"pop": SubResource("Animation_3xtcx")
+&"RESET": SubResource("Animation_dtnsc"),
+&"pop": SubResource("Animation_3xtcx")
 }
 
 [node name="TimeLabel" type="Label"]
@@ -122,5 +122,5 @@ script = ExtResource("1_4x7i3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_j866i")
+&"": SubResource("AnimationLibrary_j866i")
 }

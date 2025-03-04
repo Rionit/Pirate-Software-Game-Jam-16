@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cci3ne7yjx11w"]
 
-[ext_resource type="Script" path="res://Scripts/car_part.gd" id="1_fexw1"]
+[ext_resource type="Script" uid="uid://yps46dwaesq7" path="res://Scripts/car_part.gd" id="1_fexw1"]
 
 [node name="CarPart" type="RigidBody3D"]
 collision_layer = 2

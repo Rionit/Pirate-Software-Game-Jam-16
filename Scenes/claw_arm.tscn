@@ -1,10 +1,10 @@
 [gd_scene load_steps=44 format=4 uid="uid://d0yyaf3xp7gic"]
 
-[ext_resource type="Script" path="res://Scripts/claw_arm.gd" id="1_2dnwu"]
+[ext_resource type="Script" uid="uid://dfq8yylha03bb" path="res://Scripts/claw_arm.gd" id="1_2dnwu"]
 [ext_resource type="Texture2D" uid="uid://dvrsqa00g1b77" path="res://Meshes/Claw Arm/claw_arm_image_2.png" id="1_gymtd"]
 [ext_resource type="AudioStream" uid="uid://dkvk83y2y2lug" path="res://Sounds/SFX/metal_bang_1.mp3" id="2_5nuq5"]
-[ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="2_mgfk3"]
-[ext_resource type="Script" path="res://Scripts/ik_claw.gd" id="3_gthxj"]
+[ext_resource type="Shader" uid="uid://c6iq5aicjw6q6" path="res://Shaders/psx.gdshader" id="2_mgfk3"]
+[ext_resource type="Script" uid="uid://3f6rhhpaw3mf" path="res://Scripts/ik_claw.gd" id="3_gthxj"]
 [ext_resource type="AudioStream" uid="uid://dx1dbggm5nmd3" path="res://Sounds/SFX/metal_bang_2.mp3" id="3_wye18"]
 [ext_resource type="AudioStream" uid="uid://d4lpw8eju2b06" path="res://Sounds/SFX/hydraulic_hoist.mp3" id="4_m6iwr"]
 [ext_resource type="AudioStream" uid="uid://o4d24fkotp5x" path="res://Sounds/SFX/actuator_forward.mp3" id="4_ra0v7"]
@@ -17,6 +17,7 @@
 render_priority = 0
 shader = ExtResource("2_mgfk3")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("1_gymtd")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -25,7 +26,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_gymtd")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_g2ox2"]
 _surfaces = [{
@@ -64,13 +64,14 @@ shadow_mesh = SubResource("ArrayMesh_g2ox2")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p5b5s"]
 points = PackedVector3Array(-0.691816, -0.599507, -0.651152, -0.691816, 0.599507, -0.651152, -0.602714, -0.599507, -0.651152, -0.691816, -0.599507, 0.651024, -1.60743, -0.181683, -0.181655, -0.691816, 0.599507, 0.651024, -0.602714, 0.599507, -0.651152, -1.60743, 0.181566, -0.181655, -0.602714, -0.599507, 0.651024, 0.536015, -0.552561, -0.600161, 0.74575, -0.552561, -0.529156, 0.83294, -0.552561, -0.357445, -1.60743, -0.181683, 0.181527, -0.602714, 0.599507, 0.651024, -1.60743, 0.181566, 0.181527, 0.83294, 0.552443, -0.357445, 0.74575, 0.552443, -0.529156, 0.536015, 0.552443, -0.600161, 0.83294, -0.552561, 0.357318, 0.74575, -0.552561, 0.529029, 0.536015, -0.552561, 0.600034, 0.536015, 0.552443, 0.600034, 0.74575, 0.552443, 0.529029, 0.83294, 0.552443, 0.357318)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_7w0wb"]
-radius = 0.464466
+[sub_resource type="SphereShape3D" id="SphereShape3D_kti60"]
+radius = 0.462775
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_svexr"]
 render_priority = 0
 shader = ExtResource("2_mgfk3")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("1_gymtd")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -79,7 +80,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_gymtd")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8ncah"]
 _surfaces = [{
@@ -122,6 +122,7 @@ points = PackedVector3Array(-0.799135, -0.238532, -0.557505, -0.941048, -0.24307
 render_priority = 0
 shader = ExtResource("2_mgfk3")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("1_gymtd")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -130,7 +131,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_gymtd")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_or3sb"]
 _surfaces = [{
@@ -173,6 +173,7 @@ points = PackedVector3Array(0.204762, -0.211318, -0.451569, 0.204762, 0.211289, 
 render_priority = 0
 shader = ExtResource("2_mgfk3")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("1_gymtd")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -181,7 +182,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_gymtd")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_prmac"]
 _surfaces = [{
@@ -224,6 +224,7 @@ points = PackedVector3Array(0.107195, -0.174673, -0.676142, 0.107195, 0.187625, 
 render_priority = 0
 shader = ExtResource("2_mgfk3")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("1_gymtd")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -232,7 +233,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_gymtd")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6m26l"]
 _surfaces = [{
@@ -275,6 +275,7 @@ points = PackedVector3Array(2.84178, 0.344442, -0.559162, 2.86683, 0.295229, -0.
 render_priority = 0
 shader = ExtResource("2_mgfk3")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("1_gymtd")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -283,7 +284,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_gymtd")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_30jyc"]
 _surfaces = [{
@@ -437,9 +437,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_221kg"]
 _data = {
-"RESET": SubResource("Animation_1cpv4"),
-"pinch": SubResource("Animation_7kj4g"),
-"release": SubResource("Animation_rxxqb")
+&"RESET": SubResource("Animation_1cpv4"),
+&"pinch": SubResource("Animation_7kj4g"),
+&"release": SubResource("Animation_rxxqb")
 }
 
 [node name="claw_arm" type="Node3D"]
@@ -553,8 +553,8 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton/Claw_Clamp/Tip"]
-transform = Transform3D(1, -2.84453e-12, 1.69962e-11, -1.88738e-15, 1.00004, 1.04774e-09, 0, 0, 1.00004, 1.86212, -2.86102e-06, -5.8208e-10)
-shape = SubResource("SphereShape3D_7w0wb")
+transform = Transform3D(1, -5.02098e-14, 2.27374e-13, -1.88738e-15, 1, 0, 0, 0, 1, 1.86179, -0.00282335, 0.00415291)
+shape = SubResource("SphereShape3D_kti60")
 
 [node name="ClawCamPosition" type="Marker3D" parent="Armature/Skeleton/Claw_Clamp"]
 unique_name_in_owner = true
@@ -702,7 +702,7 @@ mesh = SubResource("SphereMesh_nnh6x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_221kg")
+&"": SubResource("AnimationLibrary_221kg")
 }
 
 [connection signal="body_entered" from="Armature/Skeleton/Claw_Clamp/Tip" to="." method="tip_entered_body"]

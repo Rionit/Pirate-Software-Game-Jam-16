@@ -1,10 +1,10 @@
 [gd_scene load_steps=82 format=4 uid="uid://c0opyhoefwu3g"]
 
-[ext_resource type="Script" path="res://Scripts/car.gd" id="1_og8ll"]
+[ext_resource type="Script" uid="uid://bx34ve0cgfhfx" path="res://Scripts/car.gd" id="1_og8ll"]
 [ext_resource type="PackedScene" uid="uid://cci3ne7yjx11w" path="res://Scenes/car_part.tscn" id="2_7k701"]
-[ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="3_fqdli"]
+[ext_resource type="Shader" uid="uid://c6iq5aicjw6q6" path="res://Shaders/psx.gdshader" id="3_fqdli"]
 [ext_resource type="Texture2D" uid="uid://dxt3bgxrbwjbn" path="res://Meshes/Honda/honda_accord_Image_0.png" id="4_t8wmk"]
-[ext_resource type="Script" path="res://Scripts/car_part.gd" id="5_unxre"]
+[ext_resource type="Script" uid="uid://yps46dwaesq7" path="res://Scripts/car_part.gd" id="5_unxre"]
 [ext_resource type="Texture2D" uid="uid://bhg5xwsw36jx5" path="res://Meshes/Honda/honda_accord_honda seat.jpg" id="6_21nrr"]
 [ext_resource type="Texture2D" uid="uid://c7upgn7f7my6x" path="res://Meshes/Honda/honda_accord_image_1.png" id="7_qnlcq"]
 [ext_resource type="Texture2D" uid="uid://tja1p1ggwe0e" path="res://Meshes/Honda/honda_accord_usedcarbatteriesyoucanrecycleprofitably_Jupiterimages_PHOTOSdotcom.jpg" id="8_7ohpq"]
@@ -16,6 +16,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_t8wmk")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -24,7 +25,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1pyx1"]
 resource_local_to_scene = true
@@ -55,6 +55,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_t8wmk")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -63,7 +64,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_h4hnf"]
 resource_local_to_scene = true
@@ -93,6 +93,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_t8wmk")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -101,7 +102,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d2ms4"]
 resource_local_to_scene = true
@@ -131,6 +131,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_t8wmk")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -139,7 +140,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_885mt"]
 resource_local_to_scene = true
@@ -169,6 +169,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("6_21nrr")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -177,7 +178,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("6_21nrr")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ut5wx"]
 resource_local_to_scene = true
@@ -208,6 +208,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("6_21nrr")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -216,7 +217,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("6_21nrr")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jq5gt"]
 resource_local_to_scene = true
@@ -247,6 +247,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("6_21nrr")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -255,7 +256,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("6_21nrr")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jj0tn"]
 resource_local_to_scene = true
@@ -286,6 +286,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("6_21nrr")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -294,7 +295,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("6_21nrr")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2s6ug"]
 resource_local_to_scene = true
@@ -325,6 +325,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("7_qnlcq")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -333,7 +334,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("7_qnlcq")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_70uur"]
 resource_local_to_scene = true
@@ -363,6 +363,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_t8wmk")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -371,7 +372,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fcs1a"]
 resource_local_to_scene = true
@@ -402,6 +402,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_t8wmk")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -410,7 +411,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_c3e4q"]
 resource_local_to_scene = true
@@ -441,6 +441,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_t8wmk")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -449,7 +450,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0j6f7"]
 resource_local_to_scene = true
@@ -479,6 +479,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("8_7ohpq")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -487,7 +488,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("8_7ohpq")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_17ekk"]
 resource_local_to_scene = true
@@ -518,6 +518,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_t8wmk")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -526,7 +527,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qfffp"]
 resource_local_to_scene = true
@@ -557,6 +557,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("9_xystx")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -565,12 +566,12 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("9_xystx")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d8vbw"]
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("9_xystx")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -579,7 +580,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("9_xystx")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_eifhr"]
 resource_local_to_scene = true
@@ -624,6 +624,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_t8wmk")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -632,7 +633,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3xjx7"]
 resource_local_to_scene = true
@@ -663,6 +663,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_t8wmk")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -671,7 +672,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nttle"]
 resource_local_to_scene = true
@@ -701,6 +701,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_t8wmk")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -709,7 +710,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_t8wmk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_x7d43"]
 resource_local_to_scene = true
@@ -739,6 +739,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("10_fmtlh")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -747,7 +748,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("10_fmtlh")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_m14mj"]
 _surfaces = [{
@@ -792,6 +792,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("10_fmtlh")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -800,7 +801,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("10_fmtlh")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mo7am"]
 _surfaces = [{
@@ -845,6 +845,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("10_fmtlh")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -853,7 +854,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("10_fmtlh")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_n0xns"]
 _surfaces = [{
@@ -898,6 +898,7 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_fqdli")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("10_fmtlh")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -906,7 +907,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("10_fmtlh")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8j0oq"]
 _surfaces = [{
@@ -1118,8 +1118,8 @@ mesh = NodePath("Body")
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)
 mesh = SubResource("ArrayMesh_0j6f7")
 skeleton = NodePath("")
-"blend_shapes/Cube Squash" = 0.0
 blend_shapes/Damage = 0.0
+"blend_shapes/Cube Squash" = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, 1, 0, -1, -3.57628e-07, 0, 1.4248, 0)

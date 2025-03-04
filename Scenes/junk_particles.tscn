@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://4rqjqcn5eoey"]
 
 [ext_resource type="Texture2D" uid="uid://b8logaw8u6qd" path="res://Images/scrap_billboards.png" id="1_jn7sq"]
-[ext_resource type="Script" path="res://Scripts/junk_particles.gd" id="2_try4t"]
+[ext_resource type="Script" uid="uid://do6322xov1ola" path="res://Scripts/junk_particles.gd" id="2_try4t"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3i4qx"]
 lifetime_randomness = 0.2

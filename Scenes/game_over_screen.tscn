@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cly3lujeyqwda"]
 
-[ext_resource type="Script" path="res://Scripts/game_over_screen.gd" id="1_ajr5w"]
+[ext_resource type="Script" uid="uid://b2excic0xmjs2" path="res://Scripts/game_over_screen.gd" id="1_ajr5w"]
 [ext_resource type="Theme" uid="uid://bxnae1arshtlw" path="res://Themes/ui.tres" id="2_fou0y"]
 
 [node name="GameOverScreen" type="Control"]

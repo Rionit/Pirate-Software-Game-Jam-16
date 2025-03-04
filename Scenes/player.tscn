@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dkxt8pog23mmg"]
 
 [ext_resource type="PackedScene" uid="uid://d0yyaf3xp7gic" path="res://Scenes/claw_arm.tscn" id="1_n1uco"]
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_xfo1h"]
+[ext_resource type="Script" uid="uid://d4gxdl2wrdbn4" path="res://Scripts/player.gd" id="1_xfo1h"]
 [ext_resource type="AudioStream" uid="uid://b3dj401ccj5c7" path="res://Sounds/SFX/movement_robotic.mp3" id="3_5dtae"]
 [ext_resource type="AudioStream" uid="uid://b7rnhf0etpesl" path="res://Sounds/SFX/hiss_1.wav" id="3_i7ry5"]
 [ext_resource type="AudioStream" uid="uid://cg4te1t6wq6tk" path="res://Sounds/SFX/engine_idle.mp3" id="4_47ghc"]

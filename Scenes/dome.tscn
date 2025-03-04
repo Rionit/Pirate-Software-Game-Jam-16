@@ -1,14 +1,15 @@
 [gd_scene load_steps=11 format=4 uid="uid://dj21v7c4awumw"]
 
-[ext_resource type="Shader" path="res://dome_psx.gdshader" id="1_lwkss"]
+[ext_resource type="Shader" uid="uid://crf6pmbsjicl" path="res://dome_psx.gdshader" id="1_lwkss"]
 [ext_resource type="Texture2D" uid="uid://d3kemij5doay0" path="res://Meshes/Dome/dome_panorama.jpg" id="1_tkosf"]
-[ext_resource type="Shader" path="res://Shaders/shadow_catcher.gdshader" id="2_2ao4t"]
+[ext_resource type="Shader" uid="uid://c7gpc8nn32wb4" path="res://Shaders/shadow_catcher.gdshader" id="2_2ao4t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ja7lb"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_lwkss")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("1_tkosf")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.05
 shader_parameter/resolution = Vector2i(320, 240)
@@ -17,7 +18,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_tkosf")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cuuni"]
 _surfaces = [{

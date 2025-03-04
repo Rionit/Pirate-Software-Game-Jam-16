@@ -1,8 +1,8 @@
 [gd_scene load_steps=93 format=4 uid="uid://dy0p1f3p4vmb"]
 
-[ext_resource type="Script" path="res://Scripts/car.gd" id="1_lmbts"]
-[ext_resource type="Script" path="res://Scripts/car_part.gd" id="2_anngt"]
-[ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="3_c0rbd"]
+[ext_resource type="Script" uid="uid://bx34ve0cgfhfx" path="res://Scripts/car.gd" id="1_lmbts"]
+[ext_resource type="Script" uid="uid://yps46dwaesq7" path="res://Scripts/car_part.gd" id="2_anngt"]
+[ext_resource type="Shader" uid="uid://c6iq5aicjw6q6" path="res://Shaders/psx.gdshader" id="3_c0rbd"]
 [ext_resource type="Texture2D" uid="uid://h0jh65kvl5j2" path="res://Meshes/Suzuki/suzuki_grand_vitara_Image_0.jpg" id="4_q7778"]
 [ext_resource type="Texture2D" uid="uid://cfng14me5k8i4" path="res://Meshes/Suzuki/suzuki_grand_vitara_Image_0_1.png" id="5_u3dmi"]
 [ext_resource type="Texture2D" uid="uid://bcdgop2q7ebxy" path="res://Meshes/Suzuki/suzuki_grand_vitara_usedcarbatteriesyoucanrecycleprofitably_Jupiterimages_PHOTOSdot.jpg" id="6_7rrw4"]
@@ -14,6 +14,7 @@
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -22,7 +23,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bxs8s"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0"
@@ -50,6 +50,7 @@ points = PackedVector3Array(-2.99439, 0.690141, -1.27665, -2.47224, 0.40613, -1.
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -58,7 +59,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vdpwu"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_001"
@@ -87,6 +87,7 @@ points = PackedVector3Array(2.56593, 1.10829, 1.30591, 2.95467, 0.947134, 1.3059
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -95,7 +96,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_taaqv"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_002"
@@ -124,6 +124,7 @@ points = PackedVector3Array(2.56593, 1.10829, -0.780926, 2.95467, 0.947133, -0.7
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -132,7 +133,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ttg2q"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_003"
@@ -161,6 +161,7 @@ points = PackedVector3Array(-2.40721, 0.558284, -1.31111, -2.24616, 0.169543, -1
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -169,7 +170,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ebl1v"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_004"
@@ -198,6 +198,7 @@ points = PackedVector3Array(-2.40721, 0.558285, 0.77572, -2.24616, 0.169543, 0.7
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -206,7 +207,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nioyb"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_006"
@@ -235,6 +235,7 @@ points = PackedVector3Array(-3.27919, 1.47497, 0.889913, -3.21984, 1.86041, 0.72
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -243,7 +244,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_q6q18"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_007"
@@ -271,6 +271,7 @@ points = PackedVector3Array(-2.4717, 2.6102, -0.90106, -2.4717, 2.6902, -0.90106
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -279,7 +280,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ahqyi"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_008"
@@ -307,6 +307,7 @@ points = PackedVector3Array(1.73186, 1.75686, 1.27665, 0.650759, 2.6902, 0.90100
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -315,7 +316,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xs2bs"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_009"
@@ -344,6 +344,7 @@ points = PackedVector3Array(3.45757, 1.44032, 0, 3.40768, 1.37787, 0, 3.35202, 1
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -352,7 +353,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jnjok"]
 _surfaces = [{
@@ -395,6 +395,7 @@ points = PackedVector3Array(3.35213, 0.551958, -1.22786, 3.2719, 0.930293, -1.28
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -403,7 +404,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_s5ktv"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_012"
@@ -432,6 +432,7 @@ points = PackedVector3Array(-0.246352, 0.800075, -1.19689, -0.246158, 0.794038, 
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -440,7 +441,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_pph3i"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_013"
@@ -469,6 +469,7 @@ points = PackedVector3Array(-0.246352, 0.800075, 1.19685, -0.17063, 0.417981, 1.
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -477,7 +478,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_iuerr"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_014"
@@ -506,6 +506,7 @@ points = PackedVector3Array(-1.74678, 1.31676, -1.27665, -1.74678, 1.31676, -1.1
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -514,7 +515,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ca1ns"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_015"
@@ -543,6 +543,7 @@ points = PackedVector3Array(-1.74678, 1.31676, 1.19664, -1.74678, 1.31676, 1.276
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -551,7 +552,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_72nni"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_016"
@@ -579,6 +579,7 @@ points = PackedVector3Array(-2.79284, 1.77201, 1.2171, -2.39861, 2.65767, 0.9009
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -587,7 +588,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7hh3y"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_017"
@@ -615,6 +615,7 @@ points = PackedVector3Array(-2.91454, 0.685654, -1.27665, -2.99439, 0.690166, -1
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -623,7 +624,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fvy2q"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_018"
@@ -652,6 +652,7 @@ points = PackedVector3Array(-1.48121, 2.6902, -0.901074, -1.48121, 2.66103, -0.8
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_q7778")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -660,7 +661,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_q7778")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d8ivl"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_019"
@@ -689,6 +689,7 @@ points = PackedVector3Array(-1.48121, 2.6902, 0.901029, -1.68143, 2.44701, 0.996
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("5_u3dmi")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -697,7 +698,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("5_u3dmi")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fdgmy"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_032"
@@ -726,6 +726,7 @@ points = PackedVector3Array(-1.64532, 0.426696, 1.29897, -1.85731, 0.580754, 1.2
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("5_u3dmi")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -734,7 +735,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("5_u3dmi")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_77qa5"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_030"
@@ -763,6 +763,7 @@ points = PackedVector3Array(2.77793, 0.530746, 1.29897, 2.56593, 0.684804, 1.299
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("6_7rrw4")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -771,7 +772,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("6_7rrw4")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qxxgj"]
 resource_name = "suzuki_grand_vitara_Cube_003"
@@ -800,6 +800,7 @@ points = PackedVector3Array(3.19302, 1.43092, 1.20895, 2.78305, 1.50129, 1.13543
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("7_hsbyn")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -808,7 +809,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("7_hsbyn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c8hm"]
 resource_name = "Tubes"
@@ -857,6 +857,7 @@ points = PackedVector3Array(3.26594, 1.09959, 0.0338253, 3.26006, 1.09341, -0.04
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("8_enq42")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -865,7 +866,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("8_enq42")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7pair"]
 resource_name = "suzuki_grand_vitara_Cube_005"
@@ -894,6 +894,7 @@ points = PackedVector3Array(-1.54717, 1.75831, -0.920273, -1.54717, 1.75831, -0.
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("8_enq42")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -902,7 +903,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("8_enq42")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dc2hm"]
 resource_name = "suzuki_grand_vitara_Cube_009"
@@ -931,6 +931,7 @@ points = PackedVector3Array(-1.54717, 1.75831, 0.424954, -1.54717, 1.75831, 0.92
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("8_enq42")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -939,7 +940,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("8_enq42")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vx6yv"]
 resource_name = "suzuki_grand_vitara_Cube_010"
@@ -968,6 +968,7 @@ points = PackedVector3Array(0.020293, 1.75831, -0.920273, 0.020293, 1.75831, -0.
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("8_enq42")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -976,7 +977,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("8_enq42")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cumjx"]
 resource_name = "suzuki_grand_vitara_Cube_011"
@@ -1005,6 +1005,7 @@ points = PackedVector3Array(0.020293, 1.75831, 0.424954, 0.020293, 1.75831, 0.92
 render_priority = 0
 shader = ExtResource("3_c0rbd")
 shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("9_ibbvx")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -1013,7 +1014,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("9_ibbvx")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cl243"]
 resource_name = "suzuki_grand_vitara_Cube_Body_0_034"

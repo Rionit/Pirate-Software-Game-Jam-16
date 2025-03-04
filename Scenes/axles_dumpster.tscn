@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://dycxentrqfn6l"]
 
-[ext_resource type="Script" path="res://Scripts/trash_pile.gd" id="1_nuyrw"]
-[ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="3_vf83x"]
+[ext_resource type="Script" uid="uid://ck1fvdgdoixh1" path="res://Scripts/trash_pile.gd" id="1_nuyrw"]
+[ext_resource type="Shader" uid="uid://c6iq5aicjw6q6" path="res://Shaders/psx.gdshader" id="3_vf83x"]
 [ext_resource type="PackedScene" uid="uid://cix64nx1cvp11" path="res://Scenes/label_3d.tscn" id="4_hbb0p"]
 [ext_resource type="Texture2D" uid="uid://m3el26inq0n8" path="res://Meshes/Battery Dumpster/battery_dumpster_image_6.png" id="4_sr6ri"]
 
@@ -9,6 +9,7 @@
 render_priority = 0
 shader = ExtResource("3_vf83x")
 shader_parameter/affine_mapping = true
+shader_parameter/albedo = ExtResource("4_sr6ri")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -17,7 +18,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_sr6ri")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5pg4p"]
 _surfaces = [{
@@ -57,6 +57,7 @@ shadow_mesh = SubResource("ArrayMesh_5pg4p")
 render_priority = 0
 shader = ExtResource("3_vf83x")
 shader_parameter/affine_mapping = true
+shader_parameter/albedo = ExtResource("4_sr6ri")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -65,7 +66,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("4_sr6ri")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4jhnt"]
 _surfaces = [{

@@ -1,14 +1,15 @@
 [gd_scene load_steps=13 format=4 uid="uid://gs7k6u5af1fu"]
 
-[ext_resource type="Script" path="res://Scripts/trash_pile.gd" id="1_4mn2g"]
+[ext_resource type="Script" uid="uid://ck1fvdgdoixh1" path="res://Scripts/trash_pile.gd" id="1_4mn2g"]
 [ext_resource type="Texture2D" uid="uid://ctlujf4scbd4c" path="res://Meshes/Glass Dumpster/dome_image_3.png" id="1_ep8pe"]
-[ext_resource type="Shader" path="res://Shaders/psx.gdshader" id="2_vwteu"]
+[ext_resource type="Shader" uid="uid://c6iq5aicjw6q6" path="res://Shaders/psx.gdshader" id="2_vwteu"]
 [ext_resource type="PackedScene" uid="uid://cix64nx1cvp11" path="res://Scenes/label_3d.tscn" id="4_1qk5t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nv312"]
 render_priority = 0
 shader = ExtResource("2_vwteu")
 shader_parameter/affine_mapping = true
+shader_parameter/albedo = ExtResource("1_ep8pe")
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.25
 shader_parameter/resolution = Vector2i(320, 240)
@@ -17,7 +18,6 @@ shader_parameter/shine_color = Color(1, 1, 1, 1)
 shader_parameter/cycle_interval = 1.0
 shader_parameter/shine_speed = 3.0
 shader_parameter/shine_width = 3.0
-shader_parameter/albedo = ExtResource("1_ep8pe")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_u0wvy"]
 _surfaces = [{
